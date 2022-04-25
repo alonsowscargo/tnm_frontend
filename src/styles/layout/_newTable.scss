@@ -1,0 +1,106 @@
+.new-table {
+    // .MuiTableBody-root {
+    //     position: relative;
+    //     // .MuiTableRow-root  {
+    //     color: pink !important;
+    //     // }
+
+    //     .icon {
+    //         background: blue;
+    //         position: absolute;
+    //         z-index: 10;
+    //         top: 0;
+    //         right: 0;
+    //     }
+    // }
+
+    // .lop:nth-last-child(-n+3) {
+    //     border-left: solid 6px;
+    //     background: pink;
+
+    //     // &:nth-last-child(n) {
+    //     //     background: blue;
+    //     // }
+
+    //     // &:last-child {
+    //     //     background: blue !important;
+    //     // }
+    // }
+    // .lop:nth-last-child(odd) {
+    //     background: #fafafa !important;
+    // }
+    
+    // .lop:nth-last-child(even) {
+    //     background: #ffffff !important;
+    // }
+
+    .lop {
+        // font-size: 16px;
+        // color: #7f8c8d;
+        background: #fafafa !important;
+        // border-left: solid 6px red;
+        // text-align: center;
+
+        .MuiAvatar-root {
+            width: 25px;
+            height: 25px;
+            font-size: 14px;
+         
+        }
+
+        .icon-succses {
+            background: rgba(110, 207, 150, 0.651) !important;
+        }
+        .icon-warning {
+            background: rgba(255, 203, 107, 0.753) !important;
+        }
+        .icon-default {
+            background: #bdbdbd!important;
+        }
+        
+        .icon-danger {
+            background: rgba(252, 86, 91, 0.753) !important;
+        }
+      }
+      
+    .lop:nth-child(2n+0) {
+        // font-size: 20px;
+        // color: #FFFFFF;
+        background: #ffffff !important;
+      }
+      
+
+    .MuiTableCell-body {
+        color: #8F8F8F;
+        font-size: 12px;
+        text-transform: capitalize !important;
+    }
+    .MuiTableCell-root {
+        padding: 14px 16px !important;
+        border: none !important;
+    }
+    .MuiTableRow-root { 
+        position: relative;
+        transition: .6s all ease;
+
+        &:hover {
+            .icon {
+                display: block;
+                background: linear-gradient( 90deg, #ffffff60, #f3f3f3 100%);
+                position: absolute;
+                z-index: 2;
+                // top: -1px;
+                right: 0;
+                padding: 0 8px;
+                @include justify-content(center,center);
+                // border-left: solid 6px transparent;
+            }
+        }
+
+        .icon {
+            display: none;
+            width: auto !important;
+            height: 100% !important;
+        }
+    }
+}

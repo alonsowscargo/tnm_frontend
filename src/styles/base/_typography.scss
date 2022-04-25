@@ -1,0 +1,359 @@
+/*Typography Styles*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: $headings-font-weight;
+  margin: 0 0 $headings-margin-bottom;
+  color: $headings-color;
+}
+
+[class*="text-"] h1, [class*="text-"] .h1 {
+  color: inherit;
+}
+
+[class*="text-"] h2, [class*="text-"] .h2 {
+  color: inherit;
+}
+
+[class*="text-"] h3, [class*="text-"] .h3 {
+  color: inherit;
+}
+
+[class*="text-"] h4, [class*="text-"] .h4 {
+  color: inherit;
+}
+
+[class*="text-"] h5, [class*="text-"] .h5 {
+  color: inherit;
+}
+
+[class*="text-"] h6, [class*="text-"] .h6 {
+  color: inherit;
+}
+
+.text-strikethrough {
+  text-decoration: line-through !important;
+}
+
+.desc-list {
+  margin-bottom: 0;
+
+  li {
+    padding: $jr-card-padding;
+    border-bottom: 1px solid $gray-500;
+    margin-left: -$jr-card-margin;
+    margin-right: -$jr-card-margin;
+
+    &:last-child {
+      border-bottom: 0 none;
+    }
+
+    & .card-title {
+      margin-bottom: 6px;
+    }
+
+  }
+
+  &.even-odd {
+    li {
+      border-bottom: 0 none;
+
+      &:nth-child(2n) {
+        background-color: $gray-300;
+      }
+    }
+  }
+}
+
+// Font Weight class
+.jr-font-weight-thin {
+  font-weight: $font-weight-thin;
+}
+
+.jr-font-weight-light {
+  font-weight: $font-weight-light;
+}
+
+.jr-font-weight-normal {
+  font-weight: $font-weight-normal;
+}
+
+.jr-font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+.jr-font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+.jr-font-weight-black {
+  font-weight: $font-weight-black;
+}
+
+/*Font size Classes*/
+/*8px*/
+.jr-fs-xxs {
+  font-size: 0.5rem !important;
+}
+
+/*10px*/
+.jr-fs-xs {
+  font-size: 0.625rem !important;
+}
+
+/*11px*/
+.jr-fs-11 {
+  font-size: 0.6875rem !important;
+}
+
+/*12px*/
+.jr-fs-sm {
+  font-size: $font-size-sm !important;
+}
+
+/*13px*/
+.jr-fs-13 {
+  font-size: 0.8125rem !important;
+}
+
+/*14px*/
+.jr-fs-md {
+  font-size: $font-size-base !important;
+  line-height: 1;
+}
+
+/*15px*/
+.jr-fs-15 {
+  font-size: 0.9375rem !important;
+}
+
+/*16px*/
+.jr-fs-lg {
+  font-size: 1rem !important;
+  line-height: 1;
+}
+
+/*20px*/
+.jr-fs-xl {
+  font-size: 1.25rem !important;
+  line-height: 1;
+}
+
+/*24px*/
+.jr-fs-xxl {
+  font-size: 1.5rem !important;
+  line-height: 1;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 1.25rem !important; //20px
+  }
+}
+
+/*28px*/
+.jr-fs-2xl {
+  font-size: 1.75rem !important;
+  line-height: 1;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 1.25rem !important; //20px
+  }
+}
+
+/*30px*/
+.jr-fs-xxxl {
+  font-size: 1.875rem !important;
+  line-height: 1;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 1.75rem !important; //28px
+  }
+
+  @media screen and (max-width: 991px) {
+    font-size: 1.5rem !important; //24px
+  }
+}
+
+/*40px*/
+.jr-fs-xlxl {
+  font-size: 2.5rem !important;
+  line-height: 1;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 2rem !important; //32px
+  }
+
+  @media screen and (max-width: 991px) {
+    font-size: 1.75rem !important; //28px
+  }
+}
+
+.jr-fs-cp {
+
+  @media screen and (min-width: 1368px) {
+    font-size: 1rem !important; //16px
+    line-height: 1;
+  }
+}
+
+
+// fonts nuevo template
+.title-h1{
+  font-size: 36px;
+  line-height: 46px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #263238;
+
+
+  @include phone  {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  // text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.377)
+}
+.title-h2{
+  font-size: 28px;
+  line-height: 38px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #263238;
+
+  @include phone  {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+.title-h3{
+  font-size:24px;
+  line-height: 28px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #263238;
+}
+.title-h4{
+  font-size: 20px;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #263238;
+}
+.title-h5{
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #263238;
+}
+.text {
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  color: #8F8F8F;
+  font-family: 'Roboto', sans-serif;
+}
+.text-small{
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  color: #8F8F8F;
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-weight-300{
+  font-weight: 300;
+}
+.font-weight-400{
+  font-weight: 400;
+}
+.font-weight-500{
+  font-weight: 500;
+}
+.font-weight-600{
+  font-weight: 600;
+}
+.font-weight-700{
+  font-weight: 700;
+}
+.font-weight-800{
+  font-weight: 800;
+}
+.font-weight-900{
+  font-weight: 900 !important;
+}
+
+.text-light{
+  color: #fff !important;
+}
+.text-dark {
+  color: #3c3c3c;
+}
+.text-center {
+  text-align: center;
+}
+.text-blue {
+  color: blue;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.link {
+  font-weight: 500;
+  text-decoration: underline;
+  padding: 0 5px;
+  color: #039be5;
+
+  &:hover {
+    color: #0780bd;
+  }
+}
+.link-whatsApp {
+  color: #6FCF97 !important;
+
+  &:hover {
+    color: #BBE8CE;
+  }
+}
+
+.link-phone {
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 14px;
+  color: #8F8F8F;
+
+
+  &:hover {
+    color: #a8a7a7;
+  }
+}
+
+
+.text-color {
+  @include phone  {
+      color: #fff;
+  }
+}
+
+.padding-subtitle {
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  padding-left: 3rem;
+  
+  @include phone {
+      margin-top: 24px;
+      padding-left: 1.5rem;
+  }
+}
+
+.title-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

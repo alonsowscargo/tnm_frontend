@@ -1,0 +1,52 @@
+.propuesta-comercial {
+    margin-top: 40px;
+    line-height: 20px;
+    text-align: center;
+
+    @include phone {
+        p {
+            font-size: 16px;
+            line-height: 18px;
+            color: #8F8F8F;
+        }
+    }
+}
+
+.page-seguimiento {
+
+    .content-buttons {
+        // padding-right: 48px;
+
+        @include phone {
+            margin: 24px 0;
+            // padding-right: 0;
+        }
+    }
+}
+
+
+
+.title-seguimiento {
+    padding: 0 48px;
+    @include phone {
+        text-align: center;
+        margin-bottom: 12px;
+        padding: 0 24px;
+
+        h4 {
+            font-size: 16px;
+            line-height: 18px;
+            color: #8F8F8F;
+        }
+    }
+}
+
+.etapa {
+    @include phone {
+
+        p {
+            line-height: 24px;
+        }
+    }
+}
+

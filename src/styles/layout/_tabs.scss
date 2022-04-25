@@ -1,0 +1,103 @@
+.tabs  {
+    background: red !important;
+    padding: 0 48px !important;
+    margin-bottom: 8px;
+    height: 2.9375rem;
+    border: none;
+    box-shadow: $box-shadow-new;
+    // border-radius: 10px;
+
+    @include phone {
+        display: none;
+    }
+
+    .nav-link {
+        border: none;
+        border-radius: 0;
+        border-bottom: solid 2px #fff;
+        transition: all .2s ease;
+        font-weight: bold;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        text-transform: capitalize;
+
+        &.active {
+            color: #FC040C;
+            border-bottom: solid 2px #FC040C;
+        }
+
+        &:hover {
+            color: #FC565C !important;
+            border-radius: 0;
+            background-color: rgba(255, 0, 0, 0.082);
+            border-bottom: solid 2px rgba(255, 0, 0, 0.082);
+        }
+    }
+}
+
+
+.tabContent {
+
+    @include phone {
+        display: none;
+    }
+}
+
+
+
+// tabs materiAL ui
+
+.tabs-material-ui {
+    .MuiAppBar-colorPrimary {
+        background: #fff !important;
+    }
+    
+    .MuiPaper-elevation4 {
+        box-shadow: none !important;
+    }
+
+    .MuiTabs-fixed {
+        background: #fff;
+        padding: 0 48px !important;
+        
+        @include phone {
+            padding: 0 24px !important;
+        }
+    }
+
+    // indicador tabs active
+    .PrivateTabIndicator-colorSecondary-25 {
+        background-color: #FC040C !important;
+    }
+    .PrivateTabIndicator-colorSecondary-45 {
+        background-color: #FC040C !important;
+    }
+    .MuiTab-textColorInherit.Mui-selected {
+        color: #FC040C !important;
+    }
+    .PrivateTabIndicator-root-23 {
+        height: 3px !important;
+    }
+
+    // link tabs
+    .MuiTab-root {
+        padding: 0.75rem 1.5rem !important;
+        font-weight: bold !important;
+        text-transform: capitalize !important;
+        color: #000 !important;
+    }
+    .MuiTab-root {
+        min-width: auto !important;
+    }
+
+    // tabs content
+    .MuiBox-root {
+        background: #fff;   
+        padding: 18px 48px !important;
+
+        @include phone {
+            padding: 0 24px !important;
+        }
+    }
+}
+

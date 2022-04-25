@@ -1,0 +1,350 @@
+/*
+Author         : G-axon
+Template Name  : Jumbo React - Admin Template
+Version        : 1.0
+*/
+/*=============================================================
+    Table of Contents:
+    =============================
+    A. Globals
+        01. Custom Animation
+    B. Base
+        01. Base Styles
+        02. Typography Styles
+    C. Layouts
+        01. App Layout Styles
+        02. Sidebar Styles
+        03. Header Styles
+        04. Main Content Styles
+        05. Footer Styles
+        06. Right Sidebar Styles
+        07. Navbar Styles
+    D. UI Components
+        01. Alert Styles
+        02. Avatar Styles
+        03. Badges Styles
+        04. Blockquotes Styles
+        05. Bottom Navigation Styles
+        06. Breadcrumb Styles
+        07. Button Styles
+        08. Button Group Styles
+        09. Callout Styles
+        10. Cards Styles
+        11. Carousel Styles
+        12. Charts Styles
+        13. Chips Styles
+        14. Color Picker Styles
+        15. Drawer Styles
+        16. E-commerce Styles
+        17. Form Styles
+        18. Grids List Styles
+        19. Icons Styles
+        20. Input Styles
+        21. Label Styles
+        22. List Styles
+        23. Nav Style
+        24. Popover Styles
+        25. Pricing Tables Styles
+        26. Progressbar Styles
+        27. React Joyride Styles
+        28. Tables Styles
+        29. Tabs Styles
+        30. Testimonial Styles
+        31. Time Lines Style
+        32. Joyride Tour Styles
+    E. Pages
+        01. Login Styles
+        02. Error Styles
+        03. Editor Styles
+        04. Contact Page Styles
+        05. Portfolio Styles
+        06. Faqs Styles
+        07. Dashboard Styles
+        08. Classic Dashboard Style
+        09. Dropzone Style
+    F. Slider
+        01. Owl Carousel Style
+    G. Modules
+        01. App Module Style
+        02. Chat Module Styles
+        03. Mails Module Styles
+        04. Contact Module Styles
+        05. Calendar Module Style
+    H. Color Theme
+        01. Theme Indigo Styles
+        02. Theme Cyan Styles
+        03. Theme Amber Styles
+        04. Theme Deep Orange Styles
+        05. Theme Pink Styles
+        06. Theme Blue Styles
+        07. Theme Deep Purple Styles
+        08. Theme Green Styles
+        09. Theme Dark Indigo Styles
+        10. Theme Dark Cyan Styles
+        11. Theme Dark Amber Styles
+        12. Theme Dark Deep Orange Styles
+        13. Theme Dark Pink Styles
+        14. Theme Dark Blue Styles
+        15. Theme Dark Deep Purple Styles
+        16. Theme Dark Green Styles
+        17. Theme Dark Amber Styles
+  =============================================================*/
+//Custom Variables
+@import "global/_global-dir";
+//Custom Files
+@import "base/_base-dir";
+@import "layout/_layout-dir";
+@import "ui/_ui-dir";
+@import "pages/_pages-dir";
+@import "slider/slick-carousel";
+@import "module/_module-dir";
+@import "colorTheme/_color-theme-dir";
+
+// .uc {
+//   // .MuiTableBody-root {
+//   //     position: relative;
+//   //     // .MuiTableRow-root  {
+//   //     color: pink !important;
+//   //     // }
+
+//   //     .icon {
+//   //         background: blue;
+//   //         position: absolute;
+//   //         z-index: 10;
+//   //         top: 0;
+//   //         right: 0;
+//   //     }
+//   // }
+
+// .MuiTableCell-body {
+//     color: #8f8f8f;
+//     font-size: 12px;
+// }
+
+// .MuiTableCell-root {
+//     padding: 14px 16px !important;
+// }
+// .MuiTableRow-root {
+//     position: relative;
+//     transition: 0.6s all ease;
+
+//     &:hover {
+//       .icon {
+//         display: block;
+//         background: linear-gradient(90deg, #ffffff, #f3f3f3 100%);
+//         position: absolute;
+//         z-index: 2;
+//         // top: -1px;
+//         right: 0;
+//         padding: 0 8px;
+//         @include justify-content(center, center);
+//       }
+//     }
+
+//     .icon {
+//       display: none;
+//       width: auto !important;
+//       height: 100% !important;
+//     }
+//   }
+// }
+.paddingContainer {
+//   margin: 0 80px;
+    padding: 0 80px;
+
+    @media screen and (min-width: 1900px) {
+        // background: yellow;
+        padding: 0 156px !important;
+    
+    }
+    @include phone {
+        padding: 0 24px;
+    }
+}
+
+// .contenedor {
+//     padding: 0 30px !important;
+//     margin: 0 !important;
+//     @media screen and (min-width: 1900px) {
+//         // background: yellow;
+//         padding: 0 156px !important;
+    
+//     }
+//     @media screen and (max-width: 767px) {
+//         padding: 0 !important;
+//     }
+// }
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.stepper-cotizar {
+    background: transparent !important;
+    .MuiStepConnector-lineVertical {
+        min-height: 4px;
+    }
+    .MuiStepConnector-vertical {
+        display: none;
+    }
+    .MuiStepConnector-line {                
+        border-color: transparent !important;
+    }
+    .MuiStepContent-root {
+        padding: 0 !important;
+        border-left: none ; 
+        margin: 8px 0;
+    }
+    .MuiFormControlLabel-label {
+        font-size: 12px !important;
+    }
+    .MuiStepLabel-label.MuiStepLabel-completed {
+        // color: rgb(0, 0, 0, 0.87);
+        color: #8F8F8F;
+        font-weight: 400;
+    }
+    .MuiStepLabel-label.MuiStepLabel-active {
+        color: #000;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    .MuiTypography-body2 {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+
+
+
+// .stepper-principal {
+    
+    
+    
+// }
+
+.MuiStepConnector-lineHorizontal{
+    display: none;
+} 
+
+.MuiStep-horizontal {
+    .MuiStepLabel-label.MuiStepLabel-active {
+        background: #fff;
+        .icon-label {
+            color:#FC565C;
+        }
+    }
+
+}
+
+.MuiStep-horizontal {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+
+    .MuiStepLabel-label {
+        background: #fafafa;
+        padding: 8px 0;
+
+        .icon-label {
+            color:#F8C96A;
+        }
+    }
+
+    .MuiStepLabel-completed {
+        color: #8F8F8F;
+        background: #fafafa;
+
+        .icon-label-ative {
+            color: #6FCF97;
+        }
+    }
+}
+
+.main-flex {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    @include phone {
+        flex-direction: column;
+    }
+}
+
+.aside {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 8px;
+    padding-right: 20px;
+
+
+    @include phone {
+        width: 100%;
+        padding-right: 0;
+        position:relative;
+
+    }
+}
+
+.aside-fixed {
+    top: 30px;
+    position: fixed;
+    animation: moveDown 0.5s ease-in-out;
+
+    @include phone {
+        top: 0;
+        position:relative;
+        animation: none;
+
+    }
+}
+
+.section {
+    margin-left: 410px;
+    padding: 0px 10px;
+    width: 100%;
+
+    @include phone {
+        margin-left: 0px;
+        padding: 0;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-5rem);
+    }
+    to {
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(360deg);
+    }
+    100% {
+        transform: rotateY(0rem);
+    }
+}

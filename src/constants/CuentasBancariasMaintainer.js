@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_CUENTASBANCARIAS = 'post_register_cuentasbancarias';
+export const POST_REGISTER_CUENTASBANCARIAS_SUCCESS= 'post_register_cuentasbancarias_success';
+export const PUT_REGISTER_CUENTASBANCARIAS = 'put_register_cuentasbancarias';
+export const PUT_REGISTER_CUENTASBANCARIAS_SUCCESS= 'put_register_cuentasbancarias_success';
+export const GET_REGISTER_CUENTASBANCARIASLIST='get_register_cuentasbancariaslist';
+export const GET_REGISTER_CUENTASBANCARIASLIST_SUCCESS='get_register_cuentasbancariaslist_success';
+export const GET_REGISTER_CUENTASBANCARIAS='get_register_cuentasbancarias';
+export const GET_REGISTER_CUENTASBANCARIAS_SUCCESS='get_register_cuentasbancarias_success';
+export const DELETE_REGISTER_CUENTASBANCARIAS='delete_register_cuentasbancarias';
+export const DELETE_REGISTER_CUENTASBANCARIAS_SUCCESS='delete_register_cuentasbancarias_success';

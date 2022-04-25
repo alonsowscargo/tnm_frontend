@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_COMUNAS = 'post_register_comunas';
+export const POST_REGISTER_COMUNAS_SUCCESS= 'post_register_comunas_success';
+export const PUT_REGISTER_COMUNAS = 'put_register_comunas';
+export const PUT_REGISTER_COMUNAS_SUCCESS= 'put_register_comunas_success';
+export const GET_REGISTER_COMUNASLIST='get_register_comunaslist';
+export const GET_REGISTER_COMUNASLIST_SUCCESS='get_register_comunaslist_success';
+export const GET_REGISTER_COMUNAS='get_register_comunas';
+export const GET_REGISTER_COMUNAS_SUCCESS='get_register_comunas_success';
+export const DELETE_REGISTER_COMUNAS='delete_register_comunas';
+export const DELETE_REGISTER_COMUNAS_SUCCESS='delete_register_comunas_success';

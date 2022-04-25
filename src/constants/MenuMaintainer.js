@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_MENU = 'post_register_menu';
+export const POST_REGISTER_MENU_SUCCESS= 'post_register_menu_success';
+export const PUT_REGISTER_MENU = 'put_register_menu';
+export const PUT_REGISTER_MENU_SUCCESS= 'put_register_menu_success';
+export const GET_REGISTER_MENULIST='get_register_menulist';
+export const GET_REGISTER_MENULIST_SUCCESS='get_register_menulist_success';
+export const GET_REGISTER_MENU='get_register_menu';
+export const GET_REGISTER_MENU_SUCCESS='get_register_menu_success';
+export const DELETE_REGISTER_MENU='delete_register_menu';
+export const DELETE_REGISTER_MENU_SUCCESS='delete_register_menu_success';

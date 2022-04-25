@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_BANCOS = 'post_register_bancos';
+export const POST_REGISTER_BANCOS_SUCCESS= 'post_register_bancos_success';
+export const PUT_REGISTER_BANCOS = 'put_register_bancos';
+export const PUT_REGISTER_BANCOS_SUCCESS= 'put_register_bancos_success';
+export const GET_REGISTER_BANCOSLIST='get_register_bancoslist';
+export const GET_REGISTER_BANCOSLIST_SUCCESS='get_register_bancoslist_success';
+export const GET_REGISTER_BANCOS='get_register_bancos';
+export const GET_REGISTER_BANCOS_SUCCESS='get_register_bancos_success';
+export const DELETE_REGISTER_BANCOS='delete_register_bancos';
+export const DELETE_REGISTER_BANCOS_SUCCESS='delete_register_bancos_success';

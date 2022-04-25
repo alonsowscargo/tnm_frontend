@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_TIPOSDIRECCIONES = 'post_register_tiposdirecciones';
+export const POST_REGISTER_TIPOSDIRECCIONES_SUCCESS= 'post_register_tiposdirecciones_success';
+export const PUT_REGISTER_TIPOSDIRECCIONES = 'put_register_tiposdirecciones';
+export const PUT_REGISTER_TIPOSDIRECCIONES_SUCCESS= 'put_register_tiposdirecciones_success';
+export const GET_REGISTER_TIPOSDIRECCIONESLIST='get_register_tiposdireccioneslist';
+export const GET_REGISTER_TIPOSDIRECCIONESLIST_SUCCESS='get_register_tiposdireccioneslist_success';
+export const GET_REGISTER_TIPOSDIRECCIONES='get_register_tiposdirecciones';
+export const GET_REGISTER_TIPOSDIRECCIONES_SUCCESS='get_register_tiposdirecciones_success';
+export const DELETE_REGISTER_TIPOSDIRECCIONES='delete_register_tiposdirecciones';
+export const DELETE_REGISTER_TIPOSDIRECCIONES_SUCCESS='delete_register_tiposdirecciones_success';

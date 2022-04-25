@@ -1,0 +1,76 @@
+.bg-loading{
+    background: rgba(252, 86, 91, 0.925);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    @include justify-content(center,center);
+
+
+    .spinner-border  {
+        width: 100px;
+        height: 100px;
+
+        border: 10px solid map-get($color, colorLight );
+        border-right-color:transparent;
+    }
+
+    img {
+        width: 15%;
+
+        @include phone {
+            width: 50%;
+        }
+    }
+
+    
+}
+
+.loading {
+    @include justify-content(center,center);
+    .spinner-border  {
+        width: 100px;
+        height: 100px;
+        border: 8px solid map-get($color, colorFour );
+        border-right-color:transparent;
+    }
+}
+.loading-form { 
+    min-height: 400px;
+}
+
+.loading-validation-document {
+    height: 100vh;
+    background: map-get($color, colorGray3 );
+    position: relative;
+    z-index: 10;
+}
+
+
+@keyframes load {
+    0% {
+        opacity: 0.08;
+        filter: blur(5px);
+    }
+    100%{
+        opacity: 1; 
+        filter: blur(0); 
+    }
+}
+
+.animate {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
+	margin: auto;
+	animation: load 1.2s infinite 0s ease-in-out;
+	animation-direction: alternate;
+	text-shadow: 0 0 1px white;
+}
+
+.view-full {
+    height: 100vh;
+    @include justify-content(center,center);
+}

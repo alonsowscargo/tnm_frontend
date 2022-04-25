@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_PAIS = 'post_register_pais';
+export const POST_REGISTER_PAIS_SUCCESS= 'post_register_pais_success';
+export const PUT_REGISTER_PAIS = 'put_register_pais';
+export const PUT_REGISTER_PAIS_SUCCESS= 'put_register_pais_success';
+export const GET_REGISTER_PAISLIST='get_register_paislist';
+export const GET_REGISTER_PAISLIST_SUCCESS='get_register_paislist_success';
+export const GET_REGISTER_PAIS='get_register_pais';
+export const GET_REGISTER_PAIS_SUCCESS='get_register_pais_success';
+export const DELETE_REGISTER_PAIS='delete_register_pais';
+export const DELETE_REGISTER_PAIS_SUCCESS='delete_register_pais_success';

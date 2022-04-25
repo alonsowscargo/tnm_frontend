@@ -1,0 +1,158 @@
+.qr {
+    background: #fff;
+    width: 100% ;
+    height: 360px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.qr-image-wrapper section { 
+    border-radius: 10px;                   
+  }
+
+
+
+.bg-l {
+    background: #fff;
+    padding: 40px 0;
+    clip-path: ellipse(86% 71% at 52% 71%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content {
+    padding: 1.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: $box-shadow-new;
+    border-radius:5px;
+
+    .text  {
+        color: #263238;
+        margin-left:0.75rem;
+    }
+}
+
+.form-row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.bg-detalle {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 116px;
+    background: linear-gradient(191.78deg, #FF565C 0%, #FD262D 76.08%);
+    
+    @include phone  {
+        background-image: url('../../assets/images/recepcion/page-detalle.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    .bg-l {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+}
+
+.bg-l {
+
+    .content-buttons{
+        justify-content: space-between;
+    }
+}
+
+
+.content-buttons {
+    .btn-50 {
+        width: 48%;
+    }
+}
+
+
+.carga-top {
+    margin-top: 48px;
+    z-index: 100 !important;
+    position: relative;
+
+    @include phone  {
+        margin-top: -180px;
+    }
+}
+
+.margin-top {
+    margin-top: 80px;
+}
+
+.cards-resumen {
+
+    .cards-body {
+        padding-top:12px;
+    }
+}
+
+.description {
+    h4 {
+        margin-bottom: 8px;
+    }
+}
+
+/// inpuut search
+.abrir {
+    display: block;
+}
+
+.cerrar {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 10000000 !important;
+    background: #f4f4f7;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+
+    .main-title {
+
+        margin-bottom: 24px;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .zmdi-chevron-left {
+            margin-top: 4px;
+            font-size: 40px;
+            font-weight: bold;
+            margin-right: 16px;
+        }
+
+    }
+}
+
+.overlay-content {
+    margin-top: 80px;
+
+    .cards {
+        &:last-child {
+            margin-bottom: 2.5rem;
+        } 
+    }
+}

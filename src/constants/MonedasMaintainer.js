@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_MONEDAS = 'post_register_monedas';
+export const POST_REGISTER_MONEDAS_SUCCESS= 'post_register_monedas_success';
+export const PUT_REGISTER_MONEDAS = 'put_register_monedas';
+export const PUT_REGISTER_MONEDAS_SUCCESS= 'put_register_monedas_success';
+export const GET_REGISTER_MONEDASLIST='get_register_monedaslist';
+export const GET_REGISTER_MONEDASLIST_SUCCESS='get_register_monedaslist_success';
+export const GET_REGISTER_MONEDAS='get_register_monedas';
+export const GET_REGISTER_MONEDAS_SUCCESS='get_register_monedas_success';
+export const DELETE_REGISTER_MONEDAS='delete_register_monedas';
+export const DELETE_REGISTER_MONEDAS_SUCCESS='delete_register_monedas_success';

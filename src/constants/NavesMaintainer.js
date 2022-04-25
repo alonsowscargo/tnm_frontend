@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_NAVES = 'post_register_naves';
+export const POST_REGISTER_NAVES_SUCCESS= 'post_register_naves_success';
+export const PUT_REGISTER_NAVES = 'put_register_naves';
+export const PUT_REGISTER_NAVES_SUCCESS= 'put_register_naves_success';
+export const GET_REGISTER_NAVESLIST='get_register_naveslist';
+export const GET_REGISTER_NAVESLIST_SUCCESS='get_register_naveslist_success';
+export const GET_REGISTER_NAVES='get_register_naves';
+export const GET_REGISTER_NAVES_SUCCESS='get_register_naves_success';
+export const DELETE_REGISTER_NAVES='delete_register_naves';
+export const DELETE_REGISTER_NAVES_SUCCESS='delete_register_naves_success';

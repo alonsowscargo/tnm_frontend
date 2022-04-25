@@ -1,0 +1,11 @@
+export const ON_CHANGE_PAYLOAD = 'on_change_payload';
+export const POST_REGISTER_EQUIPOSMODELOS = 'post_register_equiposmodelos';
+export const POST_REGISTER_EQUIPOSMODELOS_SUCCESS= 'post_register_equiposmodelos_success';
+export const PUT_REGISTER_EQUIPOSMODELOS = 'put_register_equiposmodelos';
+export const PUT_REGISTER_EQUIPOSMODELOS_SUCCESS= 'put_register_equiposmodelos_success';
+export const GET_REGISTER_EQUIPOSMODELOSLIST='get_register_equiposmodeloslist';
+export const GET_REGISTER_EQUIPOSMODELOSLIST_SUCCESS='get_register_equiposmodeloslist_success';
+export const GET_REGISTER_EQUIPOSMODELOS='get_register_equiposmodelos';
+export const GET_REGISTER_EQUIPOSMODELOS_SUCCESS='get_register_equiposmodelos_success';
+export const DELETE_REGISTER_EQUIPOSMODELOS='delete_register_equiposmodelos';
+export const DELETE_REGISTER_EQUIPOSMODELOS_SUCCESS='delete_register_equiposmodelos_success';

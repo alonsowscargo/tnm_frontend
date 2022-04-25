@@ -1,0 +1,41 @@
+.mapa {
+    width: 100%;
+    height: 23.75rem;
+    box-shadow: $box-shadow-new;
+    position: relative;
+    background: rgba(0, 0, 0, 0.096);
+
+    @include phone {
+        height: 30rem;
+    }
+}
+
+.direccion {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+
+    h3 {
+        color: #4F4F4F;
+    }
+
+    @include phone {
+        left: 1.5rem;
+    }
+}
+
+// .page-perfil {
+
+//     .list {
+//         padding: 2rem;
+//     }
+// }
+
+.documnetos {
+    
+    @include phone {
+        .cards {
+            margin-bottom: 8px;
+        }
+    }
+}

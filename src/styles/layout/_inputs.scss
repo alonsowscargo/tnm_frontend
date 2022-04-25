@@ -1,0 +1,137 @@
+.form-group {
+    position: relative;
+
+    i {
+        font-size: 24px;
+        position: absolute;
+        height: 50px !important;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        color: #263238;
+    }
+
+
+    .MuiInputBase-root {
+        border-radius: 5px !important;
+        width: 100%;
+        box-shadow: $box-shadow-new;
+        border: 1.5px solid #263238 !important;
+        font-size: 16px !important;
+        font-weight: 400;
+        border-radius: 5px;
+        height: 50px;
+    }
+
+    .right {
+        right: 12px;
+    }
+
+    .left {
+        left: 12px;
+    }
+
+    label  {
+        margin-left:0.75rem;
+        font-size: 14px;
+        color: #828282;
+        font-weight: 400;
+    }
+
+    .form-control {
+        background: #FFFFFF;
+        border: 1.5px solid #263238;
+        box-shadow: $box-shadow-new;
+        border-radius: 5px;
+        height: 50px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0.75rem;
+        font-size: 16px !important;
+
+        &::placeholder {
+            color: #263238;
+            font-size: 16px !important;
+
+        }
+
+    }
+
+    select {
+        height: 50px !important;
+        appearance: none !important;
+    }
+
+
+    .form-textarea {
+        height: 118px;
+    }
+}
+
+// input file de proceso documental 
+.proceso-documental {
+    .input-file {
+        padding: 0 !important;
+        background: transparent !important;
+        border:none !important;
+    }
+    
+    input[type='file'] {
+        height: auto !important;
+        width: 100% !important;
+        background: transparent !important;
+    }
+    
+    input[type='file']::file-selector-button {
+        padding: 15px 40px;
+        border-radius:5px;
+        border:none !important;
+        color: #fff;
+        background: map-get($color, colorFour);
+        transition:0.5s all;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-right: 5px;
+    
+            &:hover {
+            background: #FC565C !important;
+            }
+    }
+    
+    input[type='file']::-webkit-file-upload-buton {
+        padding: 15px 40px;
+        border-radius:50px;
+        border:none !important;
+        color: #fff;
+        background: map-get($color, colorFour);
+        transition:0.5s all;
+        letter-spacing: 1px;
+        cursor: pointer;
+    
+        &:hover {
+            background: #FC565C !important;
+        }
+    }
+}
+
+
+
+.Dropzone {
+
+    .MuiDropzoneArea-root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .MuiTypography-h5 {
+            font-size: 20px;
+            font-weight: 600;
+            margin:0 0 8px 0;
+        }
+        .MuiDropzoneArea-icon {
+            color:rgba(0, 0, 0, 0.666) ;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
