@@ -14,6 +14,10 @@ const Routes = ({match}) =>
         <Route path={`${match.url}/atrina-loading`} component={asyncComponent(() => import('../../modules/atrina/loading/Routes.js'))} exact/>
         <Route path={`${match.url}/atrina-prueba`} component={asyncComponent(() => import('../../modules/atrina/prueba/Routes.js'))} exact/>
         <Route path={`${match.url}/atrina-cotizador`} component={asyncComponent(() => import('../../modules/atrina/cotizador/Routes.js'))} exact/>
+        {/* TNM */}
+        <Route path={`${match.url}/reportes`} component={asyncComponent(() => import('../../modules/reportes/Routes.js'))} exact/>
+        <Route path={`${match.url}/documentacion`} component={asyncComponent(() => import('../../modules/documentacion/Routes.js'))} exact/>
+        <Route path={`${match.url}/facturacion`} component={asyncComponent(() => import('../../modules/facturacion/Routes.js'))} exact/>
     </Switch>;
 
 export default withRouter(Routes);

@@ -10,8 +10,16 @@ import Tour from "components/Tour/index";
 import {COLLAPSED_DRAWER, FIXED_DRAWER} from "constants/ActionTypes";
 import {isIOS, isMobile} from "react-device-detect";
 import { useParams } from "react-router";
-
-
+import { Link } from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
+import FolderOutlinedIcon from '@material-ui/icons/FolderOutlined';
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
+import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
+import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 /* alonso */
 import Cabecera from "./cabecera/Caberera";
 // import SideBar from "./sideBar/SideBar";
@@ -146,11 +154,29 @@ const Vertical = (props) => {
                             <Header/>
                         </div>
 
-                        <main className="app-main-content-wrapper">
-                            <div className="app-main-content">
+                        <main className="app-main-content-wrapper container-fluid">
+
+                            <div className="justify-space-between mt-5"> 
+                                <div className="app-user">
+                                    {/* <AccountCircleOutlinedIcon /> */}
+                                    <div>
+                                        <h3 className="m-0">Bienvenido(a)</h3>
+                                        <h4 className="m-0">Alonso Trina</h4>
+                                    </div>
+                                </div>
+
+                                <ul className="app-nav">
+                                    <li className="app-link"><NavLink to={"/app/inicio"}  activeClassName="selected" exact={true}><AppsOutlinedIcon/>DashBoard</NavLink></li>
+                                    <li className="app-link"><NavLink to={"/app/reportes"}  activeClassName="selected" exact={true}><BarChartOutlinedIcon/>Reportes</NavLink></li>
+                                    <li className="app-link"><NavLink to={"/app/documentacion"}  activeClassName="selected" exact={true}><FolderOutlinedIcon/> Documentación</NavLink></li>
+                                    <li className="app-link"><NavLink to={"/app/facturacion"} activeClassName="selected" exact={true}><MonetizationOnOutlinedIcon/>Facturación</NavLink></li>
+                                </ul>
+                            </div>
+
+                            <div className="app-main-content my-5">
                                 {props.children}
                             </div>
-                            <Footer/>
+                            {/* <Footer/> */}
                         </main>
                     </div>
                 </div>

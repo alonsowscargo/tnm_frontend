@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem,ButtonDropdown } from "reactstrap";
 import { COLLAPSED_DRAWER, FIXED_DRAWER } from "constants/ActionTypes";
 import { switchLanguage, toggleCollapsedNav } from "actions/Setting";
 import {userSignOut} from 'actions/Auth';
@@ -13,11 +9,70 @@ import IntlMessages from "util/IntlMessages";
 import LanguageSwitcher from "components/LanguageSwitcher/index";
 
 // nuevo template
-import logoWsCargo from './logoWsCargo.svg'
+// import logo from '../../../../assets/images/LogoTnm.png'
 import './nav.scss'
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
+
+
+import {
+    IconButton,
+    makeStyles,
+    Hidden,
+    AppBar,
+    Toolbar,
+} from "@material-ui/core";
+
+
+const useStyles = makeStyles((theme) => ({
+    appBar: {
+        background: "transparent",
+        boxShadow: "none",
+    },
+    title: {
+        flexGrow: 1,
+    },
+    inline: {
+        display: 'block',
+    },
+    inlineActive: {
+        display: 'block',
+        opacity: "0.4"
+    },
+    appDropdown: {
+        "& a":{
+            color:"rgba(0, 0, 0, 0.87)"
+        },
+
+        "& .MuiListItemIcon-root": {
+            minWidth: "auto",
+            margin: "0",
+        },
+        "& .MuiPaper-root": {
+            width: "264px",
+        },
+        "& .MuiTypography-overline": {
+            lineHeight: "18px"
+        },
+        "& .MuiListItem-root": {
+
+            "&:hover": {
+                background: "#F9F9F9"
+            },
+            "&:first-child": {
+                background: "#fff"
+            }
+        }
+    },
+    icon: {
+        fontSize: "28px",
+        "@media screen and (max-width: 576px)": {
+            fontSize: "36px",
+        }
+    },
+}));
 
 const Index = (props) => {
+    const classes = useStyles();
     const history = useHistory();
     const dispatch = useDispatch();
     const { drawerType, locale, navCollapsed } = useSelector(({ settings }) => settings);
@@ -102,60 +157,23 @@ const Index = (props) => {
 
     return (
         // className={ na ? 'app-toolbar na active' : 'app-toolbar na'}
-        <AppBar className="app-main-header lop" position="static">
+        <AppBar
+            className={classes.appBar} 
+            position="static"
+        >
             <Toolbar className={colorChange ? 'app-toolbar nav colorChange' : 'app-toolbar nav'}>
-                <IconButton className="jr-menu-icon mr-2 d-block" aria-label="Menu"
+                {/* <IconButton className="jr-menu-icon mr-2 d-block" aria-label="Menu"
                     onClick={onToggleCollapsedNav} color="secondary">
                     <span className="menu-icon icon-nav" />
-                </IconButton>
+                </IconButton> */}
 
                 <Link className="app-logo logoWs mr-2 d-none d-sm-block" to="/">
-                    <img src={logoWsCargo} alt="" draggable="false" />
-                    {/* <img src={require("assets/images/wscargologo_old.png")} alt="Jambo" title="Jambo"/> */}
+                    {/* <img src={logo} alt="" draggable="false" /> */}
+                    <img src={require("assets/images/LogoTnm.png")} alt="Jambo" title="Jambo"/>
                 </Link>
 
-                {/* nav right */}
-                <ul className="header-notifications list-inline ml-auto d-flex align-items-center">
-                    <li className="no-mobile">
-                        <Button>
-                            <i className="zmdi zmdi-whatsapp"></i> 
-                            Ejecutivo
-                        </Button>{' '}
-                    </li>
-
-                    <li className="no-mobile">
-                        <ButtonDropdown isOpen={dropdownLanguage} toggle={openLanguage}>
-                            <DropdownToggle caret>
-                                <i className="zmdi zmdi-translate"></i>
-                                Idioma
-                            </DropdownToggle>
-                            <DropdownMenu right className="w-50">
-                                <LanguageSwitcher switchLanguage={onSwitchLanguage}
-                                                  handleRequestClose={handleRequestClose}/>
-                            </DropdownMenu>
-                        </ButtonDropdown>
-                    </li>
-                    
-                    <li>
-                        <Dropdown isOpen={dropdownUserOpen} toggle={openUser}>
-                            <DropdownToggle caret>
-                                <i className="zmdi zmdi-account-circle"></i>
-                                <div className="no-mobile">User</div>
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                {/*<DropdownItem >Perfil</DropdownItem>*/}
-                                <DropdownItem onClick={()=>{
-                                history.push(`/app/configuracion`);
-                                }}><IntlMessages id="popup.setting"/></DropdownItem>
-                                <DropdownItem onClick={() => {
-                                    dispatch(userSignOut())
-                                }}><IntlMessages id="popup.logout"/></DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </li>
-                </ul>
-
-                <div className="ellipse-shape" />
+                
+                {/* <div className="ellipse-shape" /> */}
             </Toolbar>
         </AppBar>
     );

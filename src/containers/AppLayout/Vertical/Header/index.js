@@ -1,21 +1,79 @@
 import React, {useState} from "react";
 import {Link, withRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import {Dropdown, DropdownMenu, DropdownToggle} from "reactstrap";
 import {COLLAPSED_DRAWER, FIXED_DRAWER} from "constants/ActionTypes";
-import SearchBox from "components/SearchBox";
-import MailNotification from "../../../../components/MailNotification";
-import AppNotification from "../../../../components/AppNotification";
-import CardHeader from "components/dashboard/Common/CardHeader/index";
 import {switchLanguage, toggleCollapsedNav} from "actions/Setting";
-import IntlMessages from "util/IntlMessages";
-import LanguageSwitcher from "components/LanguageSwitcher/index";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
+import {
+    IconButton,
+    Menu,
+    MenuItem,
+    makeStyles,
+    Avatar,
+    Divider,
+    Typography,
+    ListItem,
+    ListItemText,
+    ListItemAvatar,
+    ListItemIcon,
+    AppBar,
+    Toolbar,
+} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    appBar: {
+        background: "#fff",
+        boxShadow: "none",
+        clipPath: "ellipse(70% 90% at 50% 10%)"
+    },
+    title: {
+        flexGrow: 1,
+    },
+    inline: {
+        display: 'block',
+    },
+    inlineActive: {
+        display: 'block',
+        opacity: "0.4"
+    },
+    appDropdown: {
+        "& a":{
+            color:"rgba(0, 0, 0, 0.87)"
+        },
+
+        "& .MuiListItemIcon-root": {
+            minWidth: "auto",
+            margin: "0",
+        },
+        "& .MuiPaper-root": {
+            width: "264px",
+        },
+        "& .MuiTypography-overline": {
+            lineHeight: "18px"
+        },
+        "& .MuiListItem-root": {
+
+            "&:hover": {
+                background: "#F9F9F9"
+            },
+            "&:first-child": {
+                background: "#fff"
+            }
+        }
+    },
+    icon: {
+        fontSize: "28px",
+        "@media screen and (max-width: 576px)": {
+            fontSize: "36px",
+        }
+    },
+}));
 
 const Index = (props) => {
-
+    const classes = useStyles();
     const dispatch = useDispatch();
     const {drawerType, locale, navCollapsed} = useSelector(({settings}) => settings);
     const [langSwitcher, setLangSwitcher] = useState(false);
@@ -56,55 +114,6 @@ const Index = (props) => {
         dispatch(toggleCollapsedNav(val));
     };
 
-
-    const Apps = () => {
-        return (
-            <ul className="jr-list jr-list-half">
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/app/calendar/basic">
-                        <i className="zmdi zmdi-calendar zmdi-hc-fw"/>
-                        <span className="jr-list-text"><IntlMessages id="sidebar.calendar.basic"/></span>
-                    </Link>
-                </li>
-
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/app/to-do">
-                        <i className="zmdi zmdi-check-square zmdi-hc-fw"/>
-                        <span className="jr-list-text"><IntlMessages id="sidebar.appModule.toDo"/></span>
-                    </Link>
-                </li>
-
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/app/mail">
-                        <i className="zmdi zmdi-email zmdi-hc-fw"/>
-                        <span className="jr-list-text"><IntlMessages id="sidebar.appModule.mail"/></span>
-                    </Link>
-                </li>
-
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/app/chat">
-                        <i className="zmdi zmdi-comment zmdi-hc-fw"/>
-                        <span className="jr-list-text"><IntlMessages id="sidebar.appModule.chat"/></span>
-                    </Link>
-                </li>
-
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/app/contact">
-                        <i className="zmdi zmdi-account-box zmdi-hc-fw"/>
-                        <span className="jr-list-text"><IntlMessages id="sidebar.appModule.contact"/></span>
-                    </Link>
-                </li>
-
-                <li className="jr-list-item">
-                    <Link className="jr-list-link" to="/">
-                        <i className="zmdi zmdi-plus-circle-o zmdi-hc-fw"/>
-                        <span className="jr-list-text">Add New</span>
-                    </Link>
-                </li>
-            </ul>);
-    };
-
-
     const updateSearchText = (evt) => {
         setSearchText(evt.target.value);
     };
@@ -115,8 +124,24 @@ const Index = (props) => {
 
     const drawerStyle = drawerType.includes(FIXED_DRAWER) ? "d-block d-xl-none" : drawerType.includes(COLLAPSED_DRAWER) ? "d-block" : "d-none";
 
+
+    // dropdown ejecutivo
+    const [anchorEl, setAnchorEl] = useState(null);
+    
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
-        <AppBar className="app-main-header">
+        <AppBar 
+            // className="app-main-header"
+            className={classes.appBar} 
+            position="static"
+        >
             <Toolbar className="app-toolbar" disableGutters={false}>
 
                 <IconButton className={`jr-menu-icon mr-3 d-block`} aria-label="Menu"
@@ -124,133 +149,55 @@ const Index = (props) => {
                     <span className="menu-icon"/>
                 </IconButton>
 
-                <Link className="app-logo mr-2 d-none d-sm-block" to="/app/inicio">
-                    <img src={require("assets/images/wscargologo_old.png")} alt="Jambo" title="Jambo"/>
+
+                <Link className={`app-logo mr-2 d-sm-block ${classes.title}`} to="/app/inicio">
+                    <img src={require("assets/images/LogoTnm.png")} alt="Transporte nuevo mundo" title="Transporte nuevo mundo"/>
                 </Link>
 
+                <IconButton
+                    data-tour="uno"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick}
+                    className="app-link-nav"
+                >
+                    <Avatar>A</Avatar>
+                    <ArrowDropDownIcon />
+                </IconButton>
 
-               {/*} <SearchBox styleName="d-none d-lg-block" placeholder=""
-                           onChange={updateSearchText}
-    value={searchText}/>*/}
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                    className="app-dropdown"
+                    variant="selectedMenu"
+                >
+                    <ListItem>
+                        <ListItemAvatar>
+                            <Avatar>A</Avatar>
+                        </ListItemAvatar>
+                        <ListItemText primary="Usuario" className="pr-2" secondary="Alonso Trina" />
+                    </ListItem>
 
-                <ul className="header-notifications list-inline ml-auto">
-                   {/* <li className="list-inline-item">
-                        <Dropdown
-                            className="quick-menu app-notification"
-                            isOpen={apps}
-                            toggle={onAppsSelect}>
+                    <Divider className="mt-2" />
 
-                            <DropdownToggle
-                                className="d-inline-block"
-                                tag="span"
-                                data-toggle="dropdown">
-                  <span className="app-notification-menu">
-                    <i className="zmdi zmdi-apps zmdi-hc-fw zmdi-hc-lg"/>
-                    <span>Apps</span>
-                  </span>
-                            </DropdownToggle>
+                    <MenuItem component={Link} to="#" onClick={handleClose}>
+                        <ListItemIcon>
+                            <SettingsIcon fontSize="small" />
+                        </ListItemIcon>
+                        <Typography variant="inherit">Configuración</Typography>
+                    </MenuItem>
 
-                            <DropdownMenu>
-                                {Apps()}
-                            </DropdownMenu>
-                        </Dropdown>
-                    </li>
-                    <li className="d-inline-block d-lg-none list-inline-item">
-                        <Dropdown
-                            className="quick-menu nav-searchbox"
-                            isOpen={searchBox}
-                            toggle={onSearchBoxSelect}>
-
-                            <DropdownToggle
-                                className="d-inline-block"
-                                tag="span"
-                                data-toggle="dropdown">
-                                <IconButton className="icon-btn">
-                                    <i className="zmdi zmdi-search zmdi-hc-fw"/>
-                                </IconButton>
-                            </DropdownToggle>
-
-                            <DropdownMenu right className="p-0">
-                                <SearchBox styleName="search-dropdown" placeholder=""
-                                           onChange={updateSearchText}
-                                           value={searchText}/>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </li>*/}
-                    <li className="list-inline-item">
-                        <Dropdown
-                            className="quick-menu"
-                            isOpen={langSwitcher}
-                            toggle={onLangSwitcherSelect}>
-
-                            <DropdownToggle
-                                className="d-inline-block"
-                                tag="span"
-                                data-toggle="dropdown">
-                                <IconButton className="icon-btn">
-                                    <i className={`flag flag-24 flag-${locale.icon}`}/>
-                                </IconButton>
-                            </DropdownToggle>
-
-                            <DropdownMenu right className="w-50">
-                                <LanguageSwitcher switchLanguage={onSwitchLanguage}
-                                                  handleRequestClose={handleRequestClose}/>
-                            </DropdownMenu>
-                        </Dropdown>
-
-
-                    </li>
-                    {/*
-                    <li className="list-inline-item app-tour">
-                        <Dropdown
-                            className="quick-menu"
-                            isOpen={appNotification}
-                            toggle={onAppNotificationSelect}>
-
-                            <DropdownToggle
-                                className="d-inline-block"
-                                tag="span"
-                                data-toggle="dropdown">
-                                <IconButton className="icon-btn">
-                                    <i className="zmdi zmdi-notifications-none icon-alert animated infinite wobble"/>
-                                </IconButton>
-                            </DropdownToggle>
-
-                            <DropdownMenu right>
-                                <CardHeader styleName="align-items-center"
-                                            heading={<IntlMessages id="appNotification.title"/>}/>
-                                <AppNotification/>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </li>
-                    <li className="list-inline-item mail-tour">
-                        <Dropdown
-                            className="quick-menu"
-                            isOpen={mailNotification}
-                            toggle={onMailNotificationSelect}
-                        >
-                            <DropdownToggle
-                                className="d-inline-block"
-                                tag="span"
-                                data-toggle="dropdown">
-
-                                <IconButton className="icon-btn">
-                                    <i className="zmdi zmdi-comment-alt-text zmdi-hc-fw"/>
-                                </IconButton>
-                            </DropdownToggle>
-
-
-                            <DropdownMenu right>
-                                <CardHeader styleName="align-items-center"
-                                            heading={<IntlMessages id="mailNotification.title"/>}/>
-                                <MailNotification/>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </li>*/}
-
-                </ul>
-
-                <div className="ellipse-shape"/>
+                    <MenuItem component={Link} to="#" onClick={handleClose}>
+                        <ListItemIcon>
+                            <ExitToAppIcon fontSize="small" />
+                        </ListItemIcon>
+                        <Typography variant="inherit">Salir</Typography>
+                    </MenuItem>
+                </Menu>
+                {/* <div className="ellipse-shape"/> */}
             </Toolbar>
         </AppBar>
     );

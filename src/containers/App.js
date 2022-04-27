@@ -8,6 +8,7 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {IntlProvider} from "react-intl";
 import "assets/vendors/style";
+import theme from "./themes/themeConfig";
 import indigoTheme from "./themes/indigoTheme";
 import cyanTheme from "./themes/cyanTheme";
 import orangeTheme from "./themes/orangeTheme";
@@ -176,7 +177,7 @@ const App = (props) => {
 
     const currentAppLocale = AppLocale[locale.locale];
     return (
-        <ThemeProvider theme={applyTheme}>
+        <ThemeProvider theme={theme}>
             <MuiPickersUtilsProvider utils={MomentUtils}>
                 <IntlProvider
                     locale={currentAppLocale.locale}
@@ -185,7 +186,7 @@ const App = (props) => {
                         <div className="app-main">
                             <Switch>
                                 <RestrictedRoute path={`${match.url}app`} authUser={authUser}
-                                                 component={AppLayout}/>
+                                                    component={AppLayout}/>
                                 <Route path='/signin' component={SignIn}/>
                                 <Route path='/signup' component={SignUp}/>
                                 {/*<Route*/}

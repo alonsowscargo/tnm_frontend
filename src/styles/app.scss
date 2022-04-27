@@ -148,12 +148,10 @@ Version        : 1.0
 //     }
 //   }
 // }
-.paddingContainer {
-//   margin: 0 80px;
+.container-fluid {
     padding: 0 80px;
 
     @media screen and (min-width: 1900px) {
-        // background: yellow;
         padding: 0 156px !important;
     
     }
@@ -184,7 +182,7 @@ Version        : 1.0
 .flex-space-between {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center !important;
 }
 
 .flex-align-center {
@@ -196,155 +194,4 @@ Version        : 1.0
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.stepper-cotizar {
-    background: transparent !important;
-    .MuiStepConnector-lineVertical {
-        min-height: 4px;
-    }
-    .MuiStepConnector-vertical {
-        display: none;
-    }
-    .MuiStepConnector-line {                
-        border-color: transparent !important;
-    }
-    .MuiStepContent-root {
-        padding: 0 !important;
-        border-left: none ; 
-        margin: 8px 0;
-    }
-    .MuiFormControlLabel-label {
-        font-size: 12px !important;
-    }
-    .MuiStepLabel-label.MuiStepLabel-completed {
-        // color: rgb(0, 0, 0, 0.87);
-        color: #8F8F8F;
-        font-weight: 400;
-    }
-    .MuiStepLabel-label.MuiStepLabel-active {
-        color: #000;
-        font-weight: 500;
-        font-size: 1rem;
-    }
-    .MuiTypography-body2 {
-        font-size: 1rem;
-        font-weight: 400;
-    }
-}
-
-
-
-// .stepper-principal {
-    
-    
-    
-// }
-
-.MuiStepConnector-lineHorizontal{
-    display: none;
-} 
-
-.MuiStep-horizontal {
-    .MuiStepLabel-label.MuiStepLabel-active {
-        background: #fff;
-        .icon-label {
-            color:#FC565C;
-        }
-    }
-
-}
-
-.MuiStep-horizontal {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-
-    .MuiStepLabel-label {
-        background: #fafafa;
-        padding: 8px 0;
-
-        .icon-label {
-            color:#F8C96A;
-        }
-    }
-
-    .MuiStepLabel-completed {
-        color: #8F8F8F;
-        background: #fafafa;
-
-        .icon-label-ative {
-            color: #6FCF97;
-        }
-    }
-}
-
-.main-flex {
-    position: relative;
-    display: flex;
-    width: 100%;
-
-    @include phone {
-        flex-direction: column;
-    }
-}
-
-.aside {
-    width: 400px;
-    height: auto;
-    position: absolute;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 8px;
-    padding-right: 20px;
-
-
-    @include phone {
-        width: 100%;
-        padding-right: 0;
-        position:relative;
-
-    }
-}
-
-.aside-fixed {
-    top: 30px;
-    position: fixed;
-    animation: moveDown 0.5s ease-in-out;
-
-    @include phone {
-        top: 0;
-        position:relative;
-        animation: none;
-
-    }
-}
-
-.section {
-    margin-left: 410px;
-    padding: 0px 10px;
-    width: 100%;
-
-    @include phone {
-        margin-left: 0px;
-        padding: 0;
-    }
-}
-
-@keyframes moveDown {
-    from {
-        transform: translateY(-5rem);
-    }
-    to {
-        transform: translateY(0rem);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotateY(360deg);
-    }
-    100% {
-        transform: rotateY(0rem);
-    }
 }
