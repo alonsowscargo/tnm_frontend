@@ -1,86 +1,47 @@
-.cards {
+.app-card {
     // border-left: solid 7px #FFCA6B;
-    background: #fff;
-    // box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-    box-shadow: $box-shadow-new;
-    transition: .3s all;
-    cursor: pointer;
-    margin-bottom: 8px;
-    border-radius: 4px;
 
-    &:last-child {
-        margin-bottom: 0; 
+    .MuiTypography-h3 {
+        font-size: 32px;
     }
 
-    // &:hover {
-    //     // border-left: solid 7px #e0b15a;
-    //     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
-    // }
-
-    h5 {
-        color: #4F4F4F;
-    }
-
-    p {
-        color: #8F8F8F;
-    }
-    .link {
-        font-size: 0.875rem;
-    }
-    .cards-header{
-        padding: 24px 24px 0 24px;
-
-        h4 {
-            color: #4F4F4F;
-        }
-    } 
-}
-
-.cards-resumen {
-    .cards-body {
-        border-bottom: solid 1px rgba(0, 0, 0, 0.103);
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        @include phone {
-            padding-left:0 ;
-            padding-right: 0;
-            margin: 0  1.5rem ;
-        }
-
+    .MuiTypography-h6 {
+        font-size: 18px;
+        font-weight: 500;
     }
 }
 
 
-.cards-body {
-    padding: 1.75rem 3rem;
-    @include phone {
-        padding: 1.5rem ;
-    }
-
-    p {
-        @include phone {
-            font-size: 0.875rem;
-        }
-    }
+.app-border-default {
+    border-left: solid 6px #bdbdbd;
 }
 
-.content-space-between {
-    @include justify-content(space-between, center);
-
-    .card-data {
-        width: 85%;
-    }
-} 
-
-
-.mobile_none {
-    @include phone {
-        display: none;
-    }
+.app-border-success {
+    border-left: solid 6px #6FCF97;
 }
+
+.app-border-warning {
+    border-left: solid 6px #FFCA6B;
+}
+
+.app-border-danger {
+    border-left: solid 6px #C8352E;
+}
+
+
+.icon-color-danger {
+    color: #C8352E;
+}
+.icon-color-warning {
+    color: #FFCA6B;
+}
+.icon-color-success {
+    color: #6FCF97;
+}
+.icon-color-default {
+    color: #bdbdbd;
+}
+
 
 
 .cards-icon {
@@ -145,63 +106,18 @@
         font-size: 24px;
     }
 }
-.icon-succses {
-    background: #6FCF97 !important;
+
+.text-success {
+    color: #6FCF97 ;
 }
-.icon-warning {
-    background: #FFCA6B !important;
+.text-warning {
+    color: #FFCA6B ;
 }
-.icon-default {
-    background: #bdbdbd!important;
+.text-default {
+    color: #bdbdbd;
 }
 
-.icon-danger {
-    background: #FC565C !important;
+.text-danger {
+    color: #FC565C ;
 }
 
-.icon-color-danger {
-    color: #FC565C !important;
-}
-.icon-color-warning {
-    color: #FFCA6B;
-}
-
-.ba {
-    display: flex;
-    overflow-x: scroll;
-
-    .bap {
-        background: #fff;
-        display: flex;
-        align-items: center;
-        padding: 14px 16px;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 14px;
-        color: #263238;
-        border-radius: 5px;
-        box-shadow: $box-shadow-new;
-        margin-right: 8px;
-        
-        .cards-icon  {
-            width: 28px !important;
-            height: 28px !important;
-        }
-        
-        p {
-            margin: 0;
-            width: 80px;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
-
-.slash {
-    padding: 0 5px;
-    @include phone {
-        padding: 0 3px;
-    }
-}
