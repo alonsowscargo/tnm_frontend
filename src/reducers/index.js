@@ -9,7 +9,9 @@ import Roles_Rdc from '../modules/roles/Reducers.js';
 import Empresas_Rdc from '../modules/empresas/Reducers.js';
 import ConfiguracionRdc from 'modules/configuracion/Reducer';
 import DashboardRdc from 'modules/dashboard/Reducer';
-import CotizadorRdc from 'modules/atrina/cotizador/Reducer';
+// import CotizadorRdc from 'modules/atrina/cotizador/Reducer';
+import { crudReducer } from './crudReducer';
+import crudTo from '../modules/control_servicio/Reducer'
 
 export default (history) => combineReducers({
     router: connectRouter(history),
@@ -21,5 +23,7 @@ export default (history) => combineReducers({
     Roles_Maintainer:Roles_Rdc,
     Configuracion:ConfiguracionRdc,
     Dashboard:DashboardRdc,
-    Cotizador:CotizadorRdc
+    // Cotizador:CotizadorRdc,
+    crud:crudReducer,
+    crudT:crudTo,
 });

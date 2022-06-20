@@ -6,6 +6,9 @@ import {switchLanguage, toggleCollapsedNav} from "actions/Setting";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+// import UserInfo from 'components/UserInfo';
+import UserInfo from '../../../../components/UserInfo/index';
+
 
 import {
     IconButton,
@@ -124,18 +127,6 @@ const Index = (props) => {
 
     const drawerStyle = drawerType.includes(FIXED_DRAWER) ? "d-block d-xl-none" : drawerType.includes(COLLAPSED_DRAWER) ? "d-block" : "d-none";
 
-
-    // dropdown ejecutivo
-    const [anchorEl, setAnchorEl] = useState(null);
-    
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
     return (
         <AppBar 
             // className="app-main-header"
@@ -154,49 +145,9 @@ const Index = (props) => {
                     <img src={require("assets/images/LogoTnm.png")} alt="Transporte nuevo mundo" title="Transporte nuevo mundo"/>
                 </Link>
 
-                <IconButton
-                    data-tour="uno"
-                    aria-controls="simple-menu"
-                    aria-haspopup="true"
-                    onClick={handleClick}
-                    className="app-link-nav"
-                >
-                    <Avatar>A</Avatar>
-                    <ArrowDropDownIcon />
-                </IconButton>
 
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                    className="app-dropdown"
-                    variant="selectedMenu"
-                >
-                    <ListItem>
-                        <ListItemAvatar>
-                            <Avatar>A</Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary="Usuario" className="pr-2" secondary="Alonso Trina" />
-                    </ListItem>
+                <UserInfo/>
 
-                    <Divider className="mt-2" />
-
-                    <MenuItem component={Link} to="#" onClick={handleClose}>
-                        <ListItemIcon>
-                            <SettingsIcon fontSize="small" />
-                        </ListItemIcon>
-                        <Typography variant="inherit">Configuración</Typography>
-                    </MenuItem>
-
-                    <MenuItem component={Link} to="#" onClick={handleClose}>
-                        <ListItemIcon>
-                            <ExitToAppIcon fontSize="small" />
-                        </ListItemIcon>
-                        <Typography variant="inherit">Salir</Typography>
-                    </MenuItem>
-                </Menu>
                 {/* <div className="ellipse-shape"/> */}
             </Toolbar>
         </AppBar>

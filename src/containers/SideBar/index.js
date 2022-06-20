@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
-import UserInfo from 'components/UserInfo';
 import {COLLAPSED_DRAWER, FIXED_DRAWER, HORIZONTAL_NAVIGATION} from 'constants/ActionTypes';
-import {toggleCollapsedNav, updateWindowWidth} from 'actions/Setting';
+import {toggleCollapsedNav} from 'actions/Setting';
 import SideBarContent from "./SideBarContent";
 
 const SideBar = () => {
@@ -46,7 +45,10 @@ const SideBar = () => {
                         paper: 'side-nav',
                     }}
             >
-                <UserInfo/>
+                <div class="app-side-logo">
+                    <img src={require("assets/images/LogoTnm.png")} alt="Transporte nuevo mundo" title="Transporte nuevo mundo"  draggable="false"/>
+                </div>
+
                 <SideBarContent/>
             </Drawer>
         </div>

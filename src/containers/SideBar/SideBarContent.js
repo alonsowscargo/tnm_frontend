@@ -29,25 +29,38 @@ const SideBarContent = () => {
   const allMenus=[
       {
         id:1,
-        name: 'label.mantenedores',
-        //icon: 'google-maps',
+        name: 'mantenedores',
+        icon: '',
         type: 'collapse',
         children: [
           /******/
           {
             id:2,
-            name: 'label.usuarios',
+            name: 'usuarios',
             type: 'item',
             link: '/app/mantenedor-usuarios',
             onclick:()=>{emptyReducer('mantenedor-usuarios')}
-          }
-            ]
-          
-      }
+          },
+        ]
+      },
+      {
+        id:2,
+        name: 'servicios',
+        icon: '',
+        type: 'collapse',
+        children: [
+          {
+            id:2,
+            name: 'control servicio',
+            type: 'item',
+            link: '/app/control-servicio-cliente/',
+          },
+        ]
+      },
     ];
 
   const rolPermissions={
-    1:[1],
+    1:[1,2,3],
     8:[1],
     2:[1],
     3:[1],
@@ -71,14 +84,14 @@ const SideBarContent = () => {
 
     const navigationMenus = [
       {
-        name: 'label.menuPrincipal',
+        name: 'Menú principal',
         type: 'section',
         children: permissionsFiltered
       },
     ];
 
     return (
-      <CustomScrollbars className=" scrollbar">
+      <CustomScrollbars className="scrollbar app-side-bar">
         <Navigation menuItems={navigationMenus}/>
       </CustomScrollbars>
     );

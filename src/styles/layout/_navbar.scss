@@ -14,30 +14,15 @@
   }
 }
 
-
 .app-toolbar {
   .MuiIconButton-root {
     font-size: 14px;
-
-    // @include phone() {
-    //     font-size: 16px;
-    // }
   }
 
   .MuiAvatar-root {
     @include phone() {
       width: 48px;
       height: 48px;
-    }
-  }
-
-  .MuiAvatar-colorDefault {
-    color: #ffff;
-    background-color: #C8352E;
-    font-size: 14px;
-
-    @include phone() {
-      font-size: 18px;
     }
   }
 
@@ -80,13 +65,14 @@
   }
 
   .MuiPaper-elevation8 {
-    box-Shadow: 0px 0px 6px rgba(0, 0, 0, 0.1) !important;
+    box-Shadow: $box-shadow-new !important;
+    @include style-border(1px,1px,1px,1px, solid)
   }
 
   .MuiMenuItem-root {
-    // color: yellow;
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 14px;
+    color: $color-dark;
+    font-size: 12px;
+    font-weight: 500;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -97,18 +83,7 @@
   }
 
   .MuiSvgIcon-root {
-    // color: #bdbdbd;
     font-size: 18px;
-  }
-
-  .MuiAvatar-colorDefault {
-    color: #ffff;
-    background-color: #C8352E;
-    font-size: 14px;
-
-    @include phone() {
-      font-size: 18px;
-    }
   }
 }
 
@@ -118,5 +93,28 @@
   &:hover {
     background: transparent !important;
     opacity: 0.7;
+  }
+}
+
+
+.app-avatar {
+  color: $color-light !important;
+  background-color: $color-danger !important;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  @include phone() {
+    font-size: 18px;
+  }
+}
+
+.app-user {
+  .MuiTypography-body1 {
+    font-weight: 600;
+  }
+
+  .MuiTypography-body2 {
+    font-weight: 500;
   }
 }

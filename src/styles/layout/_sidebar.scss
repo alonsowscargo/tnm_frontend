@@ -1,8 +1,8 @@
 /*Sidebar Styles*/
-
 .side-nav {
   width: $side-nav-width;
-  background-color: $sidebar-bg !important;
+  //background-color: $sidebar-bg !important;
+  //background-color: yellow !important;
   color: $sidebar-text-color !important;
   border-right: 0 none !important;
   z-index: 1250 !important;
@@ -29,6 +29,9 @@
     }
   }
 }
+
+
+
 
 .user-detail {
   & .user-name {

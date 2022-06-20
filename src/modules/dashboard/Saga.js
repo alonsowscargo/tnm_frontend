@@ -1,5 +1,7 @@
-import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
-import { putRequest, postRequest, getRequest, getErrorRequest, deleteRequest } from '../../util/apiFetch';
+//import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+import {call, put,takeLatest,spawn} from "redux-saga/effects";
+//import { putRequest, postRequest, getRequest, getErrorRequest, deleteRequest } from '../../util/apiFetch';
+import { getRequest, getErrorRequest} from '../../util/apiFetch';
 import {
    GET_DASHBOARD_CLIENTES_SIN_REPRESENTANTE_LEGAL_DOCUMENTACION,
    GET_REPORTE_PROPUESTAS_DASHBOARD,

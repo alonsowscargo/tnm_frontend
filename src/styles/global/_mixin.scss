@@ -264,3 +264,12 @@
   justify-content:$a;
   align-items:$b;
 }
+
+@mixin style-border($top:0px, $right:0px, $bottom:0px, $left:0px,$style:solid, $color:rgba(224, 224, 224, 1)) {
+    border-top: $top;
+    border-right: $right;
+    border-bottom: $bottom ;
+    border-left: $left;
+    border-color: $color;
+    border-style: $style;
+}

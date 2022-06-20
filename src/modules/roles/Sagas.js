@@ -1,4 +1,5 @@
-import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+//import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+import {call, put,takeLatest,spawn} from "redux-saga/effects";
 
 import {
     R_GET_ROLESLIST,
@@ -14,17 +15,19 @@ import {
     R_Show_Message_Roles,
     R_Post_Roles_Success,
     R_Get_Roles_Success,
-    R_Put_Roles_Success,
-    R_Delete_Roles_Success,
+    // R_Put_Roles_Success,
+    // R_Delete_Roles_Success,
     R_Set_Message_Eliminar_Roles,
 
 } from "./Actions.js";
 /***************************************************************************/
 /***************************************************************************/
-import { putRequest, postRequest, getRequest, getErrorRequest, deleteRequest } from '../../util/apiFetch';
-import {showAuthMessage} from "actions/Auth";
-import { valueToRelative } from "@amcharts/amcharts4/.internal/core/utils/Utils";
-import { RestoreTwoTone } from "@material-ui/icons";
+//import { putRequest, postRequest, getRequest, getErrorRequest, deleteRequest } from '../../util/apiFetch';
+import { postRequest, getRequest, getErrorRequest } from '../../util/apiFetch';
+
+// import {showAuthMessage} from "actions/Auth";
+// import { valueToRelative } from "@amcharts/amcharts4/.internal/core/utils/Utils";
+// import { RestoreTwoTone } from "@material-ui/icons";
 import _extends from "@babel/runtime/helpers/esm/extends";
 /***************************************************************************/
 /***************************************************************************/

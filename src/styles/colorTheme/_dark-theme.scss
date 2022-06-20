@@ -1015,10 +1015,10 @@ body.dark-theme {
     color: $dark-theme-text;
   }
 
-  & .MuiInput-underline {
-    &:before,
-    &:hover:not(.Mui-disabled):before {
-      border-bottom-color: $dark-theme-text;
-    }
-  }
+  // & .MuiInput-underline {
+  //   &:before,
+  //   &:hover:not(.Mui-disabled):before {
+  //     border-bottom-color: $dark-theme-text;
+  //   }
+  // }
 }

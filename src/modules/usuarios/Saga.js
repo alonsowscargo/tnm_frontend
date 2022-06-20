@@ -1,4 +1,6 @@
-import {all,fork,call, put,takeLatest,spawn} from "redux-saga/effects";
+//import {all,fork,call, put,takeLatest,spawn} from "redux-saga/effects";
+import {all,fork,call, put,takeLatest} from "redux-saga/effects";
+
 import {
     POST_REGISTER_USER,
     GET_REGISTER_USERSLIST,
@@ -11,6 +13,7 @@ import {
     UPDATE_ADDRESS_USER,
     GET_ROLES
 } from "./Constants";
+
 import {postRegisterUserSuccess,
     getRegisterUsersListSuccess,
     putRegisterUserSuccess,

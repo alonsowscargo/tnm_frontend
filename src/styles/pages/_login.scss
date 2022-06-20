@@ -1,52 +1,15 @@
 /*Login Styles*/
 /*Login Styles*/
 
-.login-container {
-  position: relative;
-  height: 100%;
-}
-
-.login-content {
-  width: 420px;
-  margin: auto;
-  padding: 35px 35px 30px;
-  background-color: $white;
-  @include box-shadow($shadow);
-  @include border-radius(4px);
-  font-size: 14px;
-  max-width: 94%;
-
-  @media screen and (max-width: 575px) {
-    padding: 25px 25px 20px;
-  }
-}
-
-.login-header {
-  margin-bottom: 30px;
-
-  @media screen and (max-width: 575px) {
-    margin-bottom: 20px;
-  }
-}
-
-.login-content .form-control {
-  background-color: map_get($gray, lighten-4);
-
-  &:focus {
-    box-shadow: none;
-    border-color: $app-primary;
-  }
-}
-
-.login-content .btn, .login-content .jr-btn {
-  padding: 10px 35px !important;
-}
-
 .app-login-container {
   position: relative;
-  max-width: 680px;
-  width: 94%;
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  background: #fff;
+  // max-width: 680px;
+  // width: 94%;
+  // margin: 0 auto;
+  // z-index: -2;
 
   & .loader-view {
     position: absolute;
@@ -57,87 +20,278 @@
     bottom: 0;
     z-index: 2;
   }
+
+  @include phone {
+    flex-direction: column;
+  }
 }
 
-.app-login-main-content {
-  @include display-flex();
-  background-color: $white;
-  @include box-shadow($shadow);
-  @include border-radius(10px);
-  font-size: 14px;
-  overflow: hidden;
-}
-
-.app-login-content {
-  padding: 35px 35px 20px;
+.app-login-content-registro {
   width: 60%;
-  order: 1;
+  padding: 20% 0;
+
+  // background: pink;
+  // height: 100%;
+  // padding-bottom: 200px;
+
+
 
   @media screen and (max-width: 575px) {
     width: 100%;
     order: 2;
+    padding: 56px 24px;
+
+    .title-h1 {
+      font-size: 28px !important;
+    }
   }
 }
 
-.app-login-header {
-  margin-bottom: 30px;
-}
+.app-login {
+  background: #fff;
+  height: 100vh;
+  width: 50%;
 
-.app-login-content .form-control {
-  background-color: map_get($gray, lighten-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &:focus {
-    box-shadow: none;
-    border-color: $app-primary;
+  @include phone {
+    width: 100%;
+    order: 2;
+    height: auto;
+    align-items: flex-start;
+    min-height: 85vh;
   }
 }
 
-.app-login-content .btn, .login-content .jr-btn {
-  padding: 10px 35px !important;
+.app-registro {
+  background: #fff;
+  height: 100vh;
+  width: 50%;
+  overflow: scroll;
+
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+
+
+  @include phone {
+    width: 100%;
+    order: 2;
+    overflow: inherit;
+    height: auto;
+
+  }
 }
 
-.app-logo-content {
-  background-color: #E10000 !important;
-  padding: 35px 35px 20px;
-  width: 40%;
-  order: 2;
+.app-login-content {
+  width: 55%;
+  height: auto;
+  // height: 100vh;
+  // width: 50%;
+  // order: 1;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 
   @media screen and (max-width: 575px) {
     width: 100%;
-    order: 1;
-  }
-}
+    padding: 56px 24px;
 
-.app-social-block {
-  @include display-flex();
-  @include align-items(center);
-  @include justify-content(space-between);
-
-  & .social-link,
-  & .social-link li {
-    margin: 0;
-  }
-
-  & .social-link button {
-    border: solid 1px $app-primary;
-    @include border-radius(50%);
-    color: $app-primary;
-    padding: 0;
-
-    &:hover,
-    &:focus {
-      color: $white;
-      background-color: $app-primary;
+    .title-h1 {
+      font-size: 28px;
     }
   }
 
-  & p {
-    margin-bottom: 0;
+  @media screen and (min-width: 1900px) {
+    // background: yellow;
+    width: 45%;
   }
 }
 
-.login-form {
-  form > :last-child {
-    margin-bottom: 0;
+
+
+.app-logo-content {
+  // background-color: #E10000 !important;
+  // padding: 35px 35px 20px;
+  background-image: url("../../assets/images/transporte-tnm.jpeg");
+  background-position: center center;
+  background-size: cover;
+  height: auto;
+  position: relative;
+  width: 50%;
+  order: 2;
+  z-index: 2;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(200, 54, 46, 0.917);
+   // background: rgba(255, 0, 0, 0.825);
+  }
+
+  .logo-lg img {
+    height: 120px;
+    position: relative;
+    z-index: 3;
+
+    @include phone {
+      height: 72px;
+    }
+  }
+
+  @include phone {
+    width: 100%;
+    padding: 80px 0;
+    height: 15vh !important;
+    order: 1;
+    clip-path: ellipse(150% 90% at 30% 10%);
   }
 }
+
+// .login-container {
+//   position: relative;
+//   height: 100%;
+// }
+
+// .login-content {
+//   width: 420px;
+//   margin: auto;
+//   padding: 35px 35px 30px;
+//   background-color: $white;
+//   @include box-shadow($shadow);
+//   @include border-radius(4px);
+//   font-size: 14px;
+//   max-width: 94%;
+
+//   @media screen and (max-width: 575px) {
+//     padding: 25px 25px 20px;
+//   }
+// }
+
+// .login-header {
+//   margin-bottom: 30px;
+
+//   @media screen and (max-width: 575px) {
+//     margin-bottom: 20px;
+//   }
+// }
+
+// .login-content .form-control {
+//   background-color: map_get($gray, lighten-4);
+
+//   &:focus {
+//     box-shadow: none;
+//     border-color: $app-primary;
+//   }
+// }
+
+// .login-content .btn, .login-content .jr-btn {
+//   padding: 10px 35px !important;
+// }
+
+// .app-login-container {
+//   position: relative;
+//   width: 100%;
+//   display: flex;
+//   //background: #fff;
+
+//   & .loader-view {
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     text-align: center;
+//     top: 0;
+//     bottom: 0;
+//     z-index: 2;
+//   }
+// }
+
+// .app-login-main-content {
+//   @include display-flex();
+//   background-color: $white;
+//   @include box-shadow($shadow);
+//   @include border-radius(10px);
+//   font-size: 14px;
+//   overflow: hidden;
+// }
+
+// .app-login-content {
+//   padding: 35px 35px 20px;
+//   width: 60%;
+//   order: 1;
+
+//   @media screen and (max-width: 575px) {
+//     width: 100%;
+//     order: 2;
+//   }
+// }
+
+// .app-login-header {
+//   margin-bottom: 30px;
+// }
+
+// .app-login-content .form-control {
+//   background-color: map_get($gray, lighten-4);
+
+//   &:focus {
+//     box-shadow: none;
+//     border-color: $app-primary;
+//   }
+// }
+
+// .app-login-content .btn, .login-content .jr-btn {
+//   padding: 10px 35px !important;
+// }
+
+// .app-logo-content {
+//   background-color: #E10000 !important;
+//   padding: 35px 35px 20px;
+//   width: 40%;
+//   order: 2;
+
+//   @media screen and (max-width: 575px) {
+//     width: 100%;
+//     order: 1;
+//   }
+// }
+
+// .app-social-block {
+//   @include display-flex();
+//   @include align-items(center);
+//   @include justify-content(space-between);
+
+//   & .social-link,
+//   & .social-link li {
+//     margin: 0;
+//   }
+
+//   & .social-link button {
+//     border: solid 1px $app-primary;
+//     @include border-radius(50%);
+//     color: $app-primary;
+//     padding: 0;
+
+//     &:hover,
+//     &:focus {
+//       color: $white;
+//       background-color: $app-primary;
+//     }
+//   }
+
+//   & p {
+//     margin-bottom: 0;
+//   }
+// }
+
+// .login-form {
+//   form > :last-child {
+//     margin-bottom: 0;
+//   }
+// }

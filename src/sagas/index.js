@@ -1,4 +1,4 @@
-import {all,spawn,fork} from 'redux-saga/effects';
+import {all,fork} from 'redux-saga/effects';
 import authSagas from './Auth';
 import userMaintainer from '../modules/usuarios/Saga';
 import Empresas_Maintainer from '../modules/empresas/Sagas.js'

@@ -1,0 +1,94 @@
+.app-leyendas {
+    // display: flex;
+    // align-items: center;
+    // @include style-border(1px, 1px, 1px, 1px, solid);
+    // padding: 12px 24px;
+    // border-radius: 4px;
+    height: 41.25px;
+
+
+
+    svg {
+        // margin-right: 8px;
+        font-size: 24px;
+    }
+
+    .icon-color-one {
+        color: #8C3CB1;
+    }
+
+    .icon-color-two {
+        color: #E93F33;
+    }
+
+    .icon-color-three {
+        color: #0000008a;
+    }
+
+    
+}
+
+.app-leyend-one {
+    // @include style-border(1px, 1px, 1px, 1px, solid, #8C3CB1);
+    // color: #8C3CB1;
+    //background-color: #8c3cb137;
+    background-color: #8C3CB1;
+
+
+    // .text-xs {
+    //     color: #8C3CB1;
+    //     font-weight: 600;
+    // }
+    
+}
+
+.app-leyend-two {
+    @include style-border(1px, 1px, 1px, 1px, solid, #E93F33);
+    color: #E93F33;
+    //background-color: #8c3cb137;
+    background-color: #fff;
+
+
+    .text-xs {
+        color: #E93F33;
+        font-weight: 600;
+    }
+    
+}
+
+.app-leyend-three {
+    @include style-border(1px, 1px, 1px, 1px, solid, #0000008a);
+    color: #0000008a;
+    //background-color: #8c3cb137;
+    background-color: #fff;
+
+
+    .text-xs {
+        color: #0000008a;
+        font-weight: 600;
+    }
+    
+}
+
+
+.text-one {
+    color: #8C3CB1;
+    font-weight: 600;
+    border-left: #8C3CB1 4px solid;
+    padding-left: 8px;
+    line-height: 12px;
+    font-size: 12px;
+    // width: 85% !important;
+    // padding: 2px 0;
+    // border-radius: 20px;
+    // text-align: center;
+    // color: #fff;
+}
+
+.text-two {
+    color: #E93F33;
+}
+
+.text-three {
+    color: #D4D4D4;
+}

@@ -16,6 +16,10 @@
     border-left: solid 6px #bdbdbd;
 }
 
+.app-border-light {
+    border-left: solid 6px #ffffff;
+}
+
 .app-border-success {
     border-left: solid 6px #6FCF97;
 }
@@ -107,17 +111,17 @@
     }
 }
 
-.text-success {
+.text-color-success {
     color: #6FCF97 ;
 }
-.text-warning {
+.text-color-warning {
     color: #FFCA6B ;
 }
-.text-default {
+.text-color-default {
     color: #bdbdbd;
 }
 
-.text-danger {
-    color: #FC565C ;
+.text-color-danger {
+    color: #C8352E;
 }
 

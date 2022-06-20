@@ -1,4 +1,7 @@
-import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+//import {all, call, fork, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+import { call, put, takeEvery,takeLatest,spawn} from "redux-saga/effects";
+
+
 import {
     auth,
     facebookAuthProvider,

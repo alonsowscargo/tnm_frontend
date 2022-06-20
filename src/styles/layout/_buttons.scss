@@ -1,248 +1,297 @@
-/***** btn ***/
-button {
-    margin: 0 !important;
-    border-radius: 4px !important;
+//Reset button ///
+.MuiButton-contained {
+    //color: rgba(0, 0, 0, 0.87);
+    box-shadow: none !important;
+    //background-color: #e0e0e0;
 }
 
-.button {
-    height: 50px;
-    border: solid 2px #000;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    margin-right: 0;
-    transition:0.5s all;
-    font-size: 12px !important;
-    padding: 8px 16px !important;
-}
-
-.button-100 {
-    width: 100%;
-}
-
-.button-50 {
-    width: 50%;
-}
-
-.button-primary {
-    background: #2DACF3 !important;
-    border: solid 2px #2DACF3 !important;
-    margin-right: 0;
-    color: #fff !important;
-
-    &:hover {
-        background: #238ecc !important;
-        border: solid 2px #238ecc !important;
-    }
-    &:focus {
-        background: #238ecc !important;
-        border: solid 2px #238ecc !important;
-    }
-}
-.button-warning {
-    background: #F8C96A !important;
-    border: solid 2px #F8C96A !important;
-    margin-right: 0;
-    color:#FFFFFF !important;
-
-    &:hover {
-        background: #FCE6B9 !important;
-        border: solid 2px #FCE6B9 !important;
-    }
-    &:focus {
-        background: #FCE6B9 !important;
-        border: solid 2px #FCE6B9 !important;
-    }
+.MuiButton-root {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    text-transform: capitalize !important;
 }
 
 
-.button-success {
-    background: rgba(111, 207, 151, 0.22);
-    border: solid 2px transparent;
-    color: #6fcf97;
-
-    &:hover {
-        background: #6fcf97;
-        border: solid 2px #6fcf97 !important;
-    }
-    &:focus {
-        color: #fff;
-        background: #6fcf97 !important;
-        border: solid 2px #6fcf97 !important;
-    }
+// Reset button
+.app-fi {
+    background-color: #fff;
+    padding: 0 48px;
+    border-radius: 4px;
+    box-shadow: $box-shadow-new;
 }
 
-.button-danger {
-    color: #fff !important;
-    background: #FC565C !important;
-    border: solid 2px #FC565C !important;
+.app-form {
+    width: 80%;
 
-    &:hover {
-        background: #d6484f!important;
-        border: solid 2px #d6484f !important;
-    }
 }
 
-.button-redlight {
-    background: map-get($color, colorFour) !important;
-    border: solid 2px map-get($color, colorFour) !important;
-
-    &:hover {
-        background: #FC565C  !important;
-        border: solid 2px #FC565C !important;
-    } 
-}
-
-.button-home {
-    background: rgba(0, 0, 0, 0.15);
-    border: 2px solid #FFFFFF; 
-}
-
-
-.button-outline {
-    background: #F9F9F9;
-    border: 2px solid #263238 !important;
-    color: #263238;
-    margin-right: 0;
-
-    &:hover {
-        color: #fff;
-        background: #263238;
-        border: solid 2px #263238 !important;
-    }
-    &:focus {
-        color: #fff;
-        background: #263238 !important;
-        border: solid 2px #263238 !important;
-    }
-}
-
-.button-outline-danger {
-    background: transparent;
-    border: 2px solid #FC565C!important;
-    color: #FC565C;
-    margin-right: 0;
-
-    &:hover {
-        color: #fff;
-        background: map-get($color, colorFour);
-        border: solid 2px map-get($color, colorFour) !important;
-    }
-    &:focus {
-        color: #fff;
-        background: map-get($color, colorFour)!important;
-        border: solid 2px map-get($color, colorFour)!important;
-    }
-}
-
-.button-gray {
-    background: #ece9e9;
-    border: 2px solid #ece9e9 !important;
-    color: #263238;
-
-    &:hover {
-        color: #263238;
-        background:#d1d1d1;
-        border: solid 2px #d1d1d1!important;
-    }
-    &:focus {
-        color: #263238;
-        background:#d1d1d1;
-        border: solid 2px #d1d1d1!important;
-    }
-}
-
-.button-light {
-    background: #fff;
-    border: 2px solid #fff !important;
-    color: #263238;
-
-    &:hover {
-        background: #fafafa;
-        border: solid 2px #fafafa!important;
-    }
-    &:focus {
-        background: #fafafa!important;
-        border: solid 2px #fafafa !important;
-    }
-}
-
-
-.button-mobile {
-    display: none;
-    @include phone {
-        display: block;
-    }
-}
-
-.content-buttons {
+.app-filter {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    @include style-border(1px, 0,1px,0, solid);
+    // border-top: solid 1px 
+    padding: 24px 0;
+    
 
-.button {
-    .spinner-border  {
-        width: 20px;
-        height: 20px;
-        border: 3px solid map-get($color, colorLight );
-        border-right-color:transparent;
+    .app-input {
+        width: 20%;
+        margin-right: 12px;
+    }
+
+    .app-action {
+        width: 20%;
+        height: 62px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .app-leyendas {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+        height: 62px;
+        align-items: flex-end;
     }
 }
 
-.button-icon {
-    i {
-        font-size: 1rem;
+
+.app-filter-secundary {
+    // flex-wrap: wrap;
+    // transition: width 2s;
+    //background-color: rgba(255, 255, 255, 0.636);
+    // border: solid rgba(255, 0, 0, 0.678) 1px;
+    //padding: 12px;    
+   // padding-left: 24px;
+   //@include style-border(1, 1,1, 1, solid);
+
+    margin-top: 24px;
+
+    // .app-border-bottom{
+    //     //border-right: rgba(0, 0, 0, 0.141) solid 2px;
+    //     // border-right: solid 3px  #F4F4F7;
+    //     border-bottom:solid 1px #34343530;
+    // }
+
+    .app-input {
+        // border-right: solid 1px #000;
+        // padding: 12px 24px;
+
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
-    .spinner-border  {
-        width: 1rem;
-        height: 1rem;
-        border: 3px solid map-get($color, colorEleven );
-        border-right-color:transparent;
-    }
+
+
+    // .app-title {
+    //     width: 100%;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     padding: 16px 24px 10px 24px;
+    //     // border-bottom:solid 1px #34343530;
+
+    // }
 }
 
-.button-icon {
-    width: 50px !important;
+
+.app-input {
+
+    .MuiInputBase-root {
+        border-radius: 4px;
+        border: solid 1px #fff;
+        //padding: 0px 16px;
+
+       
+
+        // .MuiTypography-body1 {
+        //     font-size: 14px;
+        //     color:red;
+        // }
+    
+    
+        &.Mui-focused {
+            //border: solid 1px #fff;
+            color: map-get($color,colorEleven);
+        }
+    }
+
+
+    .MuiInputBase-input {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    input::placeholder {
+        color: #212121 !important;
+        font-size: 14px;
+        font-style: italic;
+    }
+ 
+
+
+    .app-action {
+
+        .app-button {
+            .bi {
+                font-size: 100px;
+            }
+        }
+    }
+
+
+
+    // style label
+    .MuiFormLabel-root {
+        // text-transform: capitalize;
+        // color: map-get($color, colorGray2) !important;
+        // font-size: 12px !important;
+        // padding-left: 16px !important;
+        color: #212121 !important;
+        // margin-bottom: 0px;
+        font-weight: 500;
+    }
+    // .MuiFilledInput-root {
+    //     // position: relative;
+    //     // transition: background-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    //     background-color: transparent;
+    //     border-bottom: none !important;
+    //     // border-top-left-radius: 4px;
+    //     // border-top-right-radius: 4px;
+    // }
+
+    // .MuiFilledInput-input { 
+    //     padding-top:6px;
+    //     padding-bottom: 6px;
+    //     padding-left: 0;
+    // }
+
+
+    // .MuiFilledInput-underline:before {
+    //     // left: 0;
+    //     // right: 0;
+    //     // bottom: 0;
+    //     // content: "\00a0";
+    //     // position: absolute;
+    //     // transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    //     border-bottom: none;
+
+    //     &:hover {
+    //         background-color: transparent !important;
+    //     }
+    //     // pointer-events: none; 
+    // }
+    // /* padding: 27px 12px 10px; */
+
+    // .MuiFormLabel-root {
+    //     // color: rgba(0, 0, 0, 0.54);
+    //     padding: 0;
+    //     font-size: 12px;
+    //     // font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    //     font-weight: 400;
+    //     line-height: 1;
+    //     letter-spacing: 0.00938em;
+    // }
+    
+    // .MuiFormControl-root {
+    //     width: 100%;
+    // }
+
+    // .MuiInputBase-input {
+    //     background-color: transparent;
+    //     border: none ;
+    //     cursor: pointer;
+
+    //     &::placeholder {
+    //         color: #212121 !important;
+    //         font-size: 14px !important;
+    //         font-weight: 500 !important;
+    //     }
+    // }
+
+    // .MuiInput-underline {
+    //     border-bottom: 0px transparent !important;
+    // }
+
+    // .MuiInputBase-root {
+    //     font-size: 14px;
+    //     font-weight: 500;
+    //     border-bottom: 0px transparent !important;
+
+    //     .MuiIconButton-root {
+    //         color: #212121 !important;
+    //     }
+    // }
+
 }
 
-.button-text {
-    border: none;
-    color:map-get($color, colorEleven );
-    border-radius: 0 !important;
-    border-bottom: solid 2px map-get($color, colorEleven) !important;
-    background: transparent;
-    padding: 5px 0 !important;
 
-    &:hover {
-        color:map-get($color, colorGray3 );
-        background: transparent;
-        border-bottom: solid 2px map-get($color, colorGray3)!important;
-    }
-    &:focus {
-        color:map-get($color, colorGray3 );
-        background: transparent;
-        border-bottom: solid 2px map-get($color, colorGray3)!important;
-    }
-}
 
-.button-text-danger {
-    color:map-get($color, colorTwo );
-    border-bottom: solid 2px map-get($color, colorTwo) !important;
-    &:hover {
-        background: transparent;
-        color: #d6484f;
-        border-bottom: solid 2px #d6484f !important;
-    }
-    &:focus {
-        background: transparent;
-        color: #d6484f;
-        border-bottom: solid 2px #d6484f !important;
-    }
-}
+// .app-input-date {
+//     .MuiIconButton-root {
+//         padding: 12px 0px;
 
-.button-100-mobile {
-    @include phone {
-        width: 100%;
-    }
-}
+//         &:hover {
+//             background: transparent;
+//         }
+//     }
+//     .MuiSvgIcon-root {
+//         font-size: 20px;
+//     }
+// }
+
+// .app-button-filter {
+//     &:hover {
+//         background: transparent !important;
+//     }
+
+//     .MuiIconButton-label {
+//         display: flex;
+//         flex-direction: column ;
+//         font-size: 10px;
+//         font-weight: 500;
+//         color: #212121;
+//     }
+
+//     .bi {
+//         font-size: 18px;
+//         //color: #C8352E;
+//         color: #212121;
+//     }
+
+//     svg {
+//         color: #212121;
+//         font-size: 20px;
+//     }
+// }
+
+// // .app-button {
+// //     background: #2196f3 !important;
+// //     width: 40px;
+// //     height: 40px;
+
+// //     .MuiSvgIcon-root {
+// //         color: #fff;
+// //         font-size: 18px;
+// //     }
+// // }
+
+
+
+
+// //// title
+
+// .app-title {
+//     // background-color: red;
+//     margin-bottom: 24px;
+//     border-left: solid 6px #C8352E;
+//     padding-left: 24px;
+
+//     h1 {
+//         line-height: 24px;
+//         color: #676362;
+//     }
+// }
+
+
+

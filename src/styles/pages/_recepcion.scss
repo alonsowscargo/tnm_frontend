@@ -51,12 +51,12 @@
     padding-top: 116px;
     background: linear-gradient(191.78deg, #FF565C 0%, #FD262D 76.08%);
     
-    @include phone  {
-        background-image: url('../../assets/images/recepcion/page-detalle.png');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+    // @include phone  {
+    //     background-image: url('../../assets/images/recepcion/page-detalle.png');
+    //     background-position: center center;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    // }
 
 
     .bg-l {

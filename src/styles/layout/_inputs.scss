@@ -1,137 +1,113 @@
-.form-group {
-    position: relative;
+// reset base  input.
+.MuiInput-underline:before {
+    border-bottom: none !important;
+}
 
-    i {
-        font-size: 24px;
-        position: absolute;
-        height: 50px !important;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        color: #263238;
+.MuiInput-underline:focus {
+    border-bottom: none !important;
+}
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 0 !important;
+}
+
+.MuiInput-underline.Mui-error:after {
+    transform: scaleX(1);
+    border-bottom-color: transparent !important;
+}
+.MuiInput-underline:after {
+    border-bottom: 1px solid transparent !important; 
+}
+
+.MuiAutocomplete-inputRoot[class*="MuiInput-root"] {
+    padding-bottom: 6px !important;
+}
+
+// reset base  input.
+
+// style new input
+.MuiInputBase-root {
+    cursor: text;
+    display: inline-flex;
+    padding: 6px 16px;
+    font-size: 12px !important;
+    background-color: #ffffff;
+}
+
+.MuiTextField-root	{
+    &:focus {
+        border: none !important;
     }
+}
 
+.MuiInputBase-root {
+    border-radius: 4px;
+    border: solid 1px rgba(130, 130, 130,0.5);
 
-    .MuiInputBase-root {
-        border-radius: 5px !important;
-        width: 100%;
-        box-shadow: $box-shadow-new;
-        border: 1.5px solid #263238 !important;
-        font-size: 16px !important;
-        font-weight: 400;
-        border-radius: 5px;
-        height: 50px;
-    }
-
-    .right {
-        right: 12px;
-    }
-
-    .left {
-        left: 12px;
-    }
-
-    label  {
-        margin-left:0.75rem;
+    .MuiTypography-body1 {
         font-size: 14px;
-        color: #828282;
-        font-weight: 400;
     }
 
-    .form-control {
-        background: #FFFFFF;
-        border: 1.5px solid #263238;
-        box-shadow: $box-shadow-new;
-        border-radius: 5px;
-        height: 50px;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 0.75rem;
-        font-size: 16px !important;
+    &.Mui-error {
+        color: #f44336;
+        border: solid 1px map-get($color,colortwo);
 
-        &::placeholder {
-            color: #263238;
-            font-size: 16px !important;
-
+        .MuiSvgIcon-root {
+            color: #f44336;
         }
 
+        .MuiTypography-colorTextSecondary {
+            color: #f44336;
+        }
     }
 
-    select {
-        height: 50px !important;
-        appearance: none !important;
-    }
-
-
-    .form-textarea {
-        height: 118px;
+    &.Mui-focused {
+        color: $color-dark;
+        border: solid 1px map-get($color,colorEleven);
     }
 }
 
-// input file de proceso documental 
-.proceso-documental {
-    .input-file {
-        padding: 0 !important;
-        background: transparent !important;
-        border:none !important;
-    }
-    
-    input[type='file'] {
-        height: auto !important;
-        width: 100% !important;
-        background: transparent !important;
-    }
-    
-    input[type='file']::file-selector-button {
-        padding: 15px 40px;
-        border-radius:5px;
-        border:none !important;
-        color: #fff;
-        background: map-get($color, colorFour);
-        transition:0.5s all;
-        letter-spacing: 1px;
-        cursor: pointer;
-        margin-right: 5px;
-    
-            &:hover {
-            background: #FC565C !important;
-            }
-    }
-    
-    input[type='file']::-webkit-file-upload-buton {
-        padding: 15px 40px;
-        border-radius:50px;
-        border:none !important;
-        color: #fff;
-        background: map-get($color, colorFour);
-        transition:0.5s all;
-        letter-spacing: 1px;
-        cursor: pointer;
-    
-        &:hover {
-            background: #FC565C !important;
-        }
+// style label
+.MuiFormLabel-root {
+    text-transform: capitalize;
+    color: map-get($color, colorGray2);
+    font-size: 12px !important;
+    padding-left: 16px !important;
+    margin-bottom: 6px;
+
+
+    & .error-label {
+        color: #f44336 !important;
     }
 }
 
 
 
-.Dropzone {
 
-    .MuiDropzoneArea-root {
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
-        .MuiTypography-h5 {
-            font-size: 20px;
-            font-weight: 600;
-            margin:0 0 8px 0;
-        }
-        .MuiDropzoneArea-icon {
-            color:rgba(0, 0, 0, 0.666) ;
-            width: 40px;
-            height: 40px;
-        }
+// button sutbmit
+.app-button {
+    height: 41.25px;
+   // margin-top: 12px;
+}
+
+// input modal day free
+.input-day-free {
+    .MuiInputBase-input {
+        text-align: center;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+//   border: 1px solid green;
+//   -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color #fff ease-in-out 0s !important;
 }

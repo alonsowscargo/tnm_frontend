@@ -1,28 +1,51 @@
+// import React from "react";
+// import {withRouter} from "react-router-dom";
+// import {useSelector} from "react-redux";
+// import Header from "./Header/index";
+// import Nav from "./Nav/index";
+// import SideBar from "containers/SideBar/index";
+// import SideBar2 from "containers/SideBar2/index";
+// import Tour from "components/Tour/index";
+// import {COLLAPSED_DRAWER, FIXED_DRAWER} from "constants/ActionTypes";
+// import {isIOS, isMobile} from "react-device-detect";
+// import { useParams } from "react-router";
+// import { Link } from "react-router-dom"
+// import {NavLink} from "react-router-dom";
+// import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+// import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
+// import FolderOutlinedIcon from '@material-ui/icons/FolderOutlined';
+// import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+// import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
+// import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
+// import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
+// import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+// /* alonso */
+// import Cabecera from "./cabecera/Caberera";
+// // import SideBar from "./sideBar/SideBar";
+
+
 import React from "react";
-import {withRouter} from "react-router-dom";
-import {useSelector} from "react-redux";
+import { withRouter } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Header from "./Header/index";
 import Nav from "./Nav/index";
-import SideBar from "containers/SideBar/index";
-import SideBar2 from "containers/SideBar2/index";
-import Footer from "components/Footer";
-import Tour from "components/Tour/index";
-import {COLLAPSED_DRAWER, FIXED_DRAWER} from "constants/ActionTypes";
-import {isIOS, isMobile} from "react-device-detect";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom"
+import SideBar from "../../SideBar/index";
+// import SideBar2 from "containers/SideBar2/index";
+import { COLLAPSED_DRAWER, FIXED_DRAWER } from "constants/ActionTypes";
+import { isIOS, isMobile } from "react-device-detect";
 import {NavLink} from "react-router-dom";
-import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
-import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
-import FolderOutlinedIcon from '@material-ui/icons/FolderOutlined';
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
 import BarChartOutlinedIcon from '@material-ui/icons/BarChartOutlined';
 import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import FolderOutlinedIcon from '@material-ui/icons/FolderOutlined';
+import { useParams } from "react-router";
+// import CreateUser from "../../../modules/atrina/registro_empresa/CreateUser"
+
 /* alonso */
 import Cabecera from "./cabecera/Caberera";
-// import SideBar from "./sideBar/SideBar";
+
+
+
 
 const Vertical = (props) => {
 
@@ -58,8 +81,8 @@ const Vertical = (props) => {
                             || location.pathname==='/app/atrina-cotizador'
                         ) ?
                 <div className={`app-container new-template ${drawerStyle}`}>
-                    <Tour/>
-                    <SideBar2 />
+                    {/* <Tour/> */}
+                    {/* <SideBar2 /> */}
                     
                     <div className="app-main-container">
 
@@ -146,7 +169,7 @@ const Vertical = (props) => {
                 </div>
                 :
                 <div className={`app-container ${drawerStyle}`}>
-                    <Tour/>
+                    {/* <Tour/> */}
 
                     <SideBar/>
                     <div className="app-main-container">
