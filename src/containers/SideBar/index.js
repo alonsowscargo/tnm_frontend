@@ -45,9 +45,9 @@ const SideBar = () => {
                         paper: 'side-nav',
                     }}
             >
-                <div class="app-side-logo">
+                {/* <div class="app-side-logo">
                     <img src={require("assets/images/LogoTnm.png")} alt="Transporte nuevo mundo" title="Transporte nuevo mundo"  draggable="false"/>
-                </div>
+                </div> */}
 
                 <SideBarContent/>
             </Drawer>
