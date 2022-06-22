@@ -1,5 +1,5 @@
 import React from 'react';
-import Documentacion from './index.js';
+import Documentacion from './Index.js';
 import IntlMessages from 'util/IntlMessages';
 
 class DocumentacionRoutes extends React.Component {
