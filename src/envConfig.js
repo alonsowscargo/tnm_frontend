@@ -1,5 +1,4 @@
 export default {
-
     enviroment:{
         urlApi:'http://localhost:3000/api/',
     },
@@ -7,4 +6,4 @@ export default {
     development:{
         reduxLogger:true
     }
-}; 
+};
