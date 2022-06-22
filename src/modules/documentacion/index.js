@@ -18,8 +18,6 @@ const CrudApi = () => {
     const data = await response.json()
     setAllTasks(data)
   }
-  
-
 
   const handleDelete = async (id) => {
     try {
