@@ -14,6 +14,7 @@ import {
   IconButton,
   Button
 } from '@material-ui/core';
+import MainTitle from "components/Title/MainTitle";
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -105,19 +106,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="app-title justify-space-between mb-4">
-        <h1 className="font-weight-700 m-0">Facturación</h1>
-
-        <Button
-          variant="outlined"
-          size="medium"
-          //startIcon={<BsPlus />}
-          color="primary"
-          className="app-button"
-        >
-          nueva facturación
-        </Button>
-      </div>
+      <MainTitle title="Fcaturación" nameButton="nueva facturación" />
 
 
       <Form onSubmit={handleSubmit}>
@@ -234,70 +223,32 @@ const Dashboard = () => {
             title="Facturación"
             columns={columns}
             data={data}
-            // onRowClick={(evt, selectedRow) =>
-            //     setSelectedRow(selectedRow.tableData.id)
-            // }
-
-
             onRowClick={(event, rowData, togglePanel) => {
-              // Copy row data and set checked state
               togglePanel();
             }}
-
-            // onRowsClick={ (evt, selectedRow, event, rowData, togglePanel)  =>
-            //     setSelectedRow(selectedRow.tableData.id);
-            //     togglePanel();
-            // }
             options={{
               exportButton: false,
-              //filtering: true,
+              filtering: false,
               search: true,
               paging: false,
               detailPanelType: "single",
               maxBodyHeight: '80vh',
-              // rowStyle: (rowData) => ({
-              //   backgroundColor:
-              //     selectedRow === rowData.tableData.id ? "#6ABAC9" : "#FFF",
-              // }),
             }}
             localization={{
               body: {
                 emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
               }
             }}
-            // actions={[
-            //   {
-            //     icon: MoreVertIcon,
-            //     tooltip: "More",
-            //     onClick: handleClick,
-            //   },
-            // ]}
-
             detailPanel={[
               {
                 render: (rowData) => {
                   return (
                     <DetailTable rowData={rowData} handleClickOpen={handleClickOpen} />
-
-                    // <DetailTable rowData={rowData} handleClickOpen={handleClickOpen} />
                   );
                 }
               }
             ]}
           />
-
-          {/* <Menu
-          id="more-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={handleClose}>Pdf</MenuItem>
-          <MenuItem onClick={handleClose}>Zip</MenuItem>
-          <MenuItem onClick={handleClose}>Email</MenuItem>
-          <MenuItem onClick={handleClose}>Liquidación</MenuItem>
-        </Menu> */}
         </div>
       </div>
 
