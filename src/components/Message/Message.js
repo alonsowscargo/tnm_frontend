@@ -2,16 +2,49 @@ import React from 'react'
 import CheckIcon from '@material-ui/icons/Check';
 import CloseIcon from '@material-ui/icons/Close';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import { withStyles } from '@material-ui/core/styles';
 
 import {
     makeStyles,
     Dialog,
     DialogContent,
     DialogContentText,
-    DialogActions,
-    Button,
-    DialogTitle
+    Typography ,
+    IconButton
+    // DialogTitle
 } from "@material-ui/core";
+
+
+
+const styles = (theme) => ({
+    root: {
+        margin: 0,
+        padding: theme.spacing(2),
+    },
+    closeButton: {
+        position: 'absolute',
+        right: theme.spacing(1),
+        top: theme.spacing(1),
+        color: theme.palette.grey[500],
+    },
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+    const { children, classes, onClose, ...other } = props;
+    return (
+        <MuiDialogTitle disableTypography className={classes.root} {...other}>
+            <Typography variant="h6">{children}</Typography>
+            {onClose ? (
+                <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </MuiDialogTitle>
+    );
+});
+
+
 
 const useStyles = makeStyles((theme) => ({
     alertSuccess: {
@@ -69,15 +102,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,width, setEliminarOk, handleDeleteConfirmation}) => {
+const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,width }) => {
     const classes = useStyles();
 
-    // const handleDeleteConfirmation = () => {
-    //     setEliminarOk(true);
-    //   };
-
     return (
-        // <Alert color={props.bgColor}>{props.msg}</Alert>
         <Dialog
             open={open}
             aria-labelledby="alert-dialog-title"
@@ -87,32 +115,36 @@ const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,w
             fullWidth
             maxWidth={width}
         >
-            <DialogContent className="mt-3 justify-center">
-                    { typeAlert == "alertSuccess"  &&
+            <DialogTitle onClose={onClose}>
+
+            </DialogTitle>
+
+            <DialogContent className="px-5 pt-5 justify-center">
+                    { typeAlert === "alertSuccess"  &&
                         <div className={`justify-center ${classes.alertSuccess}`}>
                             <CheckIcon />
                         </div> 
                     }
-                    { typeAlert == "alertDanger" &&
+                    { typeAlert === "alertDanger" &&
                         <div className={`justify-center ${classes.iconDanger}`}>
                             <CloseIcon />
                         </div> 
                     }
 
-                    { typeAlert == "alertWarning" &&
+                    { typeAlert === "alertWarning" &&
                         <div className={`justify-center ${classes.alertWarning}`}>
                             <ReportProblemIcon />
-                        </div> 
+                        </div>
                     }
             </DialogContent>
 
-            <DialogContent className="text-center mb-2">
+            <DialogContent className='text-center px-5 pb-5'>
                 <DialogTitle className='pt-0'>{titleMessage}</DialogTitle>
 
                 {/* <DialogContentText>{tituloMensaje}</DialogContentText> */}
                 <DialogContentText className="px-0 px-md-5">{message}</DialogContentText>
             </DialogContent>
-
+{/* 
             <DialogActions className="mb-4">
                 <Button
                     variant="outlined"
@@ -128,13 +160,12 @@ const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,w
                     size="medium"
                     color="secondary"
                     onClick={ () => {
-                        // handleDeleteConfirmation();
                         onClose();
                     }}
                 >
                     {callAction}
                 </Button>
-            </DialogActions>
+            </DialogActions> */}
         </Dialog>
     )
 }

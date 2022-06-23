@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+// import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import Form from '../../components/form/Form'
 import InputAutocomplete from '../../components/form/AutoComplete'
 import Field from '../../components/form/Field'
@@ -8,13 +8,19 @@ import { data } from "./data"
 import MaterialTable from 'material-table';
 import DetailTable from "./componts/DetailTable"
 import Modal from "./componts/Modal"
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
 import {
-  IconButton,
+  // IconButton,
   Button
 } from '@material-ui/core';
 import MainTitle from "components/Title/MainTitle";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -52,21 +58,6 @@ const columns = [
   { title: "Nº. Servicio", field: "n_servicios" },
 ]
 
-
-
-
-// const columns = [
-//   { title: "Envio", field: "envio", cellStyle: { width: 100, } },
-//   { title: "Creación", field: "fecha_creacion" },
-//   { title: "Cli. Desp.", field: "cliente_despacho", },
-//   { title: "Factura SII", field: "facturacion_sii", cellStyle: { width: 300, } },
-//   { title: "Fecha SII", field: "fecha_sii", cellStyle: { width: 300, } },
-//   { title: "Servicio", field: "servicio" },
-//   { title: "Neto", field: "neto" },
-//   { title: "Nº. Servicio", field: "n_servicios" },
-// ]
-
-
 const Dashboard = () => {
 
   const [filter, setFilter] = useState(false)
@@ -77,21 +68,12 @@ const Dashboard = () => {
 
   const {
     form,
-    loading,
-    response,
+    // loading,
+    // response,
     handleChange,
     handleSubmit,
   } = useFormSearch(initalForm)
 
-  // const[anchorEl, setAnchorEl] = useState(null)
-
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
 
   ///////////////// Dialog 
   const [open, setOpen] = React.useState(false);
@@ -103,6 +85,21 @@ const Dashboard = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [openD, setOpenD] = useState(false);
+
+  const handleClickD = () => {
+    setOpenD(true, { vertical: 'top', horizontal: 'center' });
+  };
+
+  const handleCloseD = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenD(false);
+  };
+
 
   return (
     <>
@@ -252,11 +249,38 @@ const Dashboard = () => {
         </div>
       </div>
 
-
       <Modal
         open={open}
         onClose={handleClose}
+        // setConfirmEmail={setConfirmEmail}
+        handleClick={handleClickD}
       />
+
+      {/* <Message
+        open={confirmEmail}
+        titleMessage="jajja"
+        message="jajaja"
+        typeAlert="alertSuccess"
+        onClose={handleCloseEmail}
+        callAction="prueba"
+        width="sm"
+      /> */}
+
+      <Snackbar 
+        open={openD} 
+        autoHideDuration={6000} 
+        onClose={handleCloseD}
+        // TransitionComponent={TransitionRight}
+        // direction="right"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right"
+       }}
+      >
+        <Alert onClose={handleCloseD } severity="success">
+          This is a success message!
+        </Alert>
+      </Snackbar>
     </>
   )
 };

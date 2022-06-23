@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CloseIcon from '@material-ui/icons/Close';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 
 import { withStyles } from '@material-ui/core/styles';
 import {
-    makeStyles,
+    // makeStyles,
     ListItemIcon,
     Checkbox,
     List,
@@ -18,6 +18,7 @@ import {
     Dialog,
     Button
 } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const dataEmail = [
     {
@@ -35,6 +36,7 @@ const styles = (theme) => ({
     root: {
         margin: 0,
         padding: theme.spacing(2),
+        backgroundColor:"red"
     },
     closeButton: {
         position: 'absolute',
@@ -45,13 +47,13 @@ const styles = (theme) => ({
 });
 
 
-const useStyles = makeStyles((theme) => ({
-    rootList: {
-        width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     rootList: {
+//         width: '100%',
+//         maxWidth: 360,
+//         backgroundColor: "blue",
+//     },
+// }));
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -72,9 +74,11 @@ const DialogTitle = withStyles(styles)((props) => {
     );
 });
 
-const Modal = ({ open, onClose, }) => {
-    const classes = useStyles();
+
+const Modal = ({ open, onClose, setConfirmEmail, handleClick}) => {
+    // const classes = useStyles();
     const [checked, setChecked] = React.useState([]);
+    const[loading, setLoading] = useState(false)
 
     const handleToggle = (value) => () => {
         const currentIndex = checked.indexOf(value);
@@ -89,6 +93,16 @@ const Modal = ({ open, onClose, }) => {
         setChecked(newChecked);
     };
 
+    const handleSubmitEmail = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            onClose();
+            handleClick();
+        }, 5000);
+        // onClose();
+        // handleClick();
+    }
     return (
         <Dialog
             open={open}
@@ -96,18 +110,19 @@ const Modal = ({ open, onClose, }) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
             TransitionComponent={Transition}
-            fullWidth="sm"
+            fullWidth
             maxWidth="sm"
         >
-            <DialogTitle id="customized-dialog-title" onClose={onClose}>
+            <DialogTitle className="px-5 pt-5" onClose={onClose}>
                 Destinatarios
             </DialogTitle>
-            <DialogContent dividers>
-                <List dense className={classes.root}>
-                    {dataEmail.map((value) => {
+
+            <DialogContent className="px-5">
+                <List>
+                    {dataEmail.map((value, index) => {
 
                         return (
-                            <ListItem key={value} divider={false}>
+                            <ListItem key={index} divider={false}>
                                 <ListItemIcon>
                                     <Checkbox
                                         edge="start"
@@ -124,15 +139,20 @@ const Modal = ({ open, onClose, }) => {
 
             </DialogContent>
 
-            <DialogActions className='py-3'>
+            <DialogActions className='px-5 pb-5'>
                 <Button
                     variant="contained"
                     size="medium"
                     // startIcon={<BsEnvelope />}
                     color="secondary"
-                    onClick={onClose}
+                    onClick={() => {
+                        // setConfirmEmail(true);
+                        // setLoading(true);
+                        // handleClick();
+                        handleSubmitEmail();
+                    }}
                 >
-                    Enviar
+                    { loading ? <CircularProgress color="inherit" size={24} />: "Enviar"}
                 </Button>
             </DialogActions>
         </Dialog>

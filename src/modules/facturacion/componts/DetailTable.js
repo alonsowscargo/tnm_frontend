@@ -1,14 +1,8 @@
 import React from 'react'
-import {
-    Button,
-    Chip,
-} from '@material-ui/core';
-
-import { MdHeadsetMic } from "react-icons/md";
+import Button from '@material-ui/core/Button';
 
 import {
     BsFileEarmarkArrowDown,
-    BsFileEarmarkText,
     BsEnvelope
 } from "react-icons/bs";
 
@@ -16,24 +10,14 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
     return (
         <div className="app-detail-table">
             <div className="app-detail-headaer">
-                <h4 className="text-small font-weight-400"></h4>
+                <div></div>
 
                 <div className="app-detail-action">
                     <Button
                         variant="outlined"
                         size="small"
-                        startIcon={<BsEnvelope />}
-                        color="primary"
-                        className="mr-2"
-                        onClick={handleClickOpen}
-                    >
-                        Email
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        size="small"
                         startIcon={<BsFileEarmarkArrowDown />}
-                        color="secondary"
+                        color="primary"
                         className="mr-2"
                     >
                         Liq
@@ -42,7 +26,7 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
                         variant="outlined"
                         size="small"
                         startIcon={<BsFileEarmarkArrowDown />}
-                        color="secondary"
+                        color="primary"
                         className="mr-2"
                     >
                         PDF SII
@@ -51,10 +35,20 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
                         variant="outlined"
                         size="small"
                         startIcon={<BsFileEarmarkArrowDown />}
-                        color="secondary"
+                        color="primary"
                         className="mr-2"
                     >
                         Zip
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<BsEnvelope />}
+                        color="secondary"
+                        className="mr-2"
+                        onClick={handleClickOpen}
+                    >
+                        Email
                     </Button>
                 </div>
             </div>
@@ -69,9 +63,6 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
                     ))
                 }
             </div>
-
-
-
         </div>
     )
 }
