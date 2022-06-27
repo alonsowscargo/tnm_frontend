@@ -3,125 +3,136 @@
 
     .MuiTypography-h3 {
         font-size: 32px;
+        // color: $color-dark;
     }
 
     .MuiTypography-h6 {
         font-size: 18px;
         font-weight: 500;
+        // color: $color-dark;
+    }
+}
+
+//  uw card.
+.MuiCard-root{
+    .MuiCardContent-root {
+        padding: 48px;
+
+        &:last-child {
+            padding-bottom: 48px;
+        }
     }
 }
 
 
 .app-border-default {
-    border-left: solid 6px #bdbdbd;
+    border-left: solid 6px $color-default;
 }
 
 .app-border-light {
-    border-left: solid 6px #ffffff;
+    border-left: solid 6px $color-light;
 }
 
 .app-border-success {
-    border-left: solid 6px #6FCF97;
+    border-left: solid 6px $color-success
 }
 
 .app-border-warning {
-    border-left: solid 6px #FFCA6B;
+    border-left: solid 6px $color-warning;
 }
 
 .app-border-danger {
-    border-left: solid 6px #C8352E;
+    border-left: solid 6px $color-danger;
 }
 
+
+
+// .cards-icon {
+//     background:  #FC959C;
+//     height: 2.25rem;
+//     width: 2.25rem;
+//     border-radius: 100%;
+//     color: #fff;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     i {
+//         font-size: 24px;
+//     }
+// }
+
+// .icon-medium {
+//     width: 28px;
+//     height: 28px;
+
+//     i {
+//         font-size: 20px;
+//     }
+//     span {
+//         font-size: 20px;
+//     }
+// }
+
+// .icon-small {
+//     width: 24px;
+//     height: 24px;
+
+//     i {
+//         font-size: 18px;
+//     }
+// }
+
+// .icon-xs {
+//     width: 14px;
+//     height: 14px;
+
+//     i {
+//         font-size: 14px;
+//     }
+// }
+
+// .icon-large {
+//     width: 34px;
+//     height: 34px;
+
+//     i {
+//         font-size: 24px;
+//     }
+// }
+
+// .icon-xl {
+//     width: 42px;
+//     height: 42px;
+
+//     i {
+//         font-size: 24px;
+//     }
+// }
 
 .icon-color-danger {
-    color: #C8352E;
+    color: $color-danger;
 }
 .icon-color-warning {
-    color: #FFCA6B;
+    color: $color-warning;
 }
 .icon-color-success {
-    color: #6FCF97;
+    color: $color-success;
 }
 .icon-color-default {
-    color: #bdbdbd;
-}
-
-
-
-.cards-icon {
-    background:  #FC959C;
-    height: 2.25rem;
-    width: 2.25rem;
-    border-radius: 100%;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    i {
-        font-size: 24px;
-    }
-}
-
-.icon-medium {
-    width: 28px;
-    height: 28px;
-
-    i {
-        font-size: 20px;
-    }
-    span {
-        font-size: 20px;
-    }
-}
-
-.icon-small {
-    width: 24px;
-    height: 24px;
-
-    i {
-        font-size: 18px;
-    }
-}
-
-.icon-xs {
-    width: 14px;
-    height: 14px;
-
-    i {
-        font-size: 14px;
-    }
-}
-
-.icon-large {
-    width: 34px;
-    height: 34px;
-
-    i {
-        font-size: 24px;
-    }
-}
-
-.icon-xl {
-    width: 42px;
-    height: 42px;
-
-    i {
-        font-size: 24px;
-    }
+    color: $color-default;
 }
 
 .text-color-success {
-    color: #6FCF97 ;
+    color: $color-success ;
 }
 .text-color-warning {
-    color: #FFCA6B ;
+    color: $color-warning ;
 }
 .text-color-default {
-    color: #bdbdbd;
+    color: $color-default;
 }
 
 .text-color-danger {
-    color: #C8352E;
+    color: $color-danger;
 }
-
