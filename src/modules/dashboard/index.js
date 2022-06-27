@@ -35,6 +35,8 @@ import {
   ListItemIcon,
   Button
 } from "@material-ui/core";
+import CardIcon from "components/Cards/CardIcon/Index";
+import CardMenu from "../../components/Cards/CardMenu/Index";
 
 const useStyles = makeStyles({
   root: {
@@ -69,13 +71,9 @@ const columns = [
   { title: "Fecha", field: "n_servicios" },
 ]
 
-// import userPng from "../../assets/images/warning.png";
-// import Loading from "components/loading/Loading";
 
 const Dashboard = () => {
   const classes = useStyles();
-  const history = useHistory();
-
 
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
@@ -163,10 +161,6 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
-  const click = () => {
-    history.push('/app/servicios-con-problemas')
-  }
-
   return (
     <>
       <div className="row">
@@ -174,113 +168,53 @@ const Dashboard = () => {
           <CardLink
             subtitle="Servicios"
             title="Con problemas"
-            handleClick={click}
             classBorder="app-border-danger"
             colorText="text-color-danger"
-            data="10"
+            data="0"
+            toLink="/app/servicios-con-problemas"
           />
         </div>
 
         <div className="col-3">
-          <Card className="app-card app-border-success py-4">
-            <CardContent className="justify-space-between py-0">
-              <div>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  Seguimientos
-                </Typography>
-                <Typography variant="h6" component="h6">
-                  Servicios para hoy
-                </Typography>
-              </div>
-
-              <Typography variant="h3" component="h6" className="text-success">
-                10
-              </Typography>
-            </CardContent>
-          </Card>
+          <CardLink
+            subtitle="Seguimientos"
+            title="Servicios para hoy"
+            classBorder="app-border-success"
+            colorText="text-color-success"
+            data="10"
+            toLink="/app/servicios-con-problemas"
+          />
         </div>
 
         <div className="col-3">
-          <Card className="app-card app-border-success py-4">
-            <CardContent className="justify-space-between py-0">
-              <div>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  Resumen
-                </Typography>
-                <Typography variant="h6" component="h6">
-                  Servicios en transito
-                </Typography>
-              </div>
-
-              <GetAppOutlinedIcon className={`icon-color-success ${classes.icon}`} />
-            </CardContent>
-          </Card>
+          <CardIcon
+            subtitle="Resumen"
+            title="Servicios en transito"
+            classBorder="app-border-success app-hover"
+            // handleClick={namefuction}
+            icon={ <GetAppOutlinedIcon className={`icon-color-success ${classes.icon}`} />}
+          />
         </div>
 
         <div className="col-3">
-          <Card className="app-card app-border-default py-4">
-
-            <CardContent className="justify-space-between py-0">
-              <div>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  Ejecutivo
-                </Typography>
-                <Typography variant="h6" component="h6">
-                  Lilian Arguedas
-                </Typography>
-              </div>
-
-
-              <IconButton
-                data-tour="uno"
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                onClick={handleClick}
-                className="app-link-nav ml-3"
-              >
-                <MoreVertIcon />
-              </IconButton>
-
-
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-                className="app-dropdown"
-                variant="selectedMenu"
-              >
-                <MenuItem component={Link} to="/app/atrina-dashboard" onClick={handleClose}>
-                  <ListItemIcon>
-                    <DashboardIcon fontSize="small" />
-                  </ListItemIcon>
-                  <Typography variant="inherit">Home</Typography>
-                </MenuItem>
-
-
-                <MenuItem component={Link} to="/app/atrina-usuario" onClick={handleClose}>
-                  <ListItemIcon>
-                    <AccountCircleIcon fontSize="small" />
-                  </ListItemIcon>
-                  <Typography variant="inherit">Usuario</Typography>
-                </MenuItem>
-              </Menu>
-
-            </CardContent>
-          </Card>
+          <CardMenu
+            subtitle="Ejecutivo"
+            title="Lilian Arguedas"
+            classBorder="app-border-default app-hover"
+            icon={<MoreVertIcon />}
+            open={anchorEl}
+            handleClick={handleClick}
+            handleClose={handleClose}
+            option={[
+              { name:'Email', icon:<DashboardIcon fontSize="small" />, toLink:""},
+              { name:'Télefono', icon:<AccountCircleIcon fontSize="small" />, toLink:"#"},
+            ]}
+          />
         </div>
       </div>
 
 
       <div className="row">
-        {/* <div className="col-6 mt-5">
-          <div className="app-graficos">
-            <h3>Programación de presentaciones</h3> 
-            <BarChart chartData={userData} />
-          </div>
-        </div> */}
-
         <div className="col-12 my-5">
           <CardBarChart
             title="Programación de presentaciones"

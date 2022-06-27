@@ -1,6 +1,17 @@
-.app-card {
-    // border-left: solid 7px #FFCA6B;
+//  reset card ui.
+.MuiCard-root{
+    .MuiCardContent-root {
+        padding: 48px;
 
+        &:last-child {
+            padding-bottom: 48px;
+        }
+    }
+}
+
+// new card
+.app-card {
+    transition: all 0.3s;
     .MuiTypography-h3 {
         font-size: 32px;
         // color: $color-dark;
@@ -13,18 +24,18 @@
     }
 }
 
-//  uw card.
-.MuiCard-root{
-    .MuiCardContent-root {
-        padding: 48px;
+// card hover
+.app-hover:hover {
+    cursor: pointer;
+    box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.212) !important;
 
-        &:last-child {
-            padding-bottom: 48px;
-        }
-    }
+     a:hover{
+        text-decoration: none;
+     }
 }
 
 
+// border
 .app-border-default {
     border-left: solid 6px $color-default;
 }
@@ -110,6 +121,7 @@
 //     }
 // }
 
+// color icon
 .icon-color-danger {
     color: $color-danger;
 }
@@ -123,6 +135,7 @@
     color: $color-default;
 }
 
+// color text
 .text-color-success {
     color: $color-success ;
 }
