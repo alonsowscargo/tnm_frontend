@@ -1,14 +1,14 @@
-import React, { string } from 'react'
+import React, {string} from 'react'
+// import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
   Typography,
-  Button
 } from "@material-ui/core";
 
-const CardButton = ({ title, subtitle, nameButton, classBorder, handleClick, colorBotton }) => {
+const CardLink = ({ title, subtitle, data, classBorder,handleClick,colorText}) => {
   return (
-    <Card className={`app-card py-4 ${classBorder}`}>
+    <Card className={`app-card py-4 ${classBorder}`} onClick={handleClick}>
       <CardContent className="justify-space-between py-0">
         <div>
           <Typography variant="body2" component="p" color="textSecondary">
@@ -20,31 +20,24 @@ const CardButton = ({ title, subtitle, nameButton, classBorder, handleClick, col
           </Typography>
         </div>
 
-        <Button
-          variant="outlined"
-          color={colorBotton}
-          onClick={handleClick}
-        >
-          {nameButton}
-        </Button>
+        <Typography variant="h3" component="h6" className={colorText}>
+          {data}
+        </Typography>
       </CardContent>
     </Card>
   )
 }
 
-CardButton.prototype = {
+CardLink.prototype = {
   title: string,
   subtitle: string,
-  nameButton: string,
   classBorder: string,
-  colorBotton: string
 }
 
-CardButton.defaultProps = {
+CardLink.defaultProps = {
   title: "Título",
   subtitle: "Sub título",
-  nameButton: "button",
   classBorder: "app-border-default",
 }
 
-export default CardButton
+export default CardLink

@@ -9,6 +9,9 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 // import BarChart from './components/BarChart'
 import CardBarChart from '../../components/Cards/CarBarChart/Index'
 import CardButton from '../../components/Cards/CardButton/Index'
+import CardLink from '../../components/Cards/CardLink/Index'
+import { useHistory } from "react-router";
+
 
 
 import { UserData } from './Data'
@@ -71,6 +74,8 @@ const columns = [
 
 const Dashboard = () => {
   const classes = useStyles();
+  const history = useHistory();
+
 
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
@@ -158,27 +163,22 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
+  const click = () => {
+    history.push('/app/servicios-con-problemas')
+  }
+
   return (
     <>
       <div className="row">
         <div className="col-3">
-          <Card className="app-card app-border-danger py-4">
-            <CardContent className="justify-space-between py-0">
-              <div>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  Servicios
-                </Typography>
-
-                <Typography variant="h6" component="h6">
-                  Con problemas
-                </Typography>
-              </div>
-
-              <Typography variant="h3" component="h6" className="text-danger">
-                0
-              </Typography>
-            </CardContent>
-          </Card>
+          <CardLink
+            subtitle="Servicios"
+            title="Con problemas"
+            handleClick={click}
+            classBorder="app-border-danger"
+            colorText="text-color-danger"
+            data="10"
+          />
         </div>
 
         <div className="col-3">
@@ -307,64 +307,10 @@ const Dashboard = () => {
             classBorder="app-border-default"
             // colorBotton="secondary"
           />
-          {/* <Card className="app-card app-border-success py-4">
-            <CardContent className="justify-space-between py-0">
-              <div>
-                <Typography variant="body2" component="p" color="textSecondary">
-                  Retiro
-                </Typography>
-                <Typography variant="h6" component="h6">
-                  Retirado y/con horario
-                </Typography>
-              </div>
-
-              <Typography variant="h3" component="h6" className="text-success">
-                10
-              </Typography>
-            </CardContent>
-          </Card> */}
-          {/* <Card>
-            <CardContent>
-              <Button
-                variant="outlined"
-                // size="small"
-                startIcon={<BsEnvelope />}
-                color="primary"
-                className="mr-2"
-              // onClick={handleClickOpen}
-              >
-                Retirado y/con horario
-              </Button>
-            </CardContent>
-          </Card> */}
         </div>
 
         <div className="col-12 mt-3 mb-5">
         <Card>
-          {/* <CardContent>
-            <h2>Retiro</h2>
-            <h3>Seleciona el tipo de retiro</h3>
-            <Button
-              variant="outlined"
-              // size="small"
-              startIcon={<BsEnvelope />}
-              color="secondary"
-              className="mr-2"
-            // onClick={handleClickOpen}
-            >
-              Retiro sin horario
-            </Button>
-            <Button
-              variant="outlined"
-              // size="small"
-              startIcon={<BsEnvelope />}
-              color="primary"
-              className="mr-2"
-            // onClick={handleClickOpen}
-            >
-              Retirado y/con horario
-            </Button>
-          </CardContent> */}
 
           <CardContent className="pt-0">
 
