@@ -1,270 +1,253 @@
 export const data = [
-    {
-        liq: '15315',
-        envio: '24/3/2022',
-        fecha_creacion: '24/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20284',
-        fecha_sii:'22/03/2022',
-        servicio: '680000',
-        neto: '680000',
-        n_servicios: '2',
+     {
+        id:'8989',
+        contenedor: 'TXGU667807-7',
+        nave: 'Msc ruby',
+        eta: '14-02-202',
+        referencia: 'OC 59889 (2) 60028 (2)',
+        cli_despacho: 'Vanni',
+        fecha_retiro:'02/03/22',
+        hora_retiro:'10:00',
+        fecha_presentacion:'04/03/22',
+        hora_presentacion:'16:00',
         detail:[
             {
-                title:'cuadrilla',
-                content:'0',
+                typo:'Saam Sai',
+                typo_title:'Retiro Full',
+                fecha:'10-03-2022',
+                hora:'12:30',
+                conductor:'Osvaldo Antonio Escalona Avedaño',
+                tracto:'LRFJ25',
+                remolque:'LHJO24'
             },
             {
-                title:'sobrepeso',
-                content:'0',
+                typo:'San Ignacio 850, Quilicura',
+                typo_title:'Almaceje',
+                fecha:'15-03-2022',
+                hora:'08:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             },
             {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
+                typo:'DYC VALPARAIS',
+                typo_title:'Presentación Cliente',
+                fecha:'15-03-2022',
+                hora:'14:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             }
         ]
     },
     {
-        liq: '15310',
-        envio: '21/3/2022',
-        fecha_creacion: '18/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20182',
-        fecha_sii:'18/03/2022',
-        servicio: '520000',
-        neto: '530000',
-        n_servicios: '2',
+        id:'8989',
+        contenedor: 'OC 59235-59236',
+        nave: 'Msc ruby',
+        eta: '14-02-202',
+        referencia: 'OC 59889 (2) 60028 (2)',
+        cli_despacho: 'Vanni',
+        fecha_retiro:'02/03/22',
+        hora_retiro:'10:00',
+        fecha_presentacion:'04/03/22',
+        hora_presentacion:'16:00',
         detail:[
             {
-                title:'cuadrilla',
-                content:'0',
+                typo:'Saam Sai',
+                typo_title:'Retiro Full',
+                fecha:'10-03-2022',
+                hora:'12:30',
+                conductor:'Osvaldo Antonio Escalona Avedaño',
+                tracto:'LRFJ25',
+                remolque:'LHJO24'
             },
             {
-                title:'sobrepeso',
-                content:'0',
+                typo:'San Ignacio 850, Quilicura',
+                typo_title:'Almaceje',
+                fecha:'15-03-2022',
+                hora:'08:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             },
             {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
+                typo:'DYC VALPARAIS',
+                typo_title:'Presentación Cliente',
+                fecha:'15-03-2022',
+                hora:'14:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             }
         ]
     },
     {
-        liq: '15309',
-        envio: '24/3/2022',
-        fecha_creacion: '24/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20284',
-        fecha_sii:'22/03/2022',
-        servicio: '680000',
-        neto: '680000',
-        n_servicios: '2',
+        id:'8989',
+        contenedor: 'TXGU667807-7',
+        nave: 'Msc ruby',
+        eta: '14-02-202',
+        referencia: 'OC 59158 (1) // 56096 (3) // 58801 (6)',
+        cli_despacho: 'Vanni',
+        fecha_retiro:'02/03/22',
+        hora_retiro:'10:00',
+        fecha_presentacion:'04/03/22',
+        hora_presentacion:'16:00',
         detail:[
             {
-                title:'cuadrilla',
-                content:'0',
+                typo:'Saam Sai',
+                typo_title:'Retiro Full',
+                fecha:'10-03-2022',
+                hora:'12:30',
+                conductor:'Osvaldo Antonio Escalona Avedaño',
+                tracto:'LRFJ25',
+                remolque:'LHJO24'
             },
             {
-                title:'sobrepeso',
-                content:'0',
+                typo:'San Ignacio 850, Quilicura',
+                typo_title:'Almaceje',
+                fecha:'15-03-2022',
+                hora:'08:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             },
             {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
+                typo:'DYC VALPARAIS',
+                typo_title:'Presentación Cliente',
+                fecha:'15-03-2022',
+                hora:'14:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             }
         ]
     },
     {
-        liq: '15308',
-        envio: '21/3/2022',
-        fecha_creacion: '18/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20182',
-        fecha_sii:'18/03/2022',
-        servicio: '520000',
-        neto: '530000',
-        n_servicios: '2',
+        id:'8989',
+        contenedor: 'TXGU667807-7',
+        nave: 'Msc ruby',
+        eta: '14-02-202',
+        referencia: 'OC 59889 (2) 60028 (2)',
+        cli_despacho: 'Vanni',
+        fecha_retiro:'02/03/22',
+        hora_retiro:'10:00',
+        fecha_presentacion:'04/03/22',
+        hora_presentacion:'16:00',
         detail:[
             {
-                title:'cuadrilla',
-                content:'0',
+                typo:'Saam Sai',
+                typo_title:'Retiro Full',
+                fecha:'10-03-2022',
+                hora:'12:30',
+                conductor:'Osvaldo Antonio Escalona Avedaño',
+                tracto:'LRFJ25',
+                remolque:'LHJO24'
             },
             {
-                title:'sobrepeso',
-                content:'0',
+                typo:'San Ignacio 850, Quilicura',
+                typo_title:'Almaceje',
+                fecha:'15-03-2022',
+                hora:'08:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             },
             {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
+                typo:'DYC VALPARAIS',
+                typo_title:'Presentación Cliente',
+                fecha:'15-03-2022',
+                hora:'14:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             }
         ]
     },
     {
-        liq: '15307',
-        envio: '24/3/2022',
-        fecha_creacion: '24/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20284',
-        fecha_sii:'22/03/2022',
-        servicio: '680000',
-        neto: '680000',
-        n_servicios: '2',
+        id:'8989',
+        contenedor: 'TXGU667807-7',
+        nave: 'Msc ruby',
+        eta: '14-02-202',
+        referencia: 'OC 59889 (2) 60028 (2)',
+        cli_despacho: 'Vanni',
+        fecha_retiro:'02/03/22',
+        hora_retiro:'10:00',
+        fecha_presentacion:'04/03/22',
+        hora_presentacion:'16:00',
         detail:[
             {
-                title:'cuadrilla',
-                content:'0',
+                typo:'Saam Sai',
+                typo_title:'Retiro Full',
+                fecha:'10-03-2022',
+                hora:'12:30',
+                conductor:'Osvaldo Antonio Escalona Avedaño',
+                tracto:'LRFJ25',
+                remolque:'LHJO24'
             },
             {
-                title:'sobrepeso',
-                content:'0',
+                typo:'San Ignacio 850, Quilicura',
+                typo_title:'Almaceje',
+                fecha:'15-03-2022',
+                hora:'08:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             },
             {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
-    },
-    {
-        liq: '15306',
-        envio: '21/3/2022',
-        fecha_creacion: '18/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20182',
-        fecha_sii:'18/03/2022',
-        servicio: '520000',
-        neto: '530000',
-        n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
-    },
-    {
-        liq: '15304',
-        envio: '24/3/2022',
-        fecha_creacion: '24/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20284',
-        fecha_sii:'22/03/2022',
-        servicio: '680000',
-        neto: '680000',
-        n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
-    },
-    {
-        liq: '15303',
-        envio: '21/3/2022',
-        fecha_creacion: '18/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20182',
-        fecha_sii:'18/03/2022',
-        servicio: '520000',
-        neto: '530000',
-        n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
+                typo:'DYC VALPARAIS',
+                typo_title:'Presentación Cliente',
+                fecha:'15-03-2022',
+                hora:'14:30',
+                conductor:'Sergo Bastian Vega Vega',
+                tracto:'LRFP24',
+                remolque:''
             }
         ]
     },
 ]
+
+// {
+//     nave: 'Msc ruby',
+//     tipo: 'Dry',
+//     servicio:'IMPO',
+//     tamano: 40,
+//     eta: '14-02-202',
+//     contenedor: 'TXGU667807-7',
+//     cliente_factura: 'Vanni',
+//     cliente_despacho: 'Vanni',
+//     estado: 'pendiente',
+//     referencia: 'OC 59158 (1) // 56096 (3) // 58801 (6)',
+//     retiro_full_vacio: 'Saam sai',
+//     fecha_retiro: '22/0%/22',
+//     presentación_cliente: 'San ignacio 850, Quilicura',
+//     fecha_presentación: '22/0%/22',
+//     devolución_stacking: 'Contopsa sai',
+//     fecha_devolucion: '22/0%/22',
+//     dias_libres: '5',
+//     entregras:[
+//         {
+//             typo:'Saam Sai',
+//             typo_title:'Retiro Full',
+//             fecha:'10-03-2022',
+//             hora:'12:30',
+//             conductor:'Osvaldo Antonio Escalona Avedaño',
+//             tracto:'LRFJ25'
+//         },
+//         {
+//             typo:'San Ignacio 850, Quilicura',
+//             typo_title:'Presentación Cliente',
+//             fecha:'15-03-2022',
+//             hora:'08:30',
+//             conductor:'Sergo Bastian Vega Vega',
+//             tracto:'LRFP24'
+//         },
+//         {
+//             typo:'DYC VALPARAIS',
+//             typo_title:'Presentación Cliente',
+//             fecha:'15-03-2022',
+//             hora:'14:30',
+//             conductor:'Sergo Bastian Vega Vega',
+//             tracto:'LRFP24'
+//         }
+//     ]
+// },

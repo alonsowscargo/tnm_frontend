@@ -1,18 +1,23 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
+// import {
+//     BsFileEarmarkArrowDown,
+//     BsEnvelope
+// } from "react-icons/bs";
 
-import {
-    BsFileEarmarkArrowDown,
-    BsEnvelope
-} from "react-icons/bs";
-
-const DetailTable = ({ rowData, handleClickOpen }) => {
+const DetailTable = ({ rowData }) => {
     return (
         <div className="app-detail-table">
             <div className="app-detail-headaer">
-                <div></div>
+                <Chip 
+                    label={`ID ${rowData.id}`}
+                    color="secondary" 
+                    variant="outlined" 
+                    size="small"
+                />
 
-                <div className="app-detail-action">
+                {/* <div className="app-detail-action">
                     <Button
                         variant="outlined"
                         size="small"
@@ -22,47 +27,58 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
                     >
                         Liq
                     </Button>
-                    <Button
-                        variant="outlined"
-                        size="small"
-                        startIcon={<BsFileEarmarkArrowDown />}
-                        color="primary"
-                        className="mr-2"
-                    >
-                        PDF SII
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        size="small"
-                        startIcon={<BsFileEarmarkArrowDown />}
-                        color="primary"
-                        className="mr-2"
-                    >
-                        Zip
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        size="small"
-                        startIcon={<BsEnvelope />}
-                        color="secondary"
-                        className="mr-2"
-                        onClick={handleClickOpen}
-                    >
-                        Email
-                    </Button>
+                </div> */}
+            </div>
+
+            <div className="app-detail-item">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-500">Lugar</h4>
+                </div>
+
+                <div className="app-item-20">
+                    <h4 className="text-xs font-weight-500">Fecha</h4>
+                </div>
+
+                <div className="app-item-25">
+                    <h4 className="text-xs font-weight-500">Conductor</h4>
+                </div>
+
+                <div className="app-item-15">
+                    <h4 className="text-xs font-weight-500">Tracto</h4>
+                </div>
+                <div className="app-item-15">
+                    <h4 className="text-xs font-weight-500">Remolque</h4>
                 </div>
             </div>
 
-            <div className='app-item-service'>
-                {
-                    rowData.detail.map((item, index) => (
-                        <div className="app-item" key={index}>
-                            <h3 className="text-xs font-weight-500">{item.title}</h3>
-                            <h4 className="text-xs font-weight-300">{item.content}</h4>
+
+            {
+                rowData.detail.map((item, index) => (
+                    <div className="app-detail-item app-border" key={index}>
+                        <div className="app-item-40">
+                            <h4 className="text-xs font-weight-400">
+                                {item.typo_title} <span className="font-weight-300">{item.typo}</span>
+                            </h4>
                         </div>
-                    ))
-                }
-            </div>
+
+                        <div className="app-item-20">
+                            <h5 className="text-xs font-weight-300">{item.fecha} / {item.hora}hrs</h5>
+                        </div>
+
+                        <div className="app-item-25">
+                            <h5 className="text-xs font-weight-300">{item.conductor}</h5>
+                        </div>
+
+                        <div className="app-item-15">
+                            <h5 className="text-xs font-weight-300">{item.tracto}</h5>
+                        </div>
+
+                        <div className="app-item-15">
+                            <h5 className="text-xs font-weight-300">{item.remolque ? item.remolque: 'Sin información'}</h5>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     )
 }

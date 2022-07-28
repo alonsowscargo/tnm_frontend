@@ -12,6 +12,7 @@
 // new card
 .app-card {
     transition: all 0.3s;
+    background: red;
     .MuiTypography-h3 {
         font-size: 32px;
         // color: $color-dark;
@@ -34,28 +35,42 @@
      }
 }
 
+// // card retiro
 
 // border
 .app-border-default {
     border-left: solid 6px $color-default;
 }
-
 .app-border-light {
     border-left: solid 6px $color-light;
 }
-
 .app-border-success {
     border-left: solid 6px $color-success
 }
-
 .app-border-warning {
     border-left: solid 6px $color-warning;
 }
-
 .app-border-danger {
     border-left: solid 6px $color-danger;
 }
+.app-border-primary {
+    border-left: solid 6px $color-primary;
+}
+.app-border-purple {
+    border-left: solid 6px $color-purple
+}
 
+
+
+
+// .icon-small {
+//     width: 24px;
+//     height: 24px;
+
+//     i {
+//         font-size: 18px;
+//     }
+// }
 
 
 // .cards-icon {
@@ -134,6 +149,12 @@
 .icon-color-default {
     color: $color-default;
 }
+.icon-color-primary {
+    color: $color-primary;
+}
+.icon-color-purple {
+    color: $color-purple;
+}
 
 // color text
 .text-color-success {
@@ -145,7 +166,14 @@
 .text-color-default {
     color: $color-default;
 }
-
 .text-color-danger {
     color: $color-danger;
 }
+.text-color-primary {
+    color: $color-primary;
+}
+.text-color-purple {
+    color: $color-purple;
+}
+
+

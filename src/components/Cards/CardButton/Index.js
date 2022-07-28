@@ -8,8 +8,8 @@ import {
 
 const CardButton = ({ title, subtitle, nameButton, classBorder, handleClick, colorBotton }) => {
   return (
-    <Card className={`app-card py-4 ${classBorder}`}>
-      <CardContent className="justify-space-between py-0">
+    <Card className={`app-card ${classBorder}`}>
+      <CardContent className="justify-space-between py-4">
         <div>
           <Typography variant="body2" component="p" color="textSecondary">
             {subtitle}

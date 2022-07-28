@@ -54,6 +54,7 @@ const Modal = ({ open, onClose, }) => {
             <DialogTitle id="customized-dialog-title" onClose={onClose}>
                 Detalle del servicio
             </DialogTitle>
+            
             <DialogContent dividers>
                 {/* <div className='app-item-service'>
                     <div className="app-item">

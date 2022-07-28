@@ -19,21 +19,22 @@ import { dataTable } from './dataTable'
 import MaterialTable from 'material-table';
 
 
-import {
-  // BsFileEarmarkArrowDown,
-  BsEnvelope
-} from "react-icons/bs";
+// import {
+//   // BsFileEarmarkArrowDown,
+//   BsEnvelope
+// } from "react-icons/bs";
 
 import {
   Card,
   CardContent,
   Typography,
   makeStyles,
-  IconButton,
-  Menu,
-  MenuItem,
-  ListItemIcon,
   Button
+  // IconButton,
+  // Menu,
+  // MenuItem,
+  // ListItemIcon,
+  // Button
 } from "@material-ui/core";
 import CardIcon from "components/Cards/CardIcon/Index";
 import CardMenu from "../../components/Cards/CardMenu/Index";
@@ -161,6 +162,47 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
 
+
+  const [prueba, setPrueba] = useState(false)
+
+  const clickPrueba = () => {
+    setPrueba(true)
+  }
+
+  const [visible, setVisible] = useState({
+    detalle: false,
+    pagos: true,
+    cotizacion: true,
+})
+
+  // mostar componente
+  const handleChange = (newValue) => {
+    switch (newValue) {
+        case 1:
+            setVisible({
+                detalle: false,
+                pagos: true,
+                cotizacion: true
+            });
+            break;
+        case 2:
+            setVisible({
+                detalle: true,
+                pagos: false,
+                cotizacion: true
+            });
+            break;
+        case 3:
+            setVisible({
+                detalle: true,
+                pagos: true,
+                cotizacion: false
+            });
+            break;
+    }
+};
+
+
   return (
     <>
       <div className="row">
@@ -192,7 +234,7 @@ const Dashboard = () => {
             title="Servicios en transito"
             classBorder="app-border-success app-hover"
             // handleClick={namefuction}
-            icon={ <GetAppOutlinedIcon className={`icon-color-success ${classes.icon}`} />}
+            icon={<GetAppOutlinedIcon className={`icon-color-success ${classes.icon}`} />}
           />
         </div>
 
@@ -206,8 +248,8 @@ const Dashboard = () => {
             handleClick={handleClick}
             handleClose={handleClose}
             option={[
-              { name:'Email', icon:<DashboardIcon fontSize="small" />, toLink:""},
-              { name:'Télefono', icon:<AccountCircleIcon fontSize="small" />, toLink:"#"},
+              { name: 'Email', icon: <DashboardIcon fontSize="small" />, toLink: "" },
+              { name: 'Télefono', icon: <AccountCircleIcon fontSize="small" />, toLink: "#" },
             ]}
           />
         </div>
@@ -223,27 +265,181 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className="col-6">
-          <CardButton
-            title="Sin horario de retiro" 
+
+
+        <div className="col-12">
+        <div className='app-tags bg-ligh mb-4'>
+                <div className="app-buttons">
+                    <Button
+                        className={`button button-small ${visible.detalle === false ? 'button-danger' : 'button-gray'}`}
+                        onClick={(e) => handleChange(1)}
+                    >
+                        Detalle logístico
+                    </Button>
+
+                    <Button
+                        className={`button button-small mx-2 ${visible.pagos === false ? 'button-danger' : 'button-gray'}`}
+                        onClick={(e) => handleChange(2)}
+                    >
+                        Pagos
+                    </Button>
+
+                    <Button
+                            className={`button button-small ${visible.cotizacion === false ? 'button-danger' : 'button-gray'}`}
+                            onClick={(e) => handleChange(3)}
+                        >
+                            Cotización vigente
+                    </Button>
+                </div>
+            </div>
+
+            <div className='border my-4'></div>
+
+            <div hidden={visible.detalle}>
+                2
+            </div>
+
+            <div hidden={visible.pagos}>
+                3
+            </div>
+
+            <div hidden={visible.cotizacion}>
+                4
+            </div>
+          {/* <Card className="app-card bg-purple">
+
+            <CardContent>
+
+              Selelcion un tipo d eretiro
+
+            </CardContent>
+          </Card> */}
+          {/* <Typography variant="body2" component="h2" color="textSecondary">
+            Selecion tipo d eretiro
+          </Typography> */}
+        </div>
+
+
+        <div className="col-4">
+          {/* <CardButton
+            title="Sin horario de retiro"
             subtitle="Retiro"
             nameButton="Ver detalle"
             classBorder="app-border-danger"
             colorBotton="secondary"
+          /> */}
+
+          <CardIcon
+            subtitle="Retiro"
+            title="Sin horario de retiro"
+            classBorder="app-border-primary app-hover"
+            // handleClick={namefuction}
+            icon={<GetAppOutlinedIcon className={`icon-color-primary ${classes.icon}`} />}
           />
         </div>
 
-        <div className="col-6">
-          <CardButton
-            title="Retirado y/con horario" 
+        <div className="col-4">
+          {/* <CardButton
+            title="Retirado y/con horario"
             subtitle="Retiro"
             nameButton="Ver detalle"
             classBorder="app-border-default"
-            // colorBotton="secondary"
+          // colorBotton="secondary"
+          /> */}
+
+          <CardIcon
+            subtitle="Retiro"
+            title="Retirado y/con horario"
+            classBorder="app-border-purple app-hover"
+            handleClick={clickPrueba}
+            icon={<GetAppOutlinedIcon className={`icon-color-purple ${classes.icon}`} />}
           />
         </div>
 
-        <div className="col-12 mt-3 mb-5">
+        {
+          prueba &&
+          <div className="col-12 mt-3">
+            <div className="app-table">
+              <Button>uno</Button>
+              <div className="app-table-sticky">
+                <MaterialTable
+                  title="Retiro sin horario"
+                  columns={columns}
+                  data={dataTable}
+                  options={{
+                    exportButton: false,
+                    filtering: false,
+                    search: false,
+                    paging: false,
+                    maxBodyHeight: '40vh',
+                  }}
+                  localization={{
+                    body: {
+                      emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
+                    }
+                  }}
+                />
+              </div>
+            </div>
+            {/* <div className="app-table">
+              <MaterialTable
+                title="Retiro sin horario"
+                columns={columns}
+                data={dataTable}
+                options={{
+                  exportButton: false,
+                  filtering: false,
+                  search: false,
+                  paging: false,
+                  detailPanelType: "single",
+                  maxBodyHeight: '80vh',
+                }}
+                localization={{
+                  body: {
+                    emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
+                  }
+                }}
+              />
+            </div> */}
+          </div>
+        }
+
+        {/* <div className="col-12 mt-3 mb-5">
+        <Card>
+
+          <CardContent className="pt-0">
+
+          Selelcion un tipo d eretiro
+
+          </CardContent>
+        </Card>
+        </div>  */}
+
+        {/* <div className="col-12">
+          <div className="app-table">
+
+            <MaterialTable
+              title="Retiro sin horario"
+              columns={columns}
+              data={dataTable}
+              options={{
+                exportButton: false,
+                filtering: false,
+                search: false,
+                paging: false,
+                detailPanelType: "single",
+                maxBodyHeight: '80vh',
+              }}
+              localization={{
+                body: {
+                  emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
+                }
+              }}
+            />
+          </div>
+        </div> */}
+
+        {/* <div className="col-12 mt-3 mb-5">
         <Card>
 
           <CardContent className="pt-0">
@@ -254,9 +450,6 @@ const Dashboard = () => {
                 title="Retiro sin horario"
                 columns={columns}
                 data={dataTable}
-                // onRowClick={(event, rowData, togglePanel) => {
-                //   togglePanel();
-                // }}
                 options={{
                   exportButton: false,
                   filtering: false,
@@ -275,40 +468,11 @@ const Dashboard = () => {
 
           </CardContent>
         </Card>
-
-          {/* <BarChart chartData={userData} /> */}
-
-          {/* <div className="app-table mt-5">
-            <div className="app-table-sticky">
-              <MaterialTable
-                title=""
-                columns={columns}
-                data={dataTable}
-                // onRowClick={(event, rowData, togglePanel) => {
-                //   togglePanel();
-                // }}
-                options={{
-                  exportButton: false,
-                  filtering: false,
-                  search: false,
-                  paging: false,
-                  detailPanelType: "single",
-                  maxBodyHeight: '80vh',
-                }}
-                localization={{
-                  body: {
-                    emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
-                  }
-                }}
-              />
-            </div>
-          </div>  */}
-        </div>
-
+        </div> */}
       </div>
 
 
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-6">
           <CardBarChart
             title="Presentaciones"

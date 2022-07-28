@@ -1,21 +1,6 @@
 {
   "santos": [
     {
-      "id": 1,
-      "client_dispatch": "hjnmbm,b",
-      "container": "MRKU469325-9",
-      "type": "Dry",
-      "size": "80",
-      "ship": "CLIFFORD MAERSK",
-      "eta": "37/05/2022",
-      "reference": "OC 59653",
-      "service": "impo",
-      "free_days": "67",
-      "deadline_date": "no data",
-      "number_reservation": "105",
-      "kg": "300555"
-    },
-    {
       "id": 2,
       "client_dispatch": "hjnmbm,b",
       "container": "MRKU469325-9",
@@ -25,7 +10,7 @@
       "eta": "37/05/2022",
       "reference": "OC 59653",
       "service": "impo",
-      "free_days": "67",
+      "free_days": "76867",
       "deadline_date": "no data",
       "number_reservation": "105",
       "kg": "300555"
@@ -41,21 +26,6 @@
       "reference": "OC 59653",
       "service": "impo",
       "free_days": "67",
-      "deadline_date": "no data",
-      "number_reservation": "105",
-      "kg": "300555"
-    },
-    {
-      "id": 4,
-      "client_dispatch": "hjnmbm,b",
-      "container": "MRKU469325-9",
-      "type": "Dry",
-      "size": "80",
-      "ship": "CLIFFORD MAERSK",
-      "eta": "37/05/2022",
-      "reference": "OC 59653",
-      "service": "impo",
-      "free_days": "6",
       "deadline_date": "no data",
       "number_reservation": "105",
       "kg": "300555"

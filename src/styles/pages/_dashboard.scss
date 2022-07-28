@@ -84,10 +84,12 @@
   }
 }
 
-// graficos
-.app-graficos {
-  background-color: #fff;
-  padding: 48px;
-  // width: 60%;
-  // height: 400px;
+
+
+// tabkle retiro
+.app-table-retiro {
+  // background-color: blue;
+  height: 600px;
+  overflow: scroll;
+  border-bottom: solid 6px $color-purple;
 }
