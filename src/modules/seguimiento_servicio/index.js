@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useForm} from "../../hooks/useForm"
 import { data } from "./data"
 import { useHistory } from "react-router";
 import MaterialTable from 'material-table';
@@ -38,19 +39,53 @@ const columns = [
 ]
 
 const initialForm = {
-  name: '',
+  comentario: '',
+}
+
+const validationsForm = (form) => {
+  const {
+    comentario
+  } = form;
+
+  let errors = {};
+
+  if(!comentario.trim()){
+      errors.comentario = "campo obligatorio";
+  }
+
+  return errors
 }
 
 const Dashboard = () => {
   const history = useHistory();
+  const {
+    form,
+    loading,
+    errors,
+    response,
+    newData,
+    setForm,
+    setErrors,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    // handleCheckend 
+} = useForm(initialForm, validationsForm)
+
   const [openModal, setOpenModal] = useState(false);
-  const [form, setForm] = useState(initialForm)
+//   const [form, setForm] = useState(initialForm)
+//   const[errors, setErrors] = useState({
+//     error:"errorDefault"
+// })
+
+// const [comentarios, setComentarios] = useState([])
 
   const handleOpenModal = () => {
     setOpenModal(true);
   };
   const handleCloseModal = () => {
     setOpenModal(false);
+    setErrors({ error: "errorDefault"})
     setForm(initialForm)
   };
 
@@ -58,6 +93,7 @@ const Dashboard = () => {
   const handleclick = () => {
     history.push("/app/inicio")
   }
+
 
   return (
     <>
@@ -101,10 +137,23 @@ const Dashboard = () => {
 
       <Modal
         open={openModal}
-        initialForm={initialForm}
-        form={form}
-        setForm={setForm}
+        // setForm={setForm}
         onClose={handleCloseModal}
+        ///
+        // handleChange={handleChange}
+        // handleBlur={handleBlur}
+        // validateForm={validateForm}
+        // handleSubmit={handleSubmit}
+        // comentarios={comentarios}
+        form={form}
+        loading={loading}
+        errors={errors}
+        response={response}
+        newData={newData}
+        // setErrors={},
+        handleChange={handleChange}
+        handleBlur={handleBlur}
+        handleSubmit={handleSubmit}
 
       />
 

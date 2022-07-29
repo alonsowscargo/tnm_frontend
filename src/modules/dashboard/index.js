@@ -1,59 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"
-// import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-// import SystemUpdateAltOutlinedIcon from '@material-ui/icons/SystemUpdateAltOutlined';
+import { UserData } from './Data'
+import { dataTable } from './dataTable'
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-// import BarChart from './components/BarChart'
 import CardBarChart from '../../components/Cards/CarBarChart/Index'
-import CardButton from '../../components/Cards/CardButton/Index'
 import CardLink from '../../components/Cards/CardLink/Index'
-import { useHistory } from "react-router";
-
-
-
-import { UserData } from './Data'
-import { dataTable } from './dataTable'
-import MaterialTable from 'material-table';
-
-
-// import {
-//   // BsFileEarmarkArrowDown,
-//   BsEnvelope
-// } from "react-icons/bs";
-
-import {
-  // Card,
-  // CardContent,
-  // Typography,
-  makeStyles,
-  Button
-  // IconButton,
-  // Menu,
-  // MenuItem,
-  // ListItemIcon,
-  // Button
-} from "@material-ui/core";
-
 import CardIcon from "components/Cards/CardIcon/Index";
 import CardMenu from "../../components/Cards/CardMenu/Index";
+import MaterialTable from 'material-table';
+
+import {
+  makeStyles,
+} from "@material-ui/core";
+
 
 const useStyles = makeStyles({
-  root: {
-    // minWidth: 275,
-    marginTop: "48px",
-    marginBottom: "48px"
-    // border:"solid 1px rgba(0, 0, 0, 0.54)"
-  },
-  title: {
-    fontSize: 12,
-    margin: 0
-  },
-  pos: {
-    marginBottom: 12,
-  },
   icon: {
     fontSize: 38,
   }
@@ -170,38 +133,38 @@ const Dashboard = () => {
     setPrueba(true)
   }
 
-  const [visible, setVisible] = useState({
-    detalle: false,
-    pagos: true,
-    cotizacion: true,
-})
+//   const [visible, setVisible] = useState({
+//     detalle: false,
+//     pagos: true,
+//     cotizacion: true,
+// })
 
-  // mostar componente
-  const handleChange = (newValue) => {
-    switch (newValue) {
-        case 1:
-            setVisible({
-                detalle: false,
-                pagos: true,
-                cotizacion: true
-            });
-            break;
-        case 2:
-            setVisible({
-                detalle: true,
-                pagos: false,
-                cotizacion: true
-            });
-            break;
-        case 3:
-            setVisible({
-                detalle: true,
-                pagos: true,
-                cotizacion: false
-            });
-            break;
-    }
-};
+//   // mostar componente
+//   const handleChange = (newValue) => {
+//     switch (newValue) {
+//         case 1:
+//             setVisible({
+//                 detalle: false,
+//                 pagos: true,
+//                 cotizacion: true
+//             });
+//             break;
+//         case 2:
+//             setVisible({
+//                 detalle: true,
+//                 pagos: false,
+//                 cotizacion: true
+//             });
+//             break;
+//         case 3:
+//             setVisible({
+//                 detalle: true,
+//                 pagos: true,
+//                 cotizacion: false
+//             });
+//             break;
+//     }
+// };
 
 
   return (
@@ -268,7 +231,7 @@ const Dashboard = () => {
 
 
 
-        <div className="col-12">
+        {/* <div className="col-12">
         <div className='app-tags bg-ligh mb-4'>
                 <div className="app-buttons">
                     <Button
@@ -307,29 +270,10 @@ const Dashboard = () => {
             <div hidden={visible.cotizacion}>
                 4
             </div>
-          {/* <Card className="app-card bg-purple">
-
-            <CardContent>
-
-              Selelcion un tipo d eretiro
-
-            </CardContent>
-          </Card> */}
-          {/* <Typography variant="body2" component="h2" color="textSecondary">
-            Selecion tipo d eretiro
-          </Typography> */}
-        </div>
+        </div> */}
 
 
-        <div className="col-4">
-          {/* <CardButton
-            title="Sin horario de retiro"
-            subtitle="Retiro"
-            nameButton="Ver detalle"
-            classBorder="app-border-danger"
-            colorBotton="secondary"
-          /> */}
-
+        <div className="col-6">
           <CardIcon
             subtitle="Retiro"
             title="Sin horario de retiro"
@@ -339,7 +283,7 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className="col-4">
+        <div className="col-6">
           {/* <CardButton
             title="Retirado y/con horario"
             subtitle="Retiro"
@@ -361,7 +305,7 @@ const Dashboard = () => {
           prueba &&
           <div className="col-12 mt-3">
             <div className="app-table">
-              <Button>uno</Button>
+              {/* <Button>uno</Button> */}
               <div className="app-table-sticky">
                 <MaterialTable
                   title="Retiro sin horario"
