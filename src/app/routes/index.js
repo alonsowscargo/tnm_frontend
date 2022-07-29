@@ -7,6 +7,7 @@ const Routes = ({match}) =>
     <Switch>
         <Route path={`${match.url}/inicio`} component={asyncComponent(() => import('../../modules/dashboard/Routes'))} exact/>
         <Route path={`${match.url}/servicios-con-problemas`} component={asyncComponent(() => import('../../modules/servicio_con_problema/Routes.js'))} exact/>
+        <Route path={`${match.url}/seguimiento-servicio`} component={asyncComponent(() => import('../../modules/seguimiento_servicio/Routes.js'))} exact/>
         <Route path={`${match.url}/mantenedor-usuarios`} component={asyncComponent(() => import('../../modules/usuarios/Routes.js'))} exact/>
         <Route path={`${match.url}/reportes`} component={asyncComponent(() => import('../../modules/reportes/Routes.js'))} exact/>
         <Route path={`${match.url}/facturacion`} component={asyncComponent(() => import('../../modules/facturacion/Routes.js'))} exact/>

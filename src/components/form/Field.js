@@ -22,7 +22,6 @@ const Field = ({ label, type, placeholder, onChange, name, value, fullWidth, val
         helperText={
           validations && validations
         }
-      // size="small"
       />
     </>
   )

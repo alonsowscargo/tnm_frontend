@@ -285,18 +285,18 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 900 !important;
 }
 
-.text-light{
-  color: #fff !important;
-}
-.text-dark {
-  color: #3c3c3c;
-}
+// .text-light{
+//   color: #fff !important;
+// }
+// .text-dark {
+//   color: #3c3c3c;
+// }
 .text-center {
   text-align: center;
 }
-.text-blue {
-  color: blue;
-}
+// .text-blue {
+//   color: blue;
+// }
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -313,36 +313,29 @@ h1, h2, h3, h4, h5, h6,
     color: #0780bd;
   }
 }
-.link-whatsApp {
-  color: #6FCF97 !important;
+ .text-italic {
+  font-style: italic;
+ }
+// .link-whatsApp {
+//   color: #6FCF97 !important;
 
-  &:hover {
-    color: #BBE8CE;
-  }
-}
+//   &:hover {
+//     color: #BBE8CE;
+//   }
+// }
 
-.link-phone {
-  font-weight: 500;
-  text-decoration: underline;
-  font-size: 14px;
-  color: #8F8F8F;
-
-
-  &:hover {
-    color: #a8a7a7;
-  }
-}
+// .link-phone {
+//   font-weight: 500;
+//   text-decoration: underline;
+//   font-size: 14px;
+//   color: #8F8F8F;
 
 
-.text-color {
-  @include phone  {
-      color: #fff;
-  }
-}
+//   &:hover {
+//     color: #a8a7a7;
+//   }
+// }
 
-.text-danger {
-  color: #C8352E !important;
-}
 
 // .padding-subtitle {
 //   margin-top: 3rem;

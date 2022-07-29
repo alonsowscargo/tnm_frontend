@@ -26,9 +26,9 @@
 //     }
 // }
 
-.app-item-bg {
+.app-list {
     padding: 12px 16px;
-    background:#F4F4F7;
+    background:$color-light;
     display: flex;
 
     // @include phone {
@@ -40,7 +40,7 @@
     // }
 
     &:nth-child(even) {
-        background:#fff;
+        background:$color-gray;
     }
 }
 

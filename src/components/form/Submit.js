@@ -10,10 +10,10 @@ const Submit = ({ value, type, handleOne, variant, size, color, className}) => {
             color={color}
             className={className}
             fullWidth
-            onClick={() => {
-                handleOne();
-                // handleTwo();
-            }}
+            // onClick={() => {
+            //     handleOne();
+            //     // handleTwo();
+            // }}
         >
             {value}
         </Button>

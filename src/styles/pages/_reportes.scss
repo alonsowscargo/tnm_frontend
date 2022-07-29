@@ -1,21 +1,21 @@
 // .app-item {
-.app-list {
-    background: #fff;
-    padding: 12px 0;
-    box-shadow: $box-shadow-new;
-    height: 100vh;
-    overflow: scroll;
+// .app-list {
+//     background: #fff;
+//     padding: 12px 0;
+//     box-shadow: $box-shadow-new;
+//     height: 100vh;
+//     overflow: scroll;
 
-    @include phone {
-        padding: 12px 8px;
-    }
+//     @include phone {
+//         padding: 12px 8px;
+//     }
 
-    .app-item {
-        border-bottom: solid 2px #F4F4F7;
-        cursor: pointer;
+//     .app-item {
+//         border-bottom: solid 2px #F4F4F7;
+//         cursor: pointer;
 
-        &:hover {
-            background: #FAF9F8;
-        }
-    }
-}
+//         &:hover {
+//             background: #FAF9F8;
+//         }
+//     }
+// }

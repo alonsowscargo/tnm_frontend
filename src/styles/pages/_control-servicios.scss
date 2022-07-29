@@ -73,10 +73,10 @@
 
 .text-one {
     color: #8C3CB1;
-    font-weight: 600;
-    border-left: #8C3CB1 4px solid;
-    padding-left: 8px;
-    line-height: 12px;
+    // font-weight: 600;
+    // border-left: #8C3CB1 4px solid;
+    // padding-left: 8px;
+    // line-height: 12px;
     font-size: 12px;
     // width: 85% !important;
     // padding: 2px 0;
@@ -91,4 +91,14 @@
 
 .text-three {
     color: #D4D4D4;
+}
+
+
+.mapa-seguimiento-servicio {
+    background-color: #fafafa;
+    // background-image: url('../../assets/images/mapa.jpeg');
+    // background-position: center;
+    // background-size: cover;
+    width: 100%;
+    height: 350px;
 }

@@ -25,9 +25,9 @@ import MaterialTable from 'material-table';
 // } from "react-icons/bs";
 
 import {
-  Card,
-  CardContent,
-  Typography,
+  // Card,
+  // CardContent,
+  // Typography,
   makeStyles,
   Button
   // IconButton,
@@ -36,6 +36,7 @@ import {
   // ListItemIcon,
   // Button
 } from "@material-ui/core";
+
 import CardIcon from "components/Cards/CardIcon/Index";
 import CardMenu from "../../components/Cards/CardMenu/Index";
 
@@ -224,7 +225,7 @@ const Dashboard = () => {
             classBorder="app-border-success"
             colorText="text-color-success"
             data="10"
-            toLink="/app/servicios-con-problemas"
+            toLink="/app/seguimiento-servicio"
           />
         </div>
 

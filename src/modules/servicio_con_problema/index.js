@@ -9,7 +9,7 @@ const columns = [
   { title: "Contenedor", field: "contenedor" },
   { title: "nave", field: "nave", },
   { title: "eta", field: "eta", },
-  { title: "Referencia", field: "referencia",cellStyle: { width: 400 } },
+  { title: "Referencia", field: "referencia",cellStyle: { width: 350 } },
   { title: "Cli. Desp.", field: "cli_despacho", },
   { title: "Fecha retiro", field: "fecha_retiro", },
   { title: "hora retiro", field: "hora_retiro" },
