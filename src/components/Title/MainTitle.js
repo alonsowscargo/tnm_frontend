@@ -5,7 +5,8 @@ import {
 
 const MainTitle = ({
   title,
-  nameButton
+  nameButton,
+  handleClick
 }) => {
   return (
     <div className="app-title justify-space-between mb-4">
@@ -18,6 +19,7 @@ const MainTitle = ({
             //startIcon={<BsPlus />}
             color="primary"
             className="app-button"
+            onClick={handleClick}
           >
             {nameButton}
           </Button>

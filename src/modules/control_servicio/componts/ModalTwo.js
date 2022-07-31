@@ -618,8 +618,6 @@ const ModalTwo = ({
                         </Button>
                     </div>
                 </Form>
-
-                
             </DialogContent>
         </Dialog>
     );

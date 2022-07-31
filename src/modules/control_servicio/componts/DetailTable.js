@@ -11,6 +11,11 @@ import {
     BsPencilSquare
 } from "react-icons/bs";
 
+
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+
 const useStyles = makeStyles((theme) => ({
     muiButtonRoot: {
         minWidth: 0,
@@ -22,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const DetailTable = ({ rowData, handleClickOpenDelete, setDataToEdit, setPrueba, prueba }) => {
+const DetailTable = ({ rowData, handleClickOpenDelete, setDataToEdit, setPrueba, prueba, handleOpen, deleteData, setEditDay }) => {
     const classes = useStyles();
 
     return (
@@ -66,24 +71,68 @@ const DetailTable = ({ rowData, handleClickOpenDelete, setDataToEdit, setPrueba,
         <div className="app-detail-table">
             <div className="app-detail-headaer">
                 <div className="align-item-center">
-                    <h4 className="text-xs font-weight-500">Cliente despacho: <span className="font-weight-300">{rowData.cliente_despacho}</span></h4>
+                    <h4 className="text-xs font-weight-500">Cliente despacho: <span className="font-weight-300">{rowData.client_dispatch}</span></h4>
                     <h4 className="text-xs font-weight-500 mx-3">Kg: <span className="font-weight-300">{rowData.kg}</span></h4>
-                    <h4 className="text-xs font-weight-500">Nº Reserva <span className="font-weight-300">{rowData.reserva}</span></h4>
+                    <h4 className="text-xs font-weight-500">Nº Reserva <span className="font-weight-300">{rowData.number_reservation}</span></h4>
                 </div>
 
                 <div className="app-detail-action">
                     <Button
                         variant="outlined"
                         size="small"
+                        startIcon={<DateRangeIcon />}
+                        //color="primary"
+                        className="mr-2"
+                        onClick={() => {
+                            setDataToEdit(rowData);
+                            handleOpen();
+                            setEditDay(true);
+                        }}
+                    >
+                        Día libre
+                    </Button>
+
+                    {/* <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<EditIcon />}
+                        //color="primary"
+                        className="mr-2"
+                        onClick={() => {
+                            setDataToEdit(rowData);
+                            handleOpen();
+                        }}
+                    >
+                        Editar
+                    </Button>
+
+                    <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<DeleteIcon />}
+                        color="secondary"
+                        className="mr-2"
+                        onClick={() => {
+                            deleteData(rowData.id);
+                        }}
+                    >
+                        Eliminar
+                    </Button> */}
+                </div>
+
+                {/* <div className="app-detail-action">
+                    <Button
+                        variant="outlined"
+                        size="small"
                         startIcon={<BsFileEarmarkText />}
                         color="primary"
                         className="mr-2"
-                        // onClick={handleClickOpen}
+                    // onClick={handleClickOpen}
 
-                        // onClick={() => {
-                        //     // setRepresentanteLegal(rowData);
-                        //     handleClickOpen(rowData);
-                        // }}
+                    // onClick={() => {
+                    //     // setRepresentanteLegal(rowData);
+                    //     handleClickOpen(rowData);
+                    // }}
 
                     >
                         Detalle
@@ -101,10 +150,10 @@ const DetailTable = ({ rowData, handleClickOpenDelete, setDataToEdit, setPrueba,
                     >
                         Día libre
                     </Button>
-                </div>
+                </div> */}
             </div>
 
-            <div className="app-detail-item">
+            {/* <div className="app-detail-item">
                 <div className="app-item-40">
                     <h4 className="text-xs font-weight-500">Lugar</h4>
                 </div>
@@ -120,66 +169,109 @@ const DetailTable = ({ rowData, handleClickOpenDelete, setDataToEdit, setPrueba,
                 <div className="app-item-15">
                     <h4 className="text-xs font-weight-500">Almacenaje / Docs</h4>
                 </div>
+            </div> */}
+
+
+
+            <div className="app-detail-item">
+                <div className="app-item-40">
+                    {/* <h4 className="text-xs font-weight-500">Lugar</h4> */}
+                </div>
+
+                <div className="app-item-20">
+                    <h4 className="text-xs font-weight-500">Fecha</h4>
+                </div>
+
+                <div className="app-item-25">
+                    <h4 className="text-xs font-weight-500">Conductor</h4>
+                </div>
+
+                <div className="app-item-15">
+                    <h4 className="text-xs font-weight-500">Almacenaje / Docs</h4>
+                </div>
             </div>
 
-            {/* {
-                rowData.tracking.map((item, index) => (
-                    <div className="app-detail-item app-border" key={index}>
-                        <div className="app-item-40">
-                            <h4 className="text-xs font-weight-400">
-                                {item.titulo} 
-                                <span className="font-weight-300 ml-2">
-                                    {item.tipo === "" ? "Pendiente": `${item.tipo}`}
-                                </span>
-                            </h4>
-                        </div>
 
-                        <div className="app-item-20">
-                            <h5 className="text-xs font-weight-300">{item.fecha} / {item.hora}hrs</h5>
-                        </div>
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400">
+                        Retiro Full { rowData.retiro_full}
+                    </h4>
+                </div>
 
-                        <div className="app-item-25">
-                            <h5 className="text-xs font-weight-300">{item.conductor}</h5>
-                        </div>
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro_full_fecha} / {rowData.retiro_full_hora}hrs</h5>
+                </div>
 
-                        <div className="app-item-15">
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro_full_conductor}</h5>
+                </div>
 
-                            { 
-                                item.almacenaje === "" ?
-                                <h5 className="text-xs font-weight-300">Pendiente</h5> 
-                                :
-                                <h5 className="text-xs font-weight-300">{item.almacenaje}</h5> 
-                            }
+                <div className="app-item-15">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro_full_almacenaje}</h5>
+                </div>
+            </div>
 
-                            { item.docs_guia && 
-                                <Button
-                                        // variant="outlined"
-                                        size="small"
-                                        startIcon={<BsFileEarmarkArrowDown />}
-                                        disabled={item.docs_guia_state === 1 ? false: true}
-                                        className={classes.muiButtonRoot}
-                                        color="secondary"
-                                    >
-                                        Guía
-                                </Button>
-                            }
 
-                            { item.docs_eir && 
-                                <Button
-                                        variant="text"
-                                        size="small"
-                                        startIcon={<BsFileEarmarkArrowDown />}
-                                        color="secondary"
-                                        className={classes.muiButtonRoot}
-                                        disabled={item.docs_eir_state === 1 ? false: true}
-                                    >
-                                        Eai
-                                </Button>
-                            }
-                        </div>
-                    </div>
-                ))
-            } */}
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400">
+                        Presentación Cliente { rowData.presentacion_cliente}
+                    </h4>
+                </div>
+
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.presentacion_cliente_fecha} / {rowData.presentacion_cliente_hora}hrs</h5>
+                </div>
+
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.presentacion_cliente_conductor}</h5>
+                </div>
+
+                <div className="app-item-15">
+                    <Button
+                        // variant="outlined"
+                        size="small"
+                        startIcon={<BsFileEarmarkArrowDown />}
+                        disabled={rowData.presentacion_cliente_docs === 0 ? true : false}
+                        className={classes.muiButtonRoot}
+                        color="secondary"
+                    >
+                        Guía
+                    </Button>
+                </div>
+            </div>
+
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400">
+                        Devolución / Stacking {rowData.devolucion}
+                    </h4>
+                </div>
+
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.devolucion_fecha} / {rowData.devolucion_hora}hrs</h5>
+                </div>
+
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.devolucion_conductor}</h5>
+                </div>
+
+                <div className="app-item-15">
+                    <Button
+                        // variant="outlined"
+                        size="small"
+                        startIcon={<BsFileEarmarkArrowDown />}
+                        disabled={rowData.devolucion_docs === 0 ? true : false}
+                        className={classes.muiButtonRoot}
+                        color="primary"
+                    >
+                        EIR
+                    </Button>
+                </div>
+            </div>
+
+
         </div>
     )
 }

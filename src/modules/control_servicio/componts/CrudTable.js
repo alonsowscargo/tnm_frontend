@@ -115,7 +115,7 @@ const CrudTable = ({ data, setDataToEdit, deleteData, handleOpen, setEditDay }) 
 
     return (
         <div>
-            <div className="app-title justify-space-between mb-4">
+            {/* <div className="app-title justify-space-between mb-4">
                 <h1 className="font-weight-700 m-0">Control de servicio</h1>
 
                 <Button
@@ -128,7 +128,7 @@ const CrudTable = ({ data, setDataToEdit, deleteData, handleOpen, setEditDay }) 
                 >
                     nuevo servicio
                 </Button>
-            </div>
+            </div> */}
 
 
 

@@ -1,17 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { helpHttp } from "../helpers/HelpHttp"
 
-export const useForm = (initialForm, validateForm) => {
+export const useFormPrueba = (initialForm, validateForm, createData, updateData ) => {
 
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({
     error: "errorDefault"
   })
+
+
   const [loading, setLoading] = useState(false)
   const [response, setResponse] = useState(null)
   const [newData, setNewData] = useState([])
   // const [editData, setEditData] = useState(null)
-  console.log("form  -----", form)
+  // console.log("newData -----", newData)
+  const [dataToEdit, setDataToEdit] = useState(null);
+
+  
 
   // obtener el valor del input
   const handleChange = (e) => {
@@ -43,8 +48,17 @@ export const useForm = (initialForm, validateForm) => {
     e.preventDefault();
     setErrors(validateForm(form));
 
-    if (Object.keys(errors).length === 0) {
-      // alert("enviando")
+    // if (Object.keys(errors).length === 0) {
+    //   // alert("enviando")
+    
+    // } else {
+    //   return
+    // }
+
+    if (form.id === null) {
+      // createData(form);
+      // // createData2(form);
+      // alert("haz registrados  nuevos datos");
       setLoading(true)
       helpHttp()
         .post("https://formsubmit.co/ajax/alonsotrina22@gmail.com", {
@@ -63,15 +77,17 @@ export const useForm = (initialForm, validateForm) => {
           setTimeout(() => setResponse(false), 3000);
         });
     } else {
-      return
+        updateData(form);
+        alert("actulizaste tu datos");
     }
   }
 
+
   // crear nueva data
-  const createData = (data) => {
-    data.id = Date.now();
-    setNewData([...newData, data]);
-  }
+  // const createData = (data) => {
+  //   data.id = Date.now();
+  //   setNewData([...newData, data]);
+  // }
 
   // useEffect(() => {
   //   if (editData) {
@@ -82,6 +98,14 @@ export const useForm = (initialForm, validateForm) => {
 
   // }, [editData])
 
+  useEffect(() => {
+    if (dataToEdit) {
+        setForm(dataToEdit);
+    } else {
+        setForm(initialForm);
+    }
+}, [dataToEdit]);
+
   return {
     form,
     loading,
@@ -89,6 +113,7 @@ export const useForm = (initialForm, validateForm) => {
     response,
     newData,
     setForm,
+    setLoading,
     setErrors,
     handleBlur,
     handleChange,

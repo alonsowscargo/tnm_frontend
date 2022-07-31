@@ -10,14 +10,14 @@ import {
 import MaterialTable from "material-table";
 import DetailTable from "./componts/DetailTable";
 
-// import { BsExclamationSquareFill, BsCircleFill } from "react-icons/bs";
+import { BsExclamationSquareFill, BsCircleFill } from "react-icons/bs";
 
 
 
 import { helpHttp } from "../../helpers/HelpHttp";
-// import CrudTable from "./componts/CrudTable"
+import CrudTable from "./componts/CrudTable"
 // import CrudForm from "./componts/CrudForm"
-// import Loading from "../../components/loading/Loading";
+import Loading from "../../components/loading/Loading";
 import AlertMessage from "../../components/Message/AlertMessage";
 // import { HashRouter, NavLink, Route, Switch } from "react-router-dom";
 import ModalTwo from "./componts/ModalTwo"
@@ -25,7 +25,7 @@ import SkeletonTable from "./componts/SkeletonTable"
 
 import Message from "../../components/Message/Message";
 
-// import ConfirmDialog from "./componts/ConfirmDialog"
+import ConfirmDialog from "./componts/ConfirmDialog"
 import MainTitle from "components/Title/MainTitle";
 
 
@@ -99,7 +99,7 @@ const DashboardT = () => {
 
   // Dialog para eliminar
   const [eliminar, setEliminar] = useState(false);
-  // const [eliminarOk, setEliminarOk] = useState(false);
+  const [eliminarOk, setEliminarOk] = useState(false);
 
   // const handleDeleteConfirmation = () => {
   //         setEliminarOk(true);
@@ -108,12 +108,12 @@ const DashboardT = () => {
   const [deleteToEdit, setDeleteToEdit] = useState(null);
 
 
-  // const handleDelete = () => {
-  //   setEliminar(true);
-  // };
-  // const handleCloseDelete = () => {
-  //   setEliminar(false);
-  // };
+  const handleDelete = () => {
+    setEliminar(true);
+  };
+  const handleCloseDelete = () => {
+    setEliminar(false);
+  };
   // Dialog para eliminar
 
 
@@ -122,7 +122,6 @@ const DashboardT = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -150,26 +149,26 @@ const DashboardT = () => {
   }, [url, dispatch])
 
 
-  // const createData2 = (data) => {
+  const createData2 = (data) => {
 
-  //   data.id = Date.now();
-
-
-
-  //   //console.log(data);
-  //   // setPrueba([...prueba, data]);
-  //   let tem = prueba;
-  //   tem.push(data)
-  //   console.log(tem)
-  //   setPrueba(tem)
+    data.id = Date.now();
 
 
 
-  //   // selected.coment=value;
-  //   // ticketsLocal[indexTicket]=selected;
-  //   // setFormTicket(selected);
-  //   // setTicketsLocal(ticketsLocal);
-  // };
+    //console.log(data);
+    // setPrueba([...prueba, data]);
+    let tem = prueba;
+    tem.push(data)
+    console.log(tem)
+    setPrueba(tem)
+
+
+
+    // selected.coment=value;
+    // ticketsLocal[indexTicket]=selected;
+    // setFormTicket(selected);
+    // setTicketsLocal(ticketsLocal);
+  };
 
   // const createData2 = (data) => {
   //     data.id = Date.now();
@@ -222,10 +221,10 @@ const DashboardT = () => {
 
   // console.log("-------------------")
 
-  // const [chao, setChao] = useState(false);
-  // // console.log(chao + '-------')
+  const [chao, setChao] = useState(false);
+  // console.log(chao + '-------')
 
-  // const [confirmOpen, setConfirmOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const deleteData = (id) => {
     // levabtar modal
@@ -239,7 +238,7 @@ const DashboardT = () => {
 
     // poner en true el valos
     // si el valor es true ....
-    if (isDelete) {
+    if(isDelete) {
       let endpoint = `${url}/${id}`;
       let options = {
         headers: { "content-type": "application/json" }
@@ -268,14 +267,14 @@ const DashboardT = () => {
   };
 
 
-  // const handleLogout = () => {
-  //   //console.log("this hould logout the user");
-  //   setChao(true)
-  // };
+  const handleLogout = () => {
+    //console.log("this hould logout the user");
+    setChao(true)
+  };
 
   return (
     <div>
-      <MainTitle
+      <MainTitle 
         title="Control de servicio"
         nameButton="nuevo servicio"
         handleClick={handleOpen}
@@ -287,72 +286,69 @@ const DashboardT = () => {
       {errorData && <AlertMessage msg={`Error ${errorData.status}: ${errorData.statusText}`} type="error" />}
 
       {db.length > 0 &&
-        <div className="app-table">
-          <div className="app-table-sticky">
-            <MaterialTable
-              title="Servicios"
-              columns={columnsT}
-              data={db}
-              onRowClick={(event, rowData, togglePanel) => {
-                // Copy row data and set checked state
-                togglePanel();
-              }}
-              options={{
-                exportButton: false,
-                //filtering: true,
-                search: true,
-                paging: false,
-                detailPanelType: "single",
-                maxBodyHeight: "80vh",
-              }}
-              localization={{
-                body: {
-                  emptyDataSourceMessage: (
-                    <h6 style={{ textAlign: "center", margin: "0" }}>
-                      No jajaja
-                    </h6>
-                  ),
-                },
-              }}
-              detailPanel={[
-                {
-                  render: (rowData) => {
-                    return (
-                      <DetailTable
-                        rowData={rowData}
-                        // handleClickOpenDelete={handleClickOpenDelete}
-                        setDataToEdit={setDataToEdit}
-                        prueba={prueba}
-                        setPrueba={setPrueba}
-                        handleOpen={handleOpen}
-                        deleteData={deleteData}
-                        setEditDay={setEditDay}
-                      />
-                    );
-                  },
-                },
-              ]}
-            />
-          </div>
-        </div>
-
-      }
-{/* 
-<CrudTable
+        <CrudTable
           data={db}
           setDataToEdit={setDataToEdit}
           deleteData={deleteData}
           handleOpen={handleOpen}
           setEditDay={setEditDay}
-          // handleDelete={handleDelete}
+          handleDelete={handleDelete}
           // setPrueba={setPrueba}
           //setConfirmOpen={setConfirmOpen}
         // setChao={setChao}
 
         />
-       */}
+      }
 
 
+<div className="app-table">
+        <div className="app-table-sticky">
+          <MaterialTable
+            title="Servicios"
+            columns={columnsT}
+            data={db}
+            onRowClick={(event, rowData, togglePanel) => {
+              // Copy row data and set checked state
+              togglePanel();
+            }}
+            options={{
+              exportButton: false,
+              //filtering: true,
+              search: true,
+              paging: false,
+              detailPanelType: "single",
+              maxBodyHeight: "80vh",
+            }}
+            localization={{
+              body: {
+                emptyDataSourceMessage: (
+                  <h6 style={{ textAlign: "center", margin: "0" }}>
+                    No jajaja
+                  </h6>
+                ),
+              },
+            }}
+            detailPanel={[
+              {
+                render: (rowData) => {
+                  return (
+                    <DetailTable
+                      rowData={rowData}
+                      // handleClickOpenDelete={handleClickOpenDelete}
+                      setDataToEdit={setDataToEdit}
+                      prueba={prueba}
+                      setPrueba={setPrueba}
+                      handleOpen={handleOpen}
+                      deleteData={deleteData}
+                      setEditDay={setEditDay}
+                    />
+                  );
+                },
+              },
+            ]}
+          />
+        </div>
+      </div>
 
       <ModalTwo
         open={open}
@@ -383,14 +379,14 @@ const DashboardT = () => {
 
       <Message
         open={eliminar}
-        // onClose={handleCloseDelete}
+        onClose={handleCloseDelete}
         titleMessage="¡Estimado!"
         // type icon, alertSuccess, alertWarning, alertDanger 
         typeAlert="alertSuccess"
         message="Haz registrado con éxito tus días libres."
         callAction="Ok"
         width="sm"
-        // setEliminarOk={setEliminarOk}
+        setEliminarOk={setEliminarOk}
       />
     </div>
   );
