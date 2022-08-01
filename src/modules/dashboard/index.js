@@ -25,16 +25,34 @@ const useStyles = makeStyles({
 
 const columns = [
   // { title: "id", field: "liq", },
-  { title: "Contenedor", field: "cliente_despacho", },
-  { title: "Referencia", field: "envio", },
-  // { title: "Servicio", field: "fecha_creacion" },
-  // { title: "Contenedor", field: "cliente_despacho", },
-  // { title: "Tipo", field: "facturacion_sii", },
-  // { title: "Nave", field: "fecha_sii", },
-  { title: "Eta", field: "servicio" },
-  { title: "Retiro", field: "neto" },
-  { title: "Fecha", field: "n_servicios" },
+  { title: "Cli. Desp", field: "cliente_despacho"},
+  { title: "Contenedor", field: "contenedor", cellStyle: { width: 300 } },
+  { title: "Tipo", field: "tipo", cellStyle: { width: 50 }},
+  { title: "Nave", field: "nave", cellStyle: { width: 300 } },
+  { title: "Eta", field: "eta", width: 'min-content'},
+  { title: "Referencia", field: "referencia",  cellStyle: { width: 300 }},
+  { title: "Servicio", field: "servicio" },
+  // { title: "Eta", field: "servicio" },
+  { title: "Retiro", field: "retiro" },
+  { title: "Fecha Hora", field: "fecha_hora", },
+    // render: (data) => {
+
+    //   data.fecha_hora ? 'nada'
+    // },
 ]
+
+
+// id: '15315',
+// cliente_despacho:'Vanni',
+// contenedor: 'TCLU940702-1 OC 59158 (1) // 56096 (3) // 58801 (6)',
+// tipo: '24/03/2022',
+// nave: '24/03/2022',
+// eta:'22/03/2022',
+// referencia: 'TCLU940702-1 OC 59158 (1) // 56096 (3) // 58801 (6)',
+// servicio: '680000',
+// retiro: '20284',
+// fecha_hora: '20284',
+// //   hora:'22/03/2022',
 
 
 const Dashboard = () => {
@@ -308,7 +326,7 @@ const Dashboard = () => {
               {/* <Button>uno</Button> */}
               <div className="app-table-sticky">
                 <MaterialTable
-                  title="Retiro sin horario"
+                  title="Retiro con horario"
                   columns={columns}
                   data={dataTable}
                   options={{
@@ -326,26 +344,6 @@ const Dashboard = () => {
                 />
               </div>
             </div>
-            {/* <div className="app-table">
-              <MaterialTable
-                title="Retiro sin horario"
-                columns={columns}
-                data={dataTable}
-                options={{
-                  exportButton: false,
-                  filtering: false,
-                  search: false,
-                  paging: false,
-                  detailPanelType: "single",
-                  maxBodyHeight: '80vh',
-                }}
-                localization={{
-                  body: {
-                    emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
-                  }
-                }}
-              />
-            </div> */}
           </div>
         }
 

@@ -41,6 +41,18 @@ const SideBarContent = () => {
             link: '/app/mantenedor-usuarios',
             onclick:()=>{emptyReducer('mantenedor-usuarios')}
           },
+          {
+            id:2,
+            name: 'control servicio',
+            type: 'item',
+            link: '/app/control-servicio-cliente/',
+          },
+          {
+            id:2,
+            name: 'control servicio',
+            type: 'item',
+            link: '/app/control-servicio-cliente/',
+          },
         ]
       },
       {

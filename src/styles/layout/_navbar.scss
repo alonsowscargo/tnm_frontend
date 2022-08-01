@@ -118,3 +118,19 @@
     font-weight: 500;
   }
 }
+
+
+.app-side-logo  {
+  background-color: $color-gray;
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+
+  img {
+      width: 65%;
+      
+      @include phone  {
+          width: 95%;
+      }
+  }
+}
