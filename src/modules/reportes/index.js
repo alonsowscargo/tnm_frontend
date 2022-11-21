@@ -250,7 +250,7 @@ const Dashboard = () => {
                             // onClick={handleClickMenu}
                             onClick={handleFilter}
                         >
-                            <i class="bi bi-eraser-fill"></i>
+                            <i className="bi bi-eraser-fill"></i>
                         </Button>
 
                         <Button
@@ -262,7 +262,7 @@ const Dashboard = () => {
                             // onClick={handleClickMenu}
                             onClick={handleFilter}
                         >
-                            <i class="bi bi-sort-down"></i>
+                            <i className="bi bi-sort-down"></i>
                         </Button>
 
                         {/* <IconButton

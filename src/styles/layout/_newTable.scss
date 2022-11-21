@@ -33,10 +33,19 @@
     .MuiTableCell-body {
         font-size: 12px !important;
         text-transform: capitalize;
+        // background-color: red;
 
         .MuiIconButton-root {
             margin-left: 12px;
         }
+    }
+
+    .MuiTableRow-root {
+        background-color: $color-light;
+        &:nth-child(odd) {
+            background: #F9F9F9;
+        }
+        
     }
 
     // input search
@@ -94,16 +103,6 @@
     }
 }
 
-
-// ///@at-root
-// .app-detail-headaer {
-
-//     .app-item {
-//         background-color: red;
-//         display: flex;
-//     }
-// }
-
 // detail item table 
 .app-detail-item {
     display: flex;
@@ -150,10 +149,10 @@
     flex-wrap: wrap;
     padding: 12px 0;
 
-    .app-border-color {
-        width: 100%;
-        @include style-border(1px, 0, 0, 0, solid, #fff);
-    }
+    // .app-border-color {
+    //     width: 100%;
+    //     @include style-border(1px, 0, 0, 0, solid, $color-default);
+    // }
 
     .app-item {
         width: 20%;
@@ -163,7 +162,7 @@
             line-height: 12px;
             margin-bottom: 8px;
             padding-bottom: 6px;
-            @include style-border(0, 0, 1px, 0, solid);
+            @include style-border(0, 0, 1px, 0, solid, $color-default);
 
         }
 
@@ -201,128 +200,6 @@
         // margin-bottom: 8px;
         transition: all 0.3s cubic-bezier(0, 1, 0, 1);
 
-        // margin-top: -8px;
     }
 
 }
-// .card-detail .show {
-//         height: auto;
-//         max-height: 9999px;
-//         margin-bottom: 8px;
-//         // margin-top: -8px;
-// }
-
-
-
-
-// #customers td, #customers th {
-//     // border: 1px solid #ddd;
-//     padding: 8px;
-//   }
-  
-//   #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-//   #customers tr:hover {background-color: #ddd;}
-  
-//   #customers th {
-//     padding-top: 12px;
-//     padding-bottom: 12px;
-//     text-align: left;
-//     background-color: #04AA6D;
-//     color: white;
-//   }
-
-// table {
-//     border-collapse: collapse;
-//     width: 100%;
-//   }
-  
-//   th, td {
-//     padding: 8px;
-//     text-align: left;
-//     border-bottom: 1px solid #ddd;
-//   }
-
-
-// #customers {
-//     padding: 300px;
-// }
-
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-color: #fafafa;
-    padding: 100px;
-    border-spacing:100px;
-}
-
-
-
-td, th { 
-    padding: 12px 8px;
-	border-bottom: thin solid #dedede;
-	text-align: left; 
-	font-size: 12px;
-    // border-left: solid red 4px;
-}
-
-.labels td {
-	// background-color: #2cc16a;
-	// font-weight: bold;
-    padding: 0;
-	color: #fff;
-    border: none; 
-}
-
-thead {
-    
-	th {
-        padding: 18px 8px;
-        font-size: 12px;
-	}
-}
-
-tbody {
-	tr {
-        background-color: #fff;
-		&:hover {
-			background-color: rgba(255,255,255,0.3);
-		}
-	}
-
-    .cl-p {
-        border-left: solid #fff 4px;
-    }
-
-    .cl-a {
-        border-left: solid #C8352E 4px;
-    }
-
-    td.cl-4{
-        text-align:center;
-        width: 10px;
-    }
-}
-
-
-// .icon {
-//     background-color: yellow;
-//     // text-align: center;
-// }
-// table {
-//     border-spacing: 0;
-//     border-collapse: collapse;
-//     width: 100%;
-//   }
-  
-//   th,
-//   td {
-//     text-align: left;
-//     //padding: 0.5rem;
-//     border-bottom: thin solid red;
-
-//     // border-bottom: thin solid #dedede;
-//   }

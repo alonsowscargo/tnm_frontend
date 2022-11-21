@@ -9,6 +9,7 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import DataList from 'components/table/detailTable/Item'
 
 
 const styles = (theme) => ({
@@ -54,315 +55,49 @@ const Modal = ({ open, onClose, }) => {
             <DialogTitle id="customized-dialog-title" onClose={onClose}>
                 Detalle del servicio
             </DialogTitle>
-            <DialogContent dividers>
-                {/* <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Id servicio</h3>
-                        <h4 className="text-xs font-weight-300">58102</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Referencia</h3>
-                        <h4 className="text-xs font-weight-300">OC 59889 (2) 60028 (2)</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Comercial</h3>
-                        <h4 className="text-xs font-weight-300">Lilian Arguedas</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Cliente facturación</h3>
-                        <h4 className="text-xs font-weight-300">Vanni</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Cliente despacho</h3>
-                        <h4 className="text-xs font-weight-300">Vanni</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo servicio</h3>
-                        <h4 className="text-xs font-weight-300">IMPO</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo carga</h3>
-                        <h4 className="text-xs font-weight-300">FCL</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Agencia aduana</h3>
-                        <h4 className="text-xs font-weight-300">Ajleon 3</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Nave</h3>
-                        <h4 className="text-xs font-weight-300">Msc Ruby</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">ETA</h3>
-                        <h4 className="text-xs font-weight-300">17-03-2022 / 01:00 hrs</h4>
-                    </div>
-                </div> */}
-
-
-                <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Id servicio</h3>
-                        <h4 className="text-xs font-weight-300">58102</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Referencia</h3>
-                        <h4 className="text-xs font-weight-300">OC 59889 (2) 60028 (2)</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Comercial</h3>
-                        <h4 className="text-xs font-weight-300">Lilian Arguedas</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Cliente facturación</h3>
-                        <h4 className="text-xs font-weight-300">Vanni</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Cliente despacho</h3>
-                        <h4 className="text-xs font-weight-300">Vanni</h4>
-                    </div>
-
-
-                    <div className='app-border-color my-2'></div>
-
-
-
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo servicio</h3>
-                        <h4 className="text-xs font-weight-300">IMPO</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo carga</h3>
-                        <h4 className="text-xs font-weight-300">FCL</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Agencia aduana</h3>
-                        <h4 className="text-xs font-weight-300">Ajleon 3</h4>
-                    </div>
-                </div>
-
-                {/* <div className='app-border my-2'></div> */}
-
-                {/* <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo servicio</h3>
-                        <h4 className="text-xs font-weight-300">IMPO</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo carga</h3>
-                        <h4 className="text-xs font-weight-300">FCL</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Agencia aduana</h3>
-                        <h4 className="text-xs font-weight-300">Ajleon 3</h4>
-                    </div>
-                </div> */}
-
-                <div className='app-borde my-3'></div>
-
-
-                {/* <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Nº contenedor</h3>
-                        <h4 className="text-xs font-weight-300">TCNU790766-3</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tamaño</h3>
-                        <h4 className="text-xs font-weight-300">40</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo contenedor</h3>
-                        <h4 className="text-xs font-weight-300">DRY</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Conexión</h3>
-                        <h4 className="text-xs font-weight-300">NO APLICA</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Temperatura ºC</h3>
-                        <h4 className="text-xs font-weight-300">Lugar</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Contenedor Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">0</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">8684</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga IMO</h3>
-                        <h4 className="text-xs font-weight-300">-</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Número IMO</h3>
-                        <h4 className="text-xs font-weight-300">NO APLICA</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Fecha inicio conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Hora inicio conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Fecha termino conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Hora termino conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-                </div> */}
-
-
-                <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Nº contenedor</h3>
-                        <h4 className="text-xs font-weight-300">TCNU790766-3</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tamaño</h3>
-                        <h4 className="text-xs font-weight-300">40</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Tipo contenedor</h3>
-                        <h4 className="text-xs font-weight-300">DRY</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Conexión</h3>
-                        <h4 className="text-xs font-weight-300">NO APLICA</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Temperatura ºC</h3>
-                        <h4 className="text-xs font-weight-300">Lugar</h4>
-                    </div>
-
-                    <div className='app-border-color my-2'></div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Contenedor Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">0</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">8684</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga IMO</h3>
-                        <h4 className="text-xs font-weight-300">-</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Número IMO</h3>
-                        <h4 className="text-xs font-weight-300">NO APLICA</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Fecha inicio conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-                </div>
-
-                {/* <div className='app-border my-2'></div>
-
-                <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Contenedor Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">0</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga Tara (Kg)</h3>
-                        <h4 className="text-xs font-weight-300">8684</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Carga IMO</h3>
-                        <h4 className="text-xs font-weight-300">-</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Número IMO</h3>
-                        <h4 className="text-xs font-weight-300">NO APLICA</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Fecha inicio conexión</h3>
-                        <h4 className="text-xs font-weight-300"> - </h4>
-                    </div>
-                </div> */}
-
-                <div className='app-borde my-3'></div>
-
-                <div className='app-item-service'>
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Nave</h3>
-                        <h4 className="text-xs font-weight-300">Msc Ruby</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">ETA</h3>
-                        <h4 className="text-xs font-weight-300">17-03-2022 / 01:00 hrs</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Peonetas</h3>
-                        <h4 className="text-xs font-weight-300">0</h4>
-                    </div>
-
-                    <div className="app-item">
-                        <h3 className="text-xs font-weight-500">Escoltas</h3>
-                        <h4 className="text-xs font-weight-300">0</h4>
-                    </div>
-                </div>
-
+            <DialogContent dividers className='pb-4'>
+            <DataList
+                    className='bg-color-light-primary px-4 pt-4 mpb-0'
+                    data={[
+                        {titulo:'Id servicio', data:'58102'},
+                        {titulo:'Referencia', data:'OC 59889 (2) 60028 (2)'},
+                        {titulo:'Comeercial', data:'Lilian Arguedas'},
+                        {titulo:'Cliente facturación', data:'Vani'},
+                        {titulo:'Cliente despacho', data:'Vani'},
+                        {titulo:'Tipo servicio', data:'IMPO'},
+                        {titulo:'Tipo carga', data:'FLC'},
+                        {titulo:'Agencia aduana', data:'Ajleon 3'},
+                    ]}
+                />
+
+                <DataList
+                    className='bg-color-gray px-4 pt-4 my-3'
+                    data={[
+                        {titulo:'Nave', data:'Msc Ruby'},
+                        {titulo:'ETA', data:'17-03-2022 / 01:00 hrs'},
+                        {titulo:'Peonetas', data:'0'},
+                        {titulo:'Escoltas', data:'0'},
+                    ]}
+                />
+
+
+                <DataList
+                    className='bg-color-light-primary px-4 pt-4 mpb-0'
+                    data={[
+                        {titulo:'Nº contenedor', data:'TCNU790766-3'},
+                        {titulo:'Tamaño', data:'40'},
+                        {titulo:'Tipo contenedor', data:'DRY'},
+                        {titulo:'Conexión', data:''},
+                        {titulo:'Temperatura ºC', data:''},
+                        {titulo:'Contenedor Tara (Kg)', data:'0'},
+                        {titulo:'Carga Tara (Kg)', data:'8684'},
+                        {titulo:'Carga IMO', data:''},
+                        {titulo:'Número IMO', data:''},
+                        {titulo:'Fecha inicio conexión', data:''},
+                    ]}
+                />
 
             </DialogContent>
-            {/* <DialogActions>
-                <Button onClick={onClose} color="primary">
-                    Disagree
-                </Button>
-                <Button onClick={onClose} color="primary" autoFocus>
-                    Agree
-                </Button>
-            </DialogActions> */}
         </Dialog>
     )
 }

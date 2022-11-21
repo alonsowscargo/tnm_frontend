@@ -6,12 +6,12 @@ import {
 
 // import { MdHeadsetMic } from "react-icons/md";
 
-import { 
-    BsFileEarmarkArrowDown, 
-    BsFileEarmarkText, 
+import {
+    BsFileEarmarkArrowDown,
+    BsFileEarmarkText,
 } from "react-icons/bs";
 
-const DetailTable = ({rowData,handleClickOpen}) => {
+const DetailTable = ({ rowData, handleClickOpen }) => {
     return (
         <div className="app-detail-table">
             <div className="app-detail-headaer">
@@ -67,29 +67,59 @@ const DetailTable = ({rowData,handleClickOpen}) => {
             </div>
 
 
-            {
-                rowData.entregras.map((item, index) => (
-                    <div className="app-detail-item app-border" key={index}>
-                        <div className="app-item-40">
-                            <h4 className="text-xs font-weight-400">
-                                {item.typo_title} <span className="font-weight-300">{item.typo}</span>
-                            </h4>
-                        </div>
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400"><b>Retiro:</b> {rowData.retiro.titulo}</h4>
+                </div>
 
-                        <div className="app-item-20">
-                            <h5 className="text-xs font-weight-300">{item.fecha} / {item.hora}hrs</h5>
-                        </div>
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro.fecha} / {rowData.retiro.hora}hrs</h5>
+                </div>
 
-                        <div className="app-item-25">
-                            <h5 className="text-xs font-weight-300">{item.conductor}</h5>
-                        </div>
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro.conductor}</h5>
+                </div>
 
-                        <div className="app-item-15">
-                            <h5 className="text-xs font-weight-300">{item.tracto}</h5>
-                        </div>
-                    </div>
-                ))
-            }
+                <div className="app-item-15">
+                    <h5 className="text-xs font-weight-300">{rowData.retiro.tracto}</h5>
+                </div>
+            </div>
+
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400"><b>Presentación:</b> {rowData.presentacion.titulo}</h4>
+                </div>
+
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.presentacion.fecha} / {rowData.presentacion.hora}hrs</h5>
+                </div>
+
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.presentacion.conductor}</h5>
+                </div>
+
+                <div className="app-item-15">
+                    <h5 className="text-xs font-weight-300">{rowData.presentacion.tracto}</h5>
+                </div>
+            </div>
+
+            <div className="app-detail-item app-border">
+                <div className="app-item-40">
+                    <h4 className="text-xs font-weight-400"><b>Devolución:</b> {rowData.devolucion.titulo}</h4>
+                </div>
+
+                <div className="app-item-20">
+                    <h5 className="text-xs font-weight-300">{rowData.devolucion.fecha} / {rowData.devolucion.hora}hrs</h5>
+                </div>
+
+                <div className="app-item-25">
+                    <h5 className="text-xs font-weight-300">{rowData.devolucion.conductor}</h5>
+                </div>
+
+                <div className="app-item-15">
+                    <h5 className="text-xs font-weight-300">{rowData.devolucion.tracto}</h5>
+                </div>
+            </div>
         </div>
     )
 }

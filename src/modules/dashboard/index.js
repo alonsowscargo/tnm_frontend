@@ -64,11 +64,11 @@ const Dashboard = () => {
       label: "prueba 1",
       data: UserData.map((data) => data.userGain),
       backgroundColor: [
-        "#875395",
-        "#875395",
-        "#875395",
-        "#875395",
-        "#875395",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
       ],
       borderColor: "black",
       borderWidth: 2,
@@ -96,11 +96,11 @@ const Dashboard = () => {
       label: "prueba 1",
       data: UserData.map((data) => data.userGain),
       backgroundColor: [
-        "#875395",
-        "#875395",
-        "#875395",
-        "#875395",
-        "#875395",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
       ],
       borderColor: "black",
       borderWidth: 2,
@@ -121,11 +121,11 @@ const Dashboard = () => {
       label: "prueba 3",
       data: UserData.map((data) => data.year),
       backgroundColor: [
-        "#3e95cd",
-        "#3e95cd",
-        "#3e95cd",
-        "#3e95cd",
-        "#3e95cd",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
       ],
       borderColor: "black",
       borderWidth: 2,
@@ -151,40 +151,6 @@ const Dashboard = () => {
     setPrueba(true)
   }
 
-//   const [visible, setVisible] = useState({
-//     detalle: false,
-//     pagos: true,
-//     cotizacion: true,
-// })
-
-//   // mostar componente
-//   const handleChange = (newValue) => {
-//     switch (newValue) {
-//         case 1:
-//             setVisible({
-//                 detalle: false,
-//                 pagos: true,
-//                 cotizacion: true
-//             });
-//             break;
-//         case 2:
-//             setVisible({
-//                 detalle: true,
-//                 pagos: false,
-//                 cotizacion: true
-//             });
-//             break;
-//         case 3:
-//             setVisible({
-//                 detalle: true,
-//                 pagos: true,
-//                 cotizacion: false
-//             });
-//             break;
-//     }
-// };
-
-
   return (
     <>
       <div className="row">
@@ -206,7 +172,7 @@ const Dashboard = () => {
             classBorder="app-border-success"
             colorText="text-color-success"
             data="10"
-            toLink="/app/seguimiento-servicio"
+            // toLink="/app/seguimiento-servicio"
           />
         </div>
 
@@ -241,7 +207,7 @@ const Dashboard = () => {
       <div className="row">
         <div className="col-12 my-5">
           <CardBarChart
-            title="Programación de presentaciones"
+            title="Programación de presentación en clientes"
             chartData={userData}
             height={80}
           />
@@ -418,8 +384,8 @@ const Dashboard = () => {
       <div className="row mt-5">
         <div className="col-6">
           <CardBarChart
-            title="Presentaciones"
-            description="Por tipo de servicio (cat: Impo, Expo, Otros)."
+            title="Retiros por nave"
+            description=" "
             chartData={userData2}
             height={120}
           />
@@ -427,8 +393,9 @@ const Dashboard = () => {
 
         <div className="col-6">
           <CardBarChart
-            title="Retiros"
-            description="Por tipo de servicio (cat: Impo, Expo, Otros)."
+            title="Retiros de puerto"
+            description=""
+            // description="Por tipo de servicio (cat: Impo, Expo, Otros)."
             chartData={userData2}
             height={120}
           />
