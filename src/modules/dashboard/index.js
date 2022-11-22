@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { UserData } from './Data'
-import { dataTable } from './dataTable'
+import { useHistory } from "react-router-dom";
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
+import DateRangeIcon from '@material-ui/icons/DateRange';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -9,7 +10,12 @@ import CardBarChart from '../../components/Cards/CarBarChart/Index'
 import CardLink from '../../components/Cards/CardLink/Index'
 import CardIcon from "components/Cards/CardIcon/Index";
 import CardMenu from "../../components/Cards/CardMenu/Index";
-import MaterialTable from 'material-table';
+import Tabla from './components/TableRetiro'
+import Cargando from 'components/loading/Loading'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 import {
   makeStyles,
@@ -23,40 +29,18 @@ const useStyles = makeStyles({
 });
 
 
-const columns = [
-  // { title: "id", field: "liq", },
-  { title: "Cli. Desp", field: "cliente_despacho"},
-  { title: "Contenedor", field: "contenedor", cellStyle: { width: 300 } },
-  { title: "Tipo", field: "tipo", cellStyle: { width: 50 }},
-  { title: "Nave", field: "nave", cellStyle: { width: 300 } },
-  { title: "Eta", field: "eta", width: 'min-content'},
-  { title: "Referencia", field: "referencia",  cellStyle: { width: 300 }},
-  { title: "Servicio", field: "servicio" },
-  // { title: "Eta", field: "servicio" },
-  { title: "Retiro", field: "retiro" },
-  { title: "Fecha Hora", field: "fecha_hora", },
-    // render: (data) => {
 
-    //   data.fecha_hora ? 'nada'
-    // },
-]
-
-
-// id: '15315',
-// cliente_despacho:'Vanni',
-// contenedor: 'TCLU940702-1 OC 59158 (1) // 56096 (3) // 58801 (6)',
-// tipo: '24/03/2022',
-// nave: '24/03/2022',
-// eta:'22/03/2022',
-// referencia: 'TCLU940702-1 OC 59158 (1) // 56096 (3) // 58801 (6)',
-// servicio: '680000',
-// retiro: '20284',
-// fecha_hora: '20284',
-// //   hora:'22/03/2022',
 
 
 const Dashboard = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const [visible, setVisible] = useState({
+    contenedores_sin_horario: false,
+    contenedores_alacenados: false,
+  });
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [loading, setLoading] = useState(false)
 
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
@@ -88,7 +72,6 @@ const Dashboard = () => {
     }
     ]
   })
-
 
   const [userData2, setUserData2] = useState({
     labels: UserData.map((data) => data.year),
@@ -133,64 +116,102 @@ const Dashboard = () => {
     ]
   })
 
-  // dropdown ejecutivo
-  const [anchorEl, setAnchorEl] = useState(null);
-
+  // Funcion para despegar contenido del ejecutivo
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
 
 
-  const [prueba, setPrueba] = useState(false)
-
-  const clickPrueba = () => {
-    setPrueba(true)
+  // Funcion para mostrar los servicios con y sin horario de retiro
+  const clickContenedoresAlacenados = () => {
+    setVisible({
+      contenedores_sin_horario: false,
+      contenedores_alacenados: true,
+    })
+    setLoading(true)
+    setTimeout(() => setLoading(false), 5000)
   }
+
+  const handleContenodreSinRetiro = () => {
+    setVisible({
+      contenedores_sin_horario: true,
+      contenedores_alacenados: false,
+    })
+    setLoading(true)
+    setTimeout(() => setLoading(false), 5000)
+  }
+
+  const handleDedirectTo = () => {
+    history.push("/app/control-servicio-cliente");
+  };
+
 
   return (
     <>
-      <div className="row">
-        <div className="col-3">
+
+      <Swiper
+        slidesPerView={2}
+        navigation={true}
+        breakpoints={{
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 15
+          },
+        }}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <CardLink
+            subtitle="Seguimientos"
+            title="Servicios del día"
+            classBorder="app-border-success app-hover"
+            colorText="text-color-success"
+            data="10"
+          // toLink="/app/seguimiento-servicio"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
           <CardLink
             subtitle="Servicios"
             title="Con problemas"
-            classBorder="app-border-danger"
+            classBorder="app-border-danger app-hover"
             colorText="text-color-danger"
             data="0"
             toLink="/app/servicios-con-problemas"
           />
-        </div>
+        </SwiperSlide>
 
-        <div className="col-3">
-          <CardLink
-            subtitle="Seguimientos"
-            title="Servicios para hoy"
-            classBorder="app-border-success"
-            colorText="text-color-success"
-            data="10"
-            // toLink="/app/seguimiento-servicio"
+
+        <SwiperSlide>
+          <CardIcon
+            subtitle="Registra"
+            title="Tus días libres"
+            classBorder="app-border-primary app-hover"
+            handleClick={handleDedirectTo}
+            icon={<DateRangeIcon className={`icon-color-primary ${classes.icon}`} />}
           />
-        </div>
+        </SwiperSlide>
 
-        <div className="col-3">
+        <SwiperSlide>
           <CardIcon
             subtitle="Resumen"
             title="Servicios en transito"
-            classBorder="app-border-success app-hover"
+            classBorder="app-border-warning app-hover"
             // handleClick={namefuction}
-            icon={<GetAppOutlinedIcon className={`icon-color-success ${classes.icon}`} />}
+            icon={<GetAppOutlinedIcon className={`icon-color-warning ${classes.icon}`} />}
           />
-        </div>
+        </SwiperSlide>
 
-        <div className="col-3">
+        <SwiperSlide>
           <CardMenu
             subtitle="Ejecutivo"
             title="Lilian Arguedas"
-            classBorder="app-border-default app-hover"
+            classBorder="app-border-default app-hover mr-5"
             icon={<MoreVertIcon />}
             open={anchorEl}
             handleClick={handleClick}
@@ -200,8 +221,8 @@ const Dashboard = () => {
               { name: 'Télefono', icon: <AccountCircleIcon fontSize="small" />, toLink: "#" },
             ]}
           />
-        </div>
-      </div>
+        </SwiperSlide>
+      </Swiper>
 
 
       <div className="row">
@@ -213,171 +234,53 @@ const Dashboard = () => {
           />
         </div>
 
-
-
-        {/* <div className="col-12">
-        <div className='app-tags bg-ligh mb-4'>
-                <div className="app-buttons">
-                    <Button
-                        className={`button button-small ${visible.detalle === false ? 'button-danger' : 'button-gray'}`}
-                        onClick={(e) => handleChange(1)}
-                    >
-                        Detalle logístico
-                    </Button>
-
-                    <Button
-                        className={`button button-small mx-2 ${visible.pagos === false ? 'button-danger' : 'button-gray'}`}
-                        onClick={(e) => handleChange(2)}
-                    >
-                        Pagos
-                    </Button>
-
-                    <Button
-                            className={`button button-small ${visible.cotizacion === false ? 'button-danger' : 'button-gray'}`}
-                            onClick={(e) => handleChange(3)}
-                        >
-                            Cotización vigente
-                    </Button>
-                </div>
-            </div>
-
-            <div className='border my-4'></div>
-
-            <div hidden={visible.detalle}>
-                2
-            </div>
-
-            <div hidden={visible.pagos}>
-                3
-            </div>
-
-            <div hidden={visible.cotizacion}>
-                4
-            </div>
-        </div> */}
-
-
+        {/* card para consultar los servicios sin horario de retiro */}
         <div className="col-6">
           <CardIcon
-            subtitle="Retiro"
-            title="Sin horario de retiro"
+            subtitle="Contenedores"
+            title="Sin horarios de retiro en puerto"
             classBorder="app-border-primary app-hover"
-            // handleClick={namefuction}
+            handleClick={handleContenodreSinRetiro}
             icon={<GetAppOutlinedIcon className={`icon-color-primary ${classes.icon}`} />}
           />
         </div>
 
+        {/* card para consultar los servicios con contenedores almacenados */}
         <div className="col-6">
-          {/* <CardButton
-            title="Retirado y/con horario"
-            subtitle="Retiro"
-            nameButton="Ver detalle"
-            classBorder="app-border-default"
-          // colorBotton="secondary"
-          /> */}
-
           <CardIcon
-            subtitle="Retiro"
-            title="Retirado y/con horario"
+            subtitle="Stock"
+            title="Contenedores almacenados"
             classBorder="app-border-purple app-hover"
-            handleClick={clickPrueba}
+            handleClick={clickContenedoresAlacenados}
             icon={<GetAppOutlinedIcon className={`icon-color-purple ${classes.icon}`} />}
           />
         </div>
 
+
+
         {
-          prueba &&
-          <div className="col-12 mt-3">
-            <div className="app-table">
-              {/* <Button>uno</Button> */}
+          // tabla con contenedores almacenados
+          visible.contenedores_alacenados &&
+          <div className="col-12">
+            <div className="app-table mt-4">
               <div className="app-table-sticky">
-                <MaterialTable
-                  title="Retiro con horario"
-                  columns={columns}
-                  data={dataTable}
-                  options={{
-                    exportButton: false,
-                    filtering: false,
-                    search: false,
-                    paging: false,
-                    maxBodyHeight: '40vh',
-                  }}
-                  localization={{
-                    body: {
-                      emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
-                    }
-                  }}
-                />
+                <Tabla titleTable="Stock Contenedores almacenados" />
               </div>
             </div>
           </div>
         }
 
-        {/* <div className="col-12 mt-3 mb-5">
-        <Card>
-
-          <CardContent className="pt-0">
-
-          Selelcion un tipo d eretiro
-
-          </CardContent>
-        </Card>
-        </div>  */}
-
-        {/* <div className="col-12">
-          <div className="app-table">
-
-            <MaterialTable
-              title="Retiro sin horario"
-              columns={columns}
-              data={dataTable}
-              options={{
-                exportButton: false,
-                filtering: false,
-                search: false,
-                paging: false,
-                detailPanelType: "single",
-                maxBodyHeight: '80vh',
-              }}
-              localization={{
-                body: {
-                  emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
-                }
-              }}
-            />
+        {
+          // tabla con contenedores sin horario de retiro
+          visible.contenedores_sin_horario &&
+          <div className="col-12">
+            <div className="app-table mt-4">
+              <div className="app-table-sticky">
+                <Tabla titleTable="Contenedores sin horarios de retiro en puerto" />
+              </div>
+            </div>
           </div>
-        </div> */}
-
-        {/* <div className="col-12 mt-3 mb-5">
-        <Card>
-
-          <CardContent className="pt-0">
-
-          <div className="app-table">
-
-              <MaterialTable
-                title="Retiro sin horario"
-                columns={columns}
-                data={dataTable}
-                options={{
-                  exportButton: false,
-                  filtering: false,
-                  search: false,
-                  paging: false,
-                  detailPanelType: "single",
-                  maxBodyHeight: '80vh',
-                }}
-                localization={{
-                  body: {
-                    emptyDataSourceMessage: <h6 style={{ textAlign: 'center', margin: '0' }}>No jajaja</h6>
-                  }
-                }}
-              />
-          </div> 
-
-          </CardContent>
-        </Card>
-        </div> */}
+        }
       </div>
 
 
@@ -401,6 +304,12 @@ const Dashboard = () => {
           />
         </div>
       </div>
+
+
+      {loading && <Cargando />}
+
+
+
     </>
   )
 };

@@ -264,14 +264,6 @@ const Dashboard = () => {
                         >
                             <i className="bi bi-sort-down"></i>
                         </Button>
-
-                        {/* <IconButton
-                            aria-label="filtrar"
-                            //className=""
-                            onClick={handleFilter}
-                        >
-                            {filter ? <i className="bi bi-x-lg text-danger"></i> : <i className="bi bi-funnel"></i>}
-                        </IconButton> */}
                     </div>
                 </div>
 

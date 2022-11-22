@@ -1,30 +1,27 @@
 .bg-loading {
-    background: rgba($color-light, 0.982);
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    @include justify-content(center,center);
+  background: rgba($color-light, 0.982);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  @include justify-content(center, center);
 
+  // .spinner-border  {
+  //     width: 100px;
+  //     height: 100px;
 
-    // .spinner-border  {
-    //     width: 100px;
-    //     height: 100px;
+  //     border: 10px solid map-get($color, colorLight );
+  //     border-right-color:transparent;
+  // }
 
-    //     border: 10px solid map-get($color, colorLight );
-    //     border-right-color:transparent;
-    // }
+  img {
+    width: 20%;
 
-    img {
-        width: 20%;
-
-        @include phone {
-            width: 50%;
-        }
+    @include phone {
+      width: 50%;
     }
-
-    
+  }
 }
 
 // .loading {
@@ -36,7 +33,7 @@
 //         border-right-color:transparent;
 //     }
 // }
-// .loading-form { 
+// .loading-form {
 //     min-height: 400px;
 // }
 
@@ -47,27 +44,26 @@
 //     z-index: 10;
 // }
 
-
 @keyframes load {
-    0% {
-        opacity: 0.08;
-        filter: blur(5px);
-    }
-    100%{
-        opacity: 1; 
-        filter: blur(0); 
-    }
+  0% {
+    opacity: 0.08;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }
 
 .animate {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	// height:100%;
-	margin: auto;
-	animation: load 1.2s infinite 0s ease-in-out;
-	animation-direction: alternate;
-	text-shadow: 0 0 1px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height:100%;
+  margin: auto;
+  animation: load 1.2s infinite 0s ease-in-out;
+  animation-direction: alternate;
+  text-shadow: 0 0 1px white;
 }
 // .loading-spinner {
 //     display: flex;
@@ -76,7 +72,6 @@
 //     flex-direction: column;
 //     width: 100%;
 // }
-
 
 // .spinner2 {
 //     width: 96px;
@@ -129,3 +124,34 @@
 //         -webkit-transform: scale(1.0);
 //     }
 // }
+
+/// slider
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+// .swiper-slide {
+//   width: 350px !important;
+// }
+
+.mySwiper {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 55%;
+    background-color: $color-dark;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    // opacity: 0 !important;
+    margin-left: -10px;
+    z-index: 999 !important;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 12px;
+    color: $color-light !important;
+    font-weight: bold;
+    // opacity: 0;
+  }
+}
