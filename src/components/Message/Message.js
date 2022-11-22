@@ -91,8 +91,8 @@ const useStyles = makeStyles((theme) => ({
         margin: "0 auto",
 
         "& .MuiSvgIcon-root": {
-            width: "64px",
-            height: "64px",
+            width: "72px",
+            height: "72px",
         }
     },
     dialog: {
