@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
+import ItemDetail from './ItemDetail'
 import {
     BsFileEarmarkArrowDown,
     // BsEnvelope
@@ -64,8 +65,40 @@ const DetailTable = ({ rowData, handleOpenModal }) => {
                 </div>
             </div>
 
+            <ItemDetail
+                option={[
+                    {
+                        titulo_item: 'Retiro:',
+                        titulo: `${rowData.retiro.titulo}`,
+                        fecha: `${rowData.retiro.fecha}`,
+                        hora: `${rowData.retiro.hora}`,
+                        conductor: `${rowData.retiro.conductor}`,
+                        tracto: `${rowData.retiro.tracto}`,
+                        remolque: `${rowData.retiro.remolque}`
+                    },
+                    {
+                        titulo_item: 'Presentación:',
+                        titulo: `${rowData.presentacion.titulo}`,
+                        fecha: `${rowData.presentacion.fecha}`,
+                        hora: `${rowData.presentacion.hora}`,
+                        conductor: `${rowData.presentacion.conductor}`,
+                        tracto: `${rowData.presentacion.tracto}`,
+                        remolque: `${rowData.presentacion.remolque}`
+                    },
+                    {
+                        titulo_item: 'Devolución:',
+                        titulo: `${rowData.devolucion.titulo}`,
+                        fecha: `${rowData.devolucion.fecha}`,
+                        hora: `${rowData.devolucion.hora}`,
+                        conductor: `${rowData.devolucion.conductor}`,
+                        tracto: `${rowData.devolucion.tracto}`,
+                        remolque: `${rowData.devolucion.remolque}`
+                    },
+                ]}
+            />
 
-            {
+
+            {/* {
                 rowData.detail.map((item, index) => (
                     <div className="app-detail-item app-border" key={index}>
                         <div className="app-item-40">
@@ -91,7 +124,7 @@ const DetailTable = ({ rowData, handleOpenModal }) => {
                         </div>
                     </div>
                 ))
-            }
+            } */}
         </div>
     )
 }
