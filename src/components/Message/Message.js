@@ -119,7 +119,7 @@ const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,w
 
             </DialogTitle>
 
-            <DialogContent className="px-5 pt-5 justify-center">
+            <DialogContent className="pt-5 justify-center">
                     { typeAlert === "alertSuccess"  &&
                         <div className={`justify-center ${classes.alertSuccess}`}>
                             <CheckIcon />
@@ -138,34 +138,12 @@ const Message = ({ open, titleMessage, message, typeAlert, onClose, callAction,w
                     }
             </DialogContent>
 
-            <DialogContent className='text-center px-5 pb-5'>
+            <DialogContent className='text-center pb-5'>
                 <DialogTitle className='pt-0'>{titleMessage}</DialogTitle>
 
                 {/* <DialogContentText>{tituloMensaje}</DialogContentText> */}
                 <DialogContentText className="px-0 px-md-5">{message}</DialogContentText>
             </DialogContent>
-{/* 
-            <DialogActions className="mb-4">
-                <Button
-                    variant="outlined"
-                    size="medium"
-                    color="secondary"
-                    onClick={onClose}
-                >
-                   cancelar
-                </Button>
-
-                <Button
-                    variant="outlined"
-                    size="medium"
-                    color="secondary"
-                    onClick={ () => {
-                        onClose();
-                    }}
-                >
-                    {callAction}
-                </Button>
-            </DialogActions> */}
         </Dialog>
     )
 }
