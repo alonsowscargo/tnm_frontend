@@ -1,5 +1,6 @@
 import React, { useEffect, useState, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { helpHttp } from "../../helpers/HelpHttp";
 import {
   readAllAction,
   noAction,
@@ -9,79 +10,48 @@ import {
 } from "./Actions";
 import MaterialTable from "material-table";
 import DetailTable from "./componts/DetailTable";
-
-// import { BsExclamationSquareFill, BsCircleFill } from "react-icons/bs";
-
-
-
-import { helpHttp } from "../../helpers/HelpHttp";
-// import CrudTable from "./componts/CrudTable"
-// import CrudForm from "./componts/CrudForm"
-// import Loading from "../../components/loading/Loading";
-import AlertMessage from "../../components/Message/AlertMessage";
-// import { HashRouter, NavLink, Route, Switch } from "react-router-dom";
+import EditIcon from '@material-ui/icons/Edit';
+import Message from "components/Message/Message";
+import MainTitle from "components/Title/MainTitle";
+import AlertMessage from "components/Message/AlertMessage";
 import ModalTwo from "./componts/ModalTwo"
 import SkeletonTable from "./componts/SkeletonTable"
 
-import Message from "../../components/Message/Message";
-
-// import ConfirmDialog from "./componts/ConfirmDialog"
-import MainTitle from "components/Title/MainTitle";
 
 
-
-// import MaterialTable from "material-table";
-// import { BsExclamationSquareFill, BsCircleFill } from "react-icons/bs";
-// import DetailTable from "./componts/DetailTable";
-import Button from '@material-ui/core/Button';
-// import {
-//   BsFileEarmarkText,
-// } from "react-icons/bs";
-
-
-// import {
-//   // BrowserRouter as Router,
-//   // HashRouter,
-//   // Redirect,
-//   Route,
-//   Switch,
-// } from "react-router-dom";
-
-// "id": 9,
-// "client_dispatch": "hjnmbm,b",
-// "container": "MRKU469325-9",
-// "type": "Dry",
-// "size": "80",
-// "ship": "CLIFFORD MAERSK",
-// "eta": "37/05/2022",
-// "reference": "OC 59653",
-// "service": "impo",
-// "free_days": "67",
-// "deadline_date": "no data",
-// "number_reservation": "105",
-// "kg": "300555"
 
 const DashboardT = () => {
-
-
   const columnsT = [
-    { title: "Contenedor", field: "container", cellStyle: { width: 100 } },
-    { title: "tipo", field: "type", cellStyle: { width: 10 } },
-    { title: "tamaño", field: "size", cellStyle: { width: 100 } },
-    { title: "nave", field: "ship", cellStyle: { width: 400 } },
-    { title: "eta", field: "eta", cellStyle: { width: 100 } },
-    { title: "referencia", field: "reference", cellStyle: { width: 600 } },
-    { title: "servicio", field: "service" },
-    { title: "Días libres", field: "free_days", cellStyle: { width: 200 } },
+    { title: "Contenedor", field: "container" },
+    { title: "referencia", field: "reference" },
+    { title: "tipo", field: "type" },
+    { title: "tamaño", field: "size" },
+    { title: "nave", field: "ship" },
+    { title: "eta", field: "eta", },
     {
-      title: "Fecha límite",
-      field: "deadline_date",
+      title: "Días libres",
+      render: rowData => 
+        <div className="justify-space-between" onClick={() => handleOpen(rowData)}>
+          <b>{rowData.free_days}</b>
+          <EditIcon className="icon-default mr-2" />
+        </div>
+    },
+    {
+      title: "Fecha límite", field: "deadline_date",
+      cellStyle: (e, rowData) => {
+        if (rowData.free_days < 5) {
+          return { color: "#000", backgroundColor: '#bdbdbd' };
+        }
+        if (rowData.free_days > 5 && rowData.free_days < 10) {
+          return { color: "#fff", backgroundColor: '#875395' };
+        }
+
+        if (rowData.free_days >= 10) {
+          return { color: "#fff", backgroundColor: '#C8352E' };
+        }
+      },
     },
   ];
-
-  // const state = useSelector(state => state);
-  // const dispatch = useDispatch();
-  // const {db} = state.crud
 
   const {
     db,
@@ -96,16 +66,18 @@ const DashboardT = () => {
   const [prueba, setPrueba] = useState([]);
 
 
+  const [openDialog, setOpenDialog] = useState(false);
+
+
+  useEffect(() => {
+    setOpenDialog(true);
+  }, [])
+
+
 
   // Dialog para eliminar
   const [eliminar, setEliminar] = useState(false);
-  // const [eliminarOk, setEliminarOk] = useState(false);
 
-  // const handleDeleteConfirmation = () => {
-  //         setEliminarOk(true);
-  //       };
-
-  const [deleteToEdit, setDeleteToEdit] = useState(null);
 
 
   // const handleDelete = () => {
@@ -119,8 +91,10 @@ const DashboardT = () => {
 
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = (data) => {
     setOpen(true);
+    setDataToEdit(data);
+    setEditDay(true);
   };
 
   const handleClose = () => {
@@ -220,18 +194,7 @@ const DashboardT = () => {
     })
   };
 
-  // console.log("-------------------")
-
-  // const [chao, setChao] = useState(false);
-  // // console.log(chao + '-------')
-
-  // const [confirmOpen, setConfirmOpen] = useState(false);
-
   const deleteData = (id) => {
-    // levabtar modal
-    //setConfirmOpen(true)
-    //setState(false)
-
     let isDelete = window.confirm(
       `¿Estás seguro de eliminar el registro con el id '${id}'?`
     );
@@ -258,31 +221,42 @@ const DashboardT = () => {
     } else {
       return
     }
-
-
-    // console.log(eliminarOk)
-    // handleDeleteConfirmation()
-    // setConfirmOpen(true)
-
-
   };
 
 
-  // const handleLogout = () => {
-  //   //console.log("this hould logout the user");
-  //   setChao(true)
-  // };
+  const handleCloseMsg = () => {
+    setOpenDialog(false);
+  };
 
   return (
     <div>
       <MainTitle
         title="Control de servicio"
-        nameButton="nuevo servicio"
-        handleClick={handleOpen}
+      // nameButton="nuevo servicio"
+      // handleClick={handleOpen}
       />
 
+      <div className="row mb-3">
+        <div className="col-4">
+          <div className="bg-color-purple text-color-light p-1">
+            <h3 className="text-xs text-center">Servicios con fecha límite menor o igual al día de hoy.</h3>
+          </div>
+        </div>
+        <div className="col-4 px-0">
+          <div className="bg-color-danger text-color-light p-1">
+            <h3 className="text-xs text-center">Servicios con fecha limite desde hoy hasta los siguiente dos días.</h3>
+          </div>
+        </div>
+
+        <div className="col-4">
+          <div className="bg-color-default p-1">
+            <h3 className="text-xs text-center">Servicios con fecha limite entre los 2 a 4 días siguientes.</h3>
+          </div>
+        </div>
+
+      </div>
+
       {loading && <SkeletonTable />}
-      {/* {loading && <Loading />} */}
 
       {errorData && <AlertMessage msg={`Error ${errorData.status}: ${errorData.statusText}`} type="error" />}
 
@@ -294,7 +268,6 @@ const DashboardT = () => {
               columns={columnsT}
               data={db}
               onRowClick={(event, rowData, togglePanel) => {
-                // Copy row data and set checked state
                 togglePanel();
               }}
               options={{
@@ -337,21 +310,6 @@ const DashboardT = () => {
         </div>
 
       }
-{/* 
-<CrudTable
-          data={db}
-          setDataToEdit={setDataToEdit}
-          deleteData={deleteData}
-          handleOpen={handleOpen}
-          setEditDay={setEditDay}
-          // handleDelete={handleDelete}
-          // setPrueba={setPrueba}
-          //setConfirmOpen={setConfirmOpen}
-        // setChao={setChao}
-
-        />
-       */}
-
 
 
       <ModalTwo
@@ -368,19 +326,6 @@ const DashboardT = () => {
 
       />
 
-      {/* <h2>Press the button below so the confirmation modal appears </h2>
-      <Button color="inherit" onClick={() => setConfirmOpen(true)}>
-        eLIMI
-      </Button>
-
-      <ConfirmDialog
-        content="Are you sure you want to leeeave us ?"
-        open={confirmOpen}
-        setOpen={setConfirmOpen}
-        //onConfirm={handleLogout}
-        setChao={setChao}
-      /> */}
-
       <Message
         open={eliminar}
         // onClose={handleCloseDelete}
@@ -390,7 +335,18 @@ const DashboardT = () => {
         message="Haz registrado con éxito tus días libres."
         callAction="Ok"
         width="sm"
-        // setEliminarOk={setEliminarOk}
+      // setEliminarOk={setEliminarOk}
+      />
+
+      <Message
+        open={openDialog}
+        onClose={handleCloseMsg}
+        titleMessage="¡Importante!"
+        // type icon, alertSuccess, alertWarning, alertDanger 
+        typeAlert="alertWarning"
+        message="Estimado cliente, la información contenida en el siguiente cuadro es referencial y Transporte Nuevo Mundo Spa. no asume responsabilidad por los datos que ahí se encuentran. La información definitiva deberá ser confirmada con la naviera y operador logístico que presta el servicio de transporte marítimo. Si usted no ingresa información de los días libres, el valor por defecto que asume el sistema es de 14 días y aparece en gris y cursiva. El cálculo se realiza considerando la fecha de arribo de la nave (ETA) y no la fecha de descarga del contenedor de la nave."
+        callAction="Ok"
+        width="sm"
       />
     </div>
   );
