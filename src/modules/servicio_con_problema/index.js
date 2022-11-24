@@ -11,7 +11,6 @@ const columns = [
   { title: "nave", field: "nave", },
   { title: "eta", field: "eta", },
   { title: "Referencia", field: "referencia", cellStyle: { width: 350 } },
-  // { title: "Cli. Desp.", field: "cli_despacho", },
   { title: "Fecha retiro", field: "fecha_retiro", cellStyle: { width: 200 } },
   { title: "hora retiro", field: "hora_retiro", },
   {
