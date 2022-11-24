@@ -53,9 +53,9 @@ const columns = [
   { title: "Cli. Desp.", field: "cliente_despacho", },
   { title: "Factura SII", field: "facturacion_sii", },
   { title: "Fecha SII", field: "fecha_sii", },
-  { title: "Servicio", field: "servicio" },
+  { title: "Id Servicio", field: "servicio" },
   { title: "Neto", field: "neto" },
-  { title: "Nº. Servicio", field: "n_servicios" },
+  { title: "Cant. Servicio", field: "n_servicios", cellStyle: { width: 150 }  },
 ]
 
 const Dashboard = () => {
@@ -103,7 +103,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <MainTitle title="Fcaturación" nameButton="nueva facturación" />
+      <MainTitle title="Facturación" nameButton="nueva facturación" />
 
 
       <Form onSubmit={handleSubmit}>

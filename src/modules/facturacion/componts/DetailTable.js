@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
+import ItemDetail from './ItemDetail'
 
 import {
     BsFileEarmarkArrowDown,
@@ -53,16 +54,16 @@ const DetailTable = ({ rowData, handleClickOpen }) => {
                 </div>
             </div>
 
-            <div className='app-item-service'>
-                {
-                    rowData.detail.map((item, index) => (
-                        <div className="app-item" key={index}>
-                            <h3 className="text-xs font-weight-500">{item.title}</h3>
-                            <h4 className="text-xs font-weight-300">{item.content}</h4>
-                        </div>
-                    ))
-                }
-            </div>
+            <ItemDetail
+                option={[
+                    { titulo: 'Cuadrilla', content: `${rowData.cuadrilla}`, },
+                    { titulo: 'Sobrepeso', content: `${rowData.sobrepeso}` },
+                    { titulo: 'Sobreestadia', content: `${rowData.sobreestadia}` },
+                    { titulo: 'Almacenaje', content: `${rowData.almacenaje}` },
+                    { titulo: 'Refeer', content: `${rowData.refeer}` },
+                    { titulo: 'Imo', content: `${rowData.imo}` }
+                ]}
+            />
         </div>
     )
 }

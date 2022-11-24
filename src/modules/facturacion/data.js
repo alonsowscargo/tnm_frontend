@@ -9,28 +9,12 @@ export const data = [
         servicio: '680000',
         neto: '680000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '',
+        sobrepeso: '',
+        sobreestadia: '',
+        almacenaje: '',
+        refeer: '',
+        imo:''
     },
     {
         liq: '15310',
@@ -42,28 +26,12 @@ export const data = [
         servicio: '520000',
         neto: '530000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '',
+        sobrepeso: '',
+        sobreestadia: '',
+        almacenaje: '',
+        refeer: '',
+        imo:''
     },
     {
         liq: '15309',
@@ -75,28 +43,12 @@ export const data = [
         servicio: '680000',
         neto: '680000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '100.000',
+        sobrepeso: '100.000',
+        sobreestadia: '100.000',
+        almacenaje: '100.000',
+        refeer: '100.000',
+        imo:'100.000'
     },
     {
         liq: '15308',
@@ -108,28 +60,12 @@ export const data = [
         servicio: '520000',
         neto: '530000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '50.000',
+        sobrepeso: '50.000',
+        sobreestadia: '50.000',
+        almacenaje: '50.000',
+        refeer: '50.000',
+        imo:'50.000'
     },
     {
         liq: '15307',
@@ -141,28 +77,12 @@ export const data = [
         servicio: '680000',
         neto: '680000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '',
+        sobrepeso: '',
+        sobreestadia: '',
+        almacenaje: '',
+        refeer: '',
+        imo:''
     },
     {
         liq: '15306',
@@ -174,97 +94,11 @@ export const data = [
         servicio: '520000',
         neto: '530000',
         n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
-    },
-    {
-        liq: '15304',
-        envio: '24/3/2022',
-        fecha_creacion: '24/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20284',
-        fecha_sii:'22/03/2022',
-        servicio: '680000',
-        neto: '680000',
-        n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
-    },
-    {
-        liq: '15303',
-        envio: '21/3/2022',
-        fecha_creacion: '18/03/2022',
-        cliente_despacho:'Vanni',
-        facturacion_sii: '20182',
-        fecha_sii:'18/03/2022',
-        servicio: '520000',
-        neto: '530000',
-        n_servicios: '2',
-        detail:[
-            {
-                title:'cuadrilla',
-                content:'0',
-            },
-            {
-                title:'sobrepeso',
-                content:'0',
-            },
-            {
-                title:'sobreestadia',
-                content:'10000',
-            },
-            {
-                title:'almacenaje',
-                content:'0',
-            },
-            {
-                title:'refeer',
-                content:'10000',
-            }
-        ]
+        cuadrilla: '750.000',
+        sobrepeso: '750.000',
+        sobreestadia: '750.000',
+        almacenaje: '750.000',
+        refeer: '750.000',
+        imo:'750.000'
     },
 ]
