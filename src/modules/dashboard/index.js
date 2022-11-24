@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UserData } from './Data'
+import { UserData, informaciónNave, informacionRetiro } from './Data'
 import { useHistory } from "react-router-dom";
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
 import DateRangeIcon from '@material-ui/icons/DateRange';
@@ -16,7 +16,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
-
+import PruebaTabla from '../seguimiento_servicio/index'
 import {
   makeStyles,
 } from "@material-ui/core";
@@ -29,9 +29,6 @@ const useStyles = makeStyles({
 });
 
 
-
-
-
 const Dashboard = () => {
   const classes = useStyles();
   const history = useHistory();
@@ -41,7 +38,7 @@ const Dashboard = () => {
   });
   const [anchorEl, setAnchorEl] = useState(null);
   const [loading, setLoading] = useState(false)
-
+  // state para grafico de presentación cliente
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
     datasets: [{
@@ -72,12 +69,12 @@ const Dashboard = () => {
     }
     ]
   })
-
-  const [userData2, setUserData2] = useState({
-    labels: UserData.map((data) => data.year),
+  // state para grafico de retiro de puerto
+  const [retiro, setRetiro] = useState({
+    labels: informacionRetiro.map((data) => data.fecha),
     datasets: [{
-      label: "prueba 1",
-      data: UserData.map((data) => data.userGain),
+      label: "EXPO",
+      data: informacionRetiro.map((data) => data.cantidadExpo),
       backgroundColor: [
         "#D8D8D8",
         "#D8D8D8",
@@ -89,8 +86,8 @@ const Dashboard = () => {
       borderWidth: 2,
     },
     {
-      label: "prueba 2",
-      data: UserData.map((data) => data.userLost),
+      label: "IMPO",
+      data: informacionRetiro.map((data) => data.cantidadImpo),
       backgroundColor: [
         "#FE2317",
         "#FE2317",
@@ -101,8 +98,8 @@ const Dashboard = () => {
       borderColor: "black",
       borderWidth: 2,
     }, {
-      label: "prueba 3",
-      data: UserData.map((data) => data.year),
+      label: "LCL",
+      data: informacionRetiro.map((data) => data.cantidadLcl),
       backgroundColor: [
         "#D8D8D8",
         "#D8D8D8",
@@ -113,6 +110,25 @@ const Dashboard = () => {
       borderColor: "black",
       borderWidth: 2,
     }
+    ]
+  })
+
+  // state para grafico de retiro por nave
+  const [naveDate, setNaveDate] = useState({
+    labels: informaciónNave.map((data) => [data.label, data.nave]),
+    datasets: [{
+      label: "Naves",
+      data: informaciónNave.map((data) => data.contenedores),
+      backgroundColor: [
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+        "#D8D8D8",
+      ],
+      borderColor: "black",
+      borderWidth: 2,
+    },
     ]
   })
 
@@ -226,7 +242,12 @@ const Dashboard = () => {
 
 
       <div className="row">
+        <div className="col-12 mt-5">
+          <PruebaTabla />
+        </div>
+
         <div className="col-12 my-5">
+
           <CardBarChart
             title="Programación de presentación en clientes"
             chartData={userData}
@@ -289,8 +310,8 @@ const Dashboard = () => {
           <CardBarChart
             title="Retiros por nave"
             description=" "
-            chartData={userData2}
-            height={120}
+            chartData={naveDate}
+            height={150}
           />
         </div>
 
@@ -299,17 +320,14 @@ const Dashboard = () => {
             title="Retiros de puerto"
             description=""
             // description="Por tipo de servicio (cat: Impo, Expo, Otros)."
-            chartData={userData2}
-            height={120}
+            chartData={retiro}
+            height={150}
           />
         </div>
       </div>
 
 
       {loading && <Cargando />}
-
-
-
     </>
   )
 };

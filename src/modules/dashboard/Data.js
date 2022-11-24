@@ -30,3 +30,62 @@ export const UserData = [
     userLost: 234,
   },
 ];
+
+export const informaciónNave = [
+  {
+    id: 1,
+    nave: 'MSC RUBY',
+    label: 'SK 1',
+    contenedores: '30',
+  },
+  {
+    id: 1,
+    nave: 'CARLOTTA STAR',
+    label: 'SK 2',
+    contenedores: '8',
+  },
+  {
+    id: 1,
+    nave: 'EVER URBAN',
+    label: 'SK 3',
+    contenedores: '12',
+  },
+  {
+    id: 1,
+    nave: 'SKAGEN MAERSK',
+    label: 'SK 4',
+    contenedores: '20',
+  },
+];
+
+
+export const informacionRetiro = [
+  {
+    id: 1,
+    fecha: '21-11-22',
+    cantidadExpo: '30',
+    cantidadImpo: '12',
+    cantidadLcl: '8'
+  },
+  {
+    id: 1,
+    fecha: '22-11-22',
+    cantidadExpo: '8',
+    cantidadImpo: '23',
+    cantidadLcl: '30'
+  },
+  {
+    id: 1,
+    fecha: '23-11-22',
+    cantidadExpo: '12',
+    cantidadImpo: '7',
+    cantidadLcl: '4'
+  },
+  {
+    id: 1,
+    fecha: '24-11-22',
+    cantidadExpo: '20',
+    cantidadImpo: '18',
+    cantidadLcl: '19'
+  },
+];
