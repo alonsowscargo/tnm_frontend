@@ -10,7 +10,6 @@
     text-transform: capitalize !important;
 }
 
-
 // Reset button
 .app-fi {
     background-color: #fff;
@@ -55,43 +54,13 @@
 
 
 .app-filter-secundary {
-    // flex-wrap: wrap;
-    // transition: width 2s;
-    //background-color: rgba(255, 255, 255, 0.636);
-    // border: solid rgba(255, 0, 0, 0.678) 1px;
-    //padding: 12px;    
-   // padding-left: 24px;
-   //@include style-border(1, 1,1, 1, solid);
-
     margin-top: 24px;
 
-    // .app-border-bottom{
-    //     //border-right: rgba(0, 0, 0, 0.141) solid 2px;
-    //     // border-right: solid 3px  #F4F4F7;
-    //     border-bottom:solid 1px #34343530;
-    // }
-
     .app-input {
-        // border-right: solid 1px #000;
-        // padding: 12px 24px;
-
-
         &:last-child {
             margin-right: 0;
         }
     }
-
-
-
-    // .app-title {
-    //     width: 100%;
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     padding: 16px 24px 10px 24px;
-    //     // border-bottom:solid 1px #34343530;
-
-    // }
 }
 
 
@@ -100,18 +69,8 @@
     .MuiInputBase-root {
         border-radius: 4px;
         border: solid 1px #fff;
-        //padding: 0px 16px;
 
-       
-
-        // .MuiTypography-body1 {
-        //     font-size: 14px;
-        //     color:red;
-        // }
-    
-    
         &.Mui-focused {
-            //border: solid 1px #fff;
             color: map-get($color,colorEleven);
         }
     }
@@ -131,167 +90,18 @@
 
 
     .app-action {
-
         .app-button {
             .bi {
                 font-size: 100px;
             }
         }
     }
-
-
-
+    
     // style label
     .MuiFormLabel-root {
-        // text-transform: capitalize;
-        // color: map-get($color, colorGray2) !important;
-        // font-size: 12px !important;
-        // padding-left: 16px !important;
         color: #212121 !important;
-        // margin-bottom: 0px;
         font-weight: 500;
     }
-    // .MuiFilledInput-root {
-    //     // position: relative;
-    //     // transition: background-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-    //     background-color: transparent;
-    //     border-bottom: none !important;
-    //     // border-top-left-radius: 4px;
-    //     // border-top-right-radius: 4px;
-    // }
-
-    // .MuiFilledInput-input { 
-    //     padding-top:6px;
-    //     padding-bottom: 6px;
-    //     padding-left: 0;
-    // }
-
-
-    // .MuiFilledInput-underline:before {
-    //     // left: 0;
-    //     // right: 0;
-    //     // bottom: 0;
-    //     // content: "\00a0";
-    //     // position: absolute;
-    //     // transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    //     border-bottom: none;
-
-    //     &:hover {
-    //         background-color: transparent !important;
-    //     }
-    //     // pointer-events: none; 
-    // }
-    // /* padding: 27px 12px 10px; */
-
-    // .MuiFormLabel-root {
-    //     // color: rgba(0, 0, 0, 0.54);
-    //     padding: 0;
-    //     font-size: 12px;
-    //     // font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    //     font-weight: 400;
-    //     line-height: 1;
-    //     letter-spacing: 0.00938em;
-    // }
-    
-    // .MuiFormControl-root {
-    //     width: 100%;
-    // }
-
-    // .MuiInputBase-input {
-    //     background-color: transparent;
-    //     border: none ;
-    //     cursor: pointer;
-
-    //     &::placeholder {
-    //         color: #212121 !important;
-    //         font-size: 14px !important;
-    //         font-weight: 500 !important;
-    //     }
-    // }
-
-    // .MuiInput-underline {
-    //     border-bottom: 0px transparent !important;
-    // }
-
-    // .MuiInputBase-root {
-    //     font-size: 14px;
-    //     font-weight: 500;
-    //     border-bottom: 0px transparent !important;
-
-    //     .MuiIconButton-root {
-    //         color: #212121 !important;
-    //     }
-    // }
-
 }
-
-
-
-// .app-input-date {
-//     .MuiIconButton-root {
-//         padding: 12px 0px;
-
-//         &:hover {
-//             background: transparent;
-//         }
-//     }
-//     .MuiSvgIcon-root {
-//         font-size: 20px;
-//     }
-// }
-
-// .app-button-filter {
-//     &:hover {
-//         background: transparent !important;
-//     }
-
-//     .MuiIconButton-label {
-//         display: flex;
-//         flex-direction: column ;
-//         font-size: 10px;
-//         font-weight: 500;
-//         color: #212121;
-//     }
-
-//     .bi {
-//         font-size: 18px;
-//         //color: #C8352E;
-//         color: #212121;
-//     }
-
-//     svg {
-//         color: #212121;
-//         font-size: 20px;
-//     }
-// }
-
-// // .app-button {
-// //     background: #2196f3 !important;
-// //     width: 40px;
-// //     height: 40px;
-
-// //     .MuiSvgIcon-root {
-// //         color: #fff;
-// //         font-size: 18px;
-// //     }
-// // }
-
-
-
-
-// //// title
-
-// .app-title {
-//     // background-color: red;
-//     margin-bottom: 24px;
-//     border-left: solid 6px #C8352E;
-//     padding-left: 24px;
-
-//     h1 {
-//         line-height: 24px;
-//         color: #676362;
-//     }
-// }
-
 
 

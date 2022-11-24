@@ -1,195 +1,142 @@
 //  reset card ui.
-.MuiCard-root{
-    .MuiCardContent-root {
-        padding: 48px 32px;
+.MuiCard-root {
+  .MuiCardContent-root {
+    padding: 48px 32px;
 
-        &:last-child {
-            padding-bottom: 48px;
-        }
+    &:last-child {
+      padding-bottom: 48px;
     }
+  }
 }
 
 // new card
 .app-card {
-    transition: all 0.3s;
-    background: red;
-    .MuiTypography-h3 {
-        font-size: 32px;
-        // color: $color-dark;
-    }
+  transition: all 0.3s;
+  background: red;
+  .MuiTypography-h3 {
+    font-size: 32px;
+    // color: $color-dark;
+  }
 
-    .MuiTypography-h6 {
-        font-size: 18px;
-        font-weight: 500;
-        // color: $color-dark;
-    }
+  .MuiTypography-h6 {
+    font-size: 18px;
+    font-weight: 500;
+    // color: $color-dark;
+  }
 }
 
 // card hover
 .app-hover:hover {
-    cursor: pointer;
-    box-shadow:  0px 0px 16px rgba(0, 0, 0, 0.212) !important;
+  cursor: pointer;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.212) !important;
 
-     a:hover{
-        text-decoration: none;
-     }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
+// style icon
+.icon-default {
+    width: 16px !important;
+}
 // // card retiro
 
 // border
 .app-border-default {
-    border-left: solid 6px $color-default;
+  border-left: solid 6px $color-default;
 }
 .app-border-light {
-    border-left: solid 6px $color-light;
+  border-left: solid 6px $color-light;
 }
 .app-border-success {
-    border-left: solid 6px $color-success
+  border-left: solid 6px $color-success;
 }
 .app-border-warning {
-    border-left: solid 6px $color-warning;
+  border-left: solid 6px $color-warning;
 }
 .app-border-danger {
-    border-left: solid 6px $color-danger;
+  border-left: solid 6px $color-danger;
 }
 .app-border-primary {
-    border-left: solid 6px $color-primary;
+  border-left: solid 6px $color-primary;
 }
 .app-border-purple {
-    border-left: solid 6px $color-purple
+  border-left: solid 6px $color-purple;
 }
-
-
-
-
-// .icon-small {
-//     width: 24px;
-//     height: 24px;
-
-//     i {
-//         font-size: 18px;
-//     }
-// }
-
-
-// .cards-icon {
-//     background:  #FC959C;
-//     height: 2.25rem;
-//     width: 2.25rem;
-//     border-radius: 100%;
-//     color: #fff;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     i {
-//         font-size: 24px;
-//     }
-// }
-
-// .icon-medium {
-//     width: 28px;
-//     height: 28px;
-
-//     i {
-//         font-size: 20px;
-//     }
-//     span {
-//         font-size: 20px;
-//     }
-// }
-
-// .icon-small {
-//     width: 24px;
-//     height: 24px;
-
-//     i {
-//         font-size: 18px;
-//     }
-// }
-
-// .icon-xs {
-//     width: 14px;
-//     height: 14px;
-
-//     i {
-//         font-size: 14px;
-//     }
-// }
-
-// .icon-large {
-//     width: 34px;
-//     height: 34px;
-
-//     i {
-//         font-size: 24px;
-//     }
-// }
-
-// .icon-xl {
-//     width: 42px;
-//     height: 42px;
-
-//     i {
-//         font-size: 24px;
-//     }
-// }
 
 // color icon
 .icon-color-danger {
-    color: $color-danger;
+  color: $color-danger;
 }
 .icon-color-warning {
-    color: $color-warning;
+  color: $color-warning;
 }
 .icon-color-success {
-    color: $color-success;
+  color: $color-success;
 }
 .icon-color-default {
-    color: $color-default;
+  color: $color-default;
 }
 .icon-color-primary {
-    color: $color-primary;
+  color: $color-primary;
 }
 .icon-color-purple {
-    color: $color-purple;
+  color: $color-purple;
 }
 
 // color text
 .text-color-success {
-    color: $color-success ;
+  color: $color-success;
 }
 .text-color-warning {
-    color: $color-warning ;
+  color: $color-warning;
 }
 .text-color-default {
-    color: $color-default;
+  color: $color-default;
 }
 .text-color-danger {
-    color: $color-danger;
+  color: $color-danger;
 }
 .text-color-primary {
-    color: $color-primary;
+  color: $color-primary;
 }
 .text-color-purple {
-    color: $color-purple;
+  color: $color-purple;
 }
 
 .text-color-light-primary {
-    color: #115770;
+  color: #115770;
+}
+.text-color-light {
+  color: $color-light;
 }
 
-
-
-
-
 .bg-color-light-primary {
-    background-color: #d2eef7;
+  background-color: #d2eef7;
 }
 
 .bg-color-gray {
-    background-color: $color-gray;
+  background-color: $color-gray;
 }
 
-
+.bg-color-default {
+  background-color: $color-default;
+}
+.ag-color-light {
+  background-color: $color-light;
+}
+.bg-color-success {
+  background-color: $color-success;
+}
+.bg-color-warning {
+  background-color: $color-warning;
+}
+.bg-color-danger {
+  background-color: $color-danger;
+}
+.bg-color-primary {
+  background-color: $color-primary;
+}
+.bg-color-purple {
+  background-color: $color-purple;
+}
