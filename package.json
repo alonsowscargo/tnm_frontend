@@ -124,6 +124,7 @@
     "shortid": "^2.2.16",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
+    "swiper": "^8.4.5",
     "typeface-roboto": "^0.0.75",
     "url-search-params": "^1.1.0"
   },

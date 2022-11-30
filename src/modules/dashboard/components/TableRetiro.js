@@ -37,7 +37,7 @@ const TableRetiro = ({titleTable}) => {
           search: true,
           paging: false,
           detailPanelType: "single",
-          maxBodyHeight: "80vh",
+          maxBodyHeight: "45vh",
         }}
         localization={{
           body: {
